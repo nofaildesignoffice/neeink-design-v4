@@ -1058,7 +1058,7 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 .v2-svc .btn-primary:hover,.v2-value .btn-primary:hover,.v2-cta .btn-primary:hover{background:transparent;color:#fff;border-color:#000}
 .v2-svc .btn-primary:hover::before,.v2-value .btn-primary:hover::before,.v2-cta .btn-primary:hover::before{transform:scaleX(1)}
 /* 신뢰 지표 아이콘 — 커스텀 라인 아이콘 + 아이콘별 모션 */
-.v2-info-stats .stats .st-ic{width:clamp(40px,3.1vw,54px);height:clamp(40px,3.1vw,54px);color:#fff}
+.v2-info-stats .stats .st-ic{position:static;flex:none;width:clamp(40px,3.1vw,54px);height:clamp(40px,3.1vw,54px);margin-bottom:clamp(18px,1.6vw,28px);color:#fff}
 .v2-info-stats .stats .st-ic svg{width:100%;height:100%;overflow:visible}
 .st-ic svg *{transform-box:view-box}
 .st-ic .ac{fill:#0057ff;stroke:none}
@@ -1084,7 +1084,7 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 @keyframes icType{0%,60%,100%{transform:none;opacity:.45}30%{transform:translateY(-3px);opacity:1}}
 @keyframes icWobble{0%,100%{transform:rotate(0)}20%{transform:rotate(-5deg)}40%{transform:rotate(4deg)}55%{transform:rotate(0)}}
 @keyframes icTwinkle{0%,100%{transform:scale(.4) rotate(0);opacity:.2}50%{transform:scale(1.15) rotate(90deg);opacity:1}}
-@media (max-width:768px){.v2-info-stats .stats .st-ic{width:34px;height:34px}}
+@media (max-width:768px){.v2-info-stats .stats .st-ic{width:34px;height:34px;margin-bottom:14px}}
 @media (prefers-reduced-motion:reduce){.st-ic svg *{animation:none!important}}
 /* 차별점 카드 — 1:1 이미지 + 하단 카드명·설명, 호버 시 이미지 확대 */
 .v2-prog-list{gap:clamp(20px,2.08vw,40px)}
