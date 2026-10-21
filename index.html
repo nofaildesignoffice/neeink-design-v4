@@ -855,8 +855,8 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 /* 우하단 흰 카드: 점 + 이전/다음 */
 
 /* 2·3 Reviews + Stats — sc_info.group_info1: 히어로 위로 올라오는 라운드 다크 패널 + 원형 아크 카드 슬라이더 */
-.v2-info{position:relative;z-index:2;color:#fff;overflow:hidden;border-radius:103px 103px 0 0;padding-bottom:clamp(90px,8vw,150px);background:radial-gradient(60% 45% at 50% 62%,rgba(0,87,255,.38),transparent 70%),radial-gradient(40% 30% at 12% 8%,rgba(0,87,255,.35),transparent 70%),linear-gradient(180deg,#141414 0%,#0d0d0d 55%,#0a0a0a 100%)}
-.v2-info .sp-glow{position:absolute;top:112px;right:105px;width:345px;height:345px;border-radius:50%;background:rgba(18,119,73,.3);filter:blur(100px);animation:v2pulse 4s ease-in-out infinite;pointer-events:none}
+.v2-info{position:relative;z-index:2;color:#fff;overflow:hidden;border-radius:103px 103px 0 0;padding-bottom:clamp(90px,8vw,150px);background:#000}
+.v2-info .sp-glow{display:none;position:absolute;top:112px;right:105px;width:345px;height:345px;border-radius:50%;background:rgba(18,119,73,.3);filter:blur(100px);animation:v2pulse 4s ease-in-out infinite;pointer-events:none}
 @keyframes v2pulse{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.15);opacity:1}}
 .v2-info-hd{position:relative;z-index:3;text-align:center;padding-top:clamp(110px,11.35vw,218px)}
 .circle-ani{display:flex;list-style:none;padding:0;margin:0}
