@@ -1057,18 +1057,35 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 .v2-svc .btn-primary::before,.v2-value .btn-primary::before,.v2-cta .btn-primary::before{content:"";position:absolute;inset:0;z-index:-1;background:#000;transform:scaleX(0);transform-origin:left center;transition:transform .45s cubic-bezier(.65,0,.35,1)}
 .v2-svc .btn-primary:hover,.v2-value .btn-primary:hover,.v2-cta .btn-primary:hover{background:transparent;color:#fff;border-color:#000}
 .v2-svc .btn-primary:hover::before,.v2-value .btn-primary:hover::before,.v2-cta .btn-primary:hover::before{transform:scaleX(1)}
-/* 신뢰 지표 아이콘 — 원형 배지 + 선 그리기 + 은은한 부유 */
-.v2-info-stats .stats .st-ic{display:flex;align-items:center;justify-content:center;width:clamp(52px,4vw,68px);height:clamp(52px,4vw,68px);border-radius:50%;color:#fff;background:radial-gradient(circle at 30% 25%,rgba(0,87,255,.55),rgba(0,87,255,.12) 70%);border:1px solid rgba(255,255,255,.18);box-shadow:0 0 0 0 rgba(0,87,255,.35);animation:stFloat 4.2s ease-in-out infinite;transition:transform .4s,box-shadow .4s}
-.v2-info-stats .stats>div:nth-child(2) .st-ic{animation-delay:-.7s}.v2-info-stats .stats>div:nth-child(3) .st-ic{animation-delay:-1.4s}
-.v2-info-stats .stats>div:nth-child(4) .st-ic{animation-delay:-2.1s}.v2-info-stats .stats>div:nth-child(5) .st-ic{animation-delay:-2.8s}.v2-info-stats .stats>div:nth-child(6) .st-ic{animation-delay:-3.5s}
-.v2-info-stats .stats .st-ic svg{width:46%;height:46%;stroke-width:1.5}
-.v2-info-stats .stats .st-ic svg *{stroke-dasharray:1;stroke-dashoffset:1}
-.v2-info-stats .stats.is-on .st-ic svg *{animation:stDraw 1.6s cubic-bezier(.65,0,.35,1) forwards}
-.v2-info-stats .stats>div:hover .st-ic{transform:scale(1.08) rotate(-6deg);box-shadow:0 0 0 10px rgba(0,87,255,.12)}
-@keyframes stDraw{to{stroke-dashoffset:0}}
-@keyframes stFloat{0%,100%{translate:0 0}50%{translate:0 -6px}}
-@media (max-width:768px){.v2-info-stats .stats .st-ic{width:40px;height:40px}}
-@media (prefers-reduced-motion:reduce){.v2-info-stats .stats .st-ic{animation:none}.v2-info-stats .stats .st-ic svg *{stroke-dashoffset:0;animation:none!important}}
+/* 신뢰 지표 아이콘 — 커스텀 라인 아이콘 + 아이콘별 모션 */
+.v2-info-stats .stats .st-ic{width:clamp(40px,3.1vw,54px);height:clamp(40px,3.1vw,54px);color:#fff}
+.v2-info-stats .stats .st-ic svg{width:100%;height:100%;overflow:visible}
+.st-ic svg *{transform-box:view-box}
+.st-ic .ac{fill:#0057ff;stroke:none}
+.ic-clock .mn{transform-origin:24px 24px;animation:icSpin 4s linear infinite}
+.ic-clock .hr{transform-origin:24px 24px;animation:icSpin 48s linear infinite}
+.ic-eye .lid{transform-origin:24px 24px;animation:icBlink 3.6s ease-in-out infinite}
+.ic-eye .iris{animation:icLook 3.6s ease-in-out infinite}
+.ic-cap .cap{transform-origin:24px 30px;animation:icToss 2.8s cubic-bezier(.45,0,.55,1) infinite}
+.ic-cap .tassel{transform-origin:40px 19.8px;animation:icSwing 2.8s ease-in-out infinite}
+.ic-crew .p{animation:icHop 2.4s cubic-bezier(.45,0,.55,1) infinite}
+.ic-crew .p2{animation-delay:.2s}.ic-crew .p3{animation-delay:.4s}
+.ic-chat .d{animation:icType 1.4s ease-in-out infinite}
+.ic-chat .d2{animation-delay:.18s}.ic-chat .d3{animation-delay:.36s}
+.ic-cup .cup{transform-origin:24px 40px;animation:icWobble 3.2s ease-in-out infinite}
+.ic-cup .spk{transform-origin:40px 8px;animation:icTwinkle 2s ease-in-out infinite}
+.ic-cup .spk2{transform-origin:8px 33px;animation:icTwinkle 2s ease-in-out 1s infinite}
+@keyframes icSpin{to{transform:rotate(360deg)}}
+@keyframes icBlink{0%,86%,100%{transform:scaleY(1)}91%{transform:scaleY(.08)}}
+@keyframes icLook{0%,20%{transform:translateX(0)}30%,45%{transform:translateX(-4px)}55%,70%{transform:translateX(4px)}80%,100%{transform:translateX(0)}}
+@keyframes icToss{0%,60%,100%{transform:none}25%{transform:translateY(-5px) rotate(-8deg)}}
+@keyframes icSwing{0%,100%{transform:rotate(0)}30%{transform:rotate(18deg)}55%{transform:rotate(-12deg)}75%{transform:rotate(5deg)}}
+@keyframes icHop{0%,50%,100%{transform:none}20%{transform:translateY(-3.5px)}}
+@keyframes icType{0%,60%,100%{transform:none;opacity:.45}30%{transform:translateY(-3px);opacity:1}}
+@keyframes icWobble{0%,100%{transform:rotate(0)}20%{transform:rotate(-5deg)}40%{transform:rotate(4deg)}55%{transform:rotate(0)}}
+@keyframes icTwinkle{0%,100%{transform:scale(.4) rotate(0);opacity:.2}50%{transform:scale(1.15) rotate(90deg);opacity:1}}
+@media (max-width:768px){.v2-info-stats .stats .st-ic{width:34px;height:34px}}
+@media (prefers-reduced-motion:reduce){.st-ic svg *{animation:none!important}}
 /* 차별점 카드 — 1:1 이미지 + 하단 카드명·설명, 호버 시 이미지 확대 */
 .v2-prog-list{gap:clamp(20px,2.08vw,40px)}
 .v2-prog-list .card{background:none!important;border:none;border-radius:0;padding:0;align-items:stretch;text-align:left}
@@ -1162,12 +1179,12 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
   </div>
   <div class="container v2-info-stats">
     <div class="stats">
-      <div><span class="st-ic"><i data-lucide="store"></i></span><p class="v" data-count="6" data-suf="년">6년</p><p class="k">니잉 운영</p></div>
-      <div><span class="st-ic"><i data-lucide="sparkles"></i></span><p class="v" data-count="6000" data-suf="+">6,000+</p><p class="k">누적 시술</p></div>
-      <div><span class="st-ic"><i data-lucide="graduation-cap"></i></span><p class="v" data-count="500" data-suf="+">500+</p><p class="k">교육으로 만난 원장님</p></div>
-      <div><span class="st-ic"><i data-lucide="users-round"></i></span><p class="v" data-count="200" data-suf="+">200+</p><p class="k">마스터크루 원장님</p></div>
-      <div><span class="st-ic"><i data-lucide="star"></i></span><p class="v" data-count="1000" data-suf="+">1,000+</p><p class="k">네이버 리뷰</p></div>
-      <div><span class="st-ic"><i data-lucide="trophy"></i></span><p class="v">수상</p><p class="k">래쉬애딕트 최고 교육지사상</p></div>
+      <div><span class="st-ic"><svg class="ic-clock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="18"/><path d="M24 7.5v2.5M24 38v2.5M7.5 24H10M38 24h2.5"/><line class="hr" x1="24" y1="24" x2="31" y2="24"/><line class="mn" x1="24" y1="24" x2="24" y2="13"/><circle class="ac" cx="24" cy="24" r="2.4"/></svg></span><p class="v" data-count="6" data-suf="년">6년</p><p class="k">니잉 운영</p></div>
+      <div><span class="st-ic"><svg class="ic-eye" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="lid"><path d="M6 24Q24 8 42 24Q24 40 6 24Z"/><path d="M13.2 18.9l-2.7-4.4M18.6 16.7l-1.4-5.1M24 16v-5.2M29.4 16.7l1.4-5.1M34.8 18.9l2.7-4.4"/><circle class="ac iris" cx="24" cy="24" r="5"/></g></svg></span><p class="v" data-count="6000" data-suf="+">6,000+</p><p class="k">누적 시술</p></div>
+      <div><span class="st-ic"><svg class="ic-cap" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="cap"><path d="M4 18L24 9l20 9-20 9z"/><path d="M12 22v9q12 7 24 0v-9"/><g class="tassel"><path d="M40 19.8V30"/><circle class="ac" cx="40" cy="32" r="2.2"/></g></g></svg></span><p class="v" data-count="500" data-suf="+">500+</p><p class="k">교육으로 만난 원장님</p></div>
+      <div><span class="st-ic"><svg class="ic-crew" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="p p1"><circle cx="11" cy="19" r="3.8"/><path d="M4 34q0-7 7-7 4 0 6 2"/></g><g class="p p3"><circle cx="37" cy="19" r="3.8"/><path d="M44 34q0-7-7-7-4 0-6 2"/></g><g class="p p2"><circle class="ac" cx="24" cy="15" r="5"/><path d="M14 37q0-12 10-12t10 12"/></g></svg></span><p class="v" data-count="200" data-suf="+">200+</p><p class="k">마스터크루 원장님</p></div>
+      <div><span class="st-ic"><svg class="ic-chat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 9h28a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H22l-8 7v-7h-4a4 4 0 0 1-4-4V13a4 4 0 0 1 4-4z"/><circle class="d d1" cx="16" cy="21" r="2" fill="currentColor" stroke="none"/><circle class="d d2 ac" cx="24" cy="21" r="2"/><circle class="d d3" cx="32" cy="21" r="2" fill="currentColor" stroke="none"/></svg></span><p class="v" data-count="1000" data-suf="+">1,000+</p><p class="k">네이버 리뷰</p></div>
+      <div><span class="st-ic"><svg class="ic-cup" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="cup"><path d="M16 8h16v10q0 10-8 10t-8-10z"/><path d="M16 12h-6q0 8 7 9M32 12h6q0 8-7 9M24 28v6M18 40h12M19 34h10v6"/></g><path class="spk ac" d="M40 3l1.3 3.7L45 8l-3.7 1.3L40 13l-1.3-3.7L35 8l3.7-1.3z"/><path class="spk2" d="M8 30l.8 2.2L11 33l-2.2.8L8 36l-.8-2.2L5 33l2.2-.8z"/></svg></span><p class="v">수상</p><p class="k">래쉬애딕트 최고 교육지사상</p></div>
     </div>
   </div>
 </section>
@@ -1179,7 +1196,7 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
     <div class="v2-prog-hd">
       <p class="section-label">Why NEEINK</p>
       <h2 class="section-title">현장의 노하우를 그대로</h2>
-      <p class="section-desc">신논현 스튜디오에서 매일 시술하는 기준 그대로 가르칩니다.</p>
+      <p class="section-desc">매일 시술하는 기준 그대로 가르칩니다.</p>
     </div>
     <div class="v2-prog-list">
       <div class="card">
@@ -1421,7 +1438,6 @@ document.getElementById('hPrev').onclick=function(){go(hi-1);reset()};document.g
 <script>
 /* 신뢰 지표: 화면에 들어오면 아이콘 선 그리기 + 숫자 카운트업 */
 (function(){var g=document.querySelector('.v2-info-stats .stats');if(!g)return;
-  g.querySelectorAll('.st-ic svg *').forEach(function(e){e.setAttribute('pathLength','1')});
   var nums=[].slice.call(g.querySelectorAll('[data-count]'));
   function run(){g.classList.add('is-on');var t0=performance.now(),D=1800;
     (function f(t){var p=Math.min(1,(t-t0)/D),e=1-Math.pow(1-p,3);
