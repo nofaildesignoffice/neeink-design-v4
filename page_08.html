@@ -819,6 +819,9 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 .btn-primary:hover{background:var(--blue);border-color:var(--blue)}
 .bg-dark .btn-primary,.hero .btn-primary{background:#fff;color:#000;border-color:#fff}
 .bg-dark .btn-primary:hover,.hero .btn-primary:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+/* 푸터 글로우 — 잘린 원 대신 넓고 부드러운 그라데이션 */
+.footer::before{right:-10%;top:-30%;width:70%;height:130%;border-radius:0;background:radial-gradient(closest-side,rgba(0,87,255,.16),rgba(0,87,255,.06) 55%,transparent);filter:blur(40px)}
+.footer::after{content:"";position:absolute;left:-10%;bottom:-40%;width:60%;height:110%;background:radial-gradient(closest-side,rgba(18,119,73,.08),transparent);filter:blur(40px);pointer-events:none}
 </style>
 </head>
 <body>

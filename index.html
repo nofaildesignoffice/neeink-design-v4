@@ -1046,6 +1046,40 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
   .v2-cta .banner h3{font-size:20px}
   .v2-cta .banner p{font-size:14px}
 }
+
+/* ===== 피드백 2026-10-21 ===== */
+/* 히어로·후기 카드 카피 — 프리텐다드 */
+.v2-hero h1,.v2-hero h2{font-family:'Pretendard',sans-serif;font-weight:600;letter-spacing:-.04em}
+.v2-hero .hero-body p{font-family:'Pretendard',sans-serif}
+.arc-meta .q{font-family:'Pretendard',sans-serif;letter-spacing:-.03em}
+/* 라이트 섹션 주요 버튼 — 블랙 아웃라인, 호버 시 왼쪽→오른쪽 채움 */
+.v2-svc .btn-primary,.v2-value .btn-primary,.v2-cta .btn-primary{position:relative;isolation:isolate;overflow:hidden;background:transparent;color:#000;border-color:#000;transition:color .45s cubic-bezier(.65,0,.35,1),border-color .3s}
+.v2-svc .btn-primary::before,.v2-value .btn-primary::before,.v2-cta .btn-primary::before{content:"";position:absolute;inset:0;z-index:-1;background:#000;transform:scaleX(0);transform-origin:left center;transition:transform .45s cubic-bezier(.65,0,.35,1)}
+.v2-svc .btn-primary:hover,.v2-value .btn-primary:hover,.v2-cta .btn-primary:hover{background:transparent;color:#fff;border-color:#000}
+.v2-svc .btn-primary:hover::before,.v2-value .btn-primary:hover::before,.v2-cta .btn-primary:hover::before{transform:scaleX(1)}
+/* 신뢰 지표 아이콘 — 원형 배지 + 선 그리기 + 은은한 부유 */
+.v2-info-stats .stats .st-ic{display:flex;align-items:center;justify-content:center;width:clamp(52px,4vw,68px);height:clamp(52px,4vw,68px);border-radius:50%;color:#fff;background:radial-gradient(circle at 30% 25%,rgba(0,87,255,.55),rgba(0,87,255,.12) 70%);border:1px solid rgba(255,255,255,.18);box-shadow:0 0 0 0 rgba(0,87,255,.35);animation:stFloat 4.2s ease-in-out infinite;transition:transform .4s,box-shadow .4s}
+.v2-info-stats .stats>div:nth-child(2) .st-ic{animation-delay:-.7s}.v2-info-stats .stats>div:nth-child(3) .st-ic{animation-delay:-1.4s}
+.v2-info-stats .stats>div:nth-child(4) .st-ic{animation-delay:-2.1s}.v2-info-stats .stats>div:nth-child(5) .st-ic{animation-delay:-2.8s}.v2-info-stats .stats>div:nth-child(6) .st-ic{animation-delay:-3.5s}
+.v2-info-stats .stats .st-ic svg{width:46%;height:46%;stroke-width:1.5}
+.v2-info-stats .stats .st-ic svg *{stroke-dasharray:1;stroke-dashoffset:1}
+.v2-info-stats .stats.is-on .st-ic svg *{animation:stDraw 1.6s cubic-bezier(.65,0,.35,1) forwards}
+.v2-info-stats .stats>div:hover .st-ic{transform:scale(1.08) rotate(-6deg);box-shadow:0 0 0 10px rgba(0,87,255,.12)}
+@keyframes stDraw{to{stroke-dashoffset:0}}
+@keyframes stFloat{0%,100%{translate:0 0}50%{translate:0 -6px}}
+@media (max-width:768px){.v2-info-stats .stats .st-ic{width:40px;height:40px}}
+@media (prefers-reduced-motion:reduce){.v2-info-stats .stats .st-ic{animation:none}.v2-info-stats .stats .st-ic svg *{stroke-dashoffset:0;animation:none!important}}
+/* 차별점 카드 — 1:1 이미지 + 하단 카드명·설명, 호버 시 이미지 확대 */
+.v2-prog-list{gap:clamp(20px,2.08vw,40px)}
+.v2-prog-list .card{background:none!important;border:none;border-radius:0;padding:0;align-items:stretch;text-align:left}
+.v2-prog-list .pc-img{aspect-ratio:1/1;overflow:hidden;border-radius:20px;margin-bottom:clamp(22px,1.8vw,32px)}
+.v2-prog-list .pc-img .img-placeholder{width:100%;height:100%;aspect-ratio:auto;border-radius:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:13px;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.v2-prog-list .card:hover .pc-img .img-placeholder{transform:scale(1.08)}
+.v2-prog-list h3{margin-bottom:10px}
+@media (max-width:768px){.v2-prog-list .card{padding:0;border-radius:0}.v2-prog-list .pc-img{border-radius:14px}}
+/* 푸터 글로우 — 잘린 원 대신 넓고 부드러운 그라데이션 */
+.footer::before{right:-10%;top:-30%;width:70%;height:130%;border-radius:0;background:radial-gradient(closest-side,rgba(0,87,255,.16),rgba(0,87,255,.06) 55%,transparent);filter:blur(40px)}
+.footer::after{content:"";position:absolute;left:-10%;bottom:-40%;width:60%;height:110%;background:radial-gradient(closest-side,rgba(18,119,73,.08),transparent);filter:blur(40px);pointer-events:none}
 </style>
 </head>
 <body>
@@ -1128,16 +1162,44 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
   </div>
   <div class="container v2-info-stats">
     <div class="stats">
-      <div><i data-lucide="store" class="st-ic"></i><p class="v">6년</p><p class="k">니잉 운영</p></div>
-      <div><i data-lucide="eye" class="st-ic"></i><p class="v">6,000+</p><p class="k">누적 시술</p></div>
-      <div><i data-lucide="graduation-cap" class="st-ic"></i><p class="v">500+</p><p class="k">교육으로 만난 원장님</p></div>
-      <div><i data-lucide="users" class="st-ic"></i><p class="v">200+</p><p class="k">마스터크루 원장님</p></div>
-      <div><i data-lucide="message-square-heart" class="st-ic"></i><p class="v">1,000+</p><p class="k">네이버 리뷰</p></div>
-      <div><i data-lucide="award" class="st-ic"></i><p class="v">수상</p><p class="k">래쉬애딕트 최고 교육지사상</p></div>
+      <div><span class="st-ic"><i data-lucide="store"></i></span><p class="v" data-count="6" data-suf="년">6년</p><p class="k">니잉 운영</p></div>
+      <div><span class="st-ic"><i data-lucide="sparkles"></i></span><p class="v" data-count="6000" data-suf="+">6,000+</p><p class="k">누적 시술</p></div>
+      <div><span class="st-ic"><i data-lucide="graduation-cap"></i></span><p class="v" data-count="500" data-suf="+">500+</p><p class="k">교육으로 만난 원장님</p></div>
+      <div><span class="st-ic"><i data-lucide="users-round"></i></span><p class="v" data-count="200" data-suf="+">200+</p><p class="k">마스터크루 원장님</p></div>
+      <div><span class="st-ic"><i data-lucide="star"></i></span><p class="v" data-count="1000" data-suf="+">1,000+</p><p class="k">네이버 리뷰</p></div>
+      <div><span class="st-ic"><i data-lucide="trophy"></i></span><p class="v">수상</p><p class="k">래쉬애딕트 최고 교육지사상</p></div>
     </div>
   </div>
 </section>
 </div>
+
+<!-- ================= 섹션 6 : 차별점 3축 ================= -->
+<section class="section v2-prog">
+  <div class="container v2-prog-in">
+    <div class="v2-prog-hd">
+      <p class="section-label">Why NEEINK</p>
+      <h2 class="section-title">현장의 노하우를 그대로</h2>
+      <p class="section-desc">신논현 스튜디오에서 매일 시술하는 기준 그대로 가르칩니다.</p>
+    </div>
+    <div class="v2-prog-list">
+      <div class="card">
+        <div class="pc-img"><div class="img-placeholder"><i data-lucide="image"></i><span>[이미지 · 1:1 · 판단 기준 · 눈매 케이스]</span></div></div>
+        <h3>6,000건이 만든 판단 기준</h3>
+        <p>처진 눈, 들린 눈, 컬이 높게 나오는 눈, 컬이 잘 나오지 않는 눈. 교과서에 없는 케이스를 무엇을 보고 판단하는지 알려드립니다.</p>
+      </div>
+      <div class="card">
+        <div class="pc-img"><div class="img-placeholder"><i data-lucide="image"></i><span>[이미지 · 1:1 · 실습 현장]</span></div></div>
+        <h3>처음부터 끝까지 내 손으로</h3>
+        <p>이론과 데모는 온라인으로 먼저 보고, 오프라인 시간은 전부 실습에 씁니다. 모델과 재료는 니잉이 준비합니다.</p>
+      </div>
+      <div class="card">
+        <div class="pc-img"><div class="img-placeholder"><i data-lucide="image"></i><span>[이미지 · 1:1 · 수료 후 카톡 피드백]</span></div></div>
+        <h3>수료 후에도 열려 있는 질문 창구</h3>
+        <p>샵에 돌아가 막히는 순간에 카카오톡으로 물어보세요. 제품을 도입하면 200여 명의 마스터크루 단톡방이 이어집니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ================= 섹션 4 : 급속교정 클래스 ================= -->
 <section class="section v2-svc v2-svc-a" id="edu">
@@ -1174,50 +1236,6 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
   </div>
 </section>
 
-<!-- ================= 섹션 6 : 차별점 3축 ================= -->
-<section class="section v2-prog">
-  <div class="container v2-prog-in">
-    <div class="v2-prog-hd">
-      <p class="section-label">Why NEEINK</p>
-      <h2 class="section-title">교육만 하는 곳이 아닙니다. 오늘도 고객을 받는 샵입니다</h2>
-      <p class="section-desc">신논현 스튜디오에서 매일 시술하는 기준 그대로 가르칩니다.</p>
-    </div>
-    <div class="v2-prog-list">
-      <div class="card">
-        <div class="icon-circle"><i data-lucide="scan-eye"></i></div>
-        <h3>6,000건이 만든 판단 기준</h3>
-        <p>처진 눈, 들린 눈, 컬이 높게 나오는 눈, 컬이 잘 나오지 않는 눈. 교과서에 없는 케이스를 무엇을 보고 판단하는지 알려드립니다.</p>
-      </div>
-      <div class="card">
-        <div class="icon-circle"><i data-lucide="hand"></i></div>
-        <h3>처음부터 끝까지 내 손으로</h3>
-        <p>이론과 데모는 온라인으로 먼저 보고, 오프라인 시간은 전부 실습에 씁니다. 모델과 재료는 니잉이 준비합니다.</p>
-      </div>
-      <div class="card">
-        <div class="icon-circle"><i data-lucide="messages-square"></i></div>
-        <h3>수료 후에도 열려 있는 질문 창구</h3>
-        <p>샵에 돌아가 막히는 순간에 카카오톡으로 물어보세요. 제품을 도입하면 200여 명의 마스터크루 단톡방이 이어집니다.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= 섹션 7 : 니잉 스토어 ================= -->
-<section class="section bg-mint v2-store">
-  <div class="container">
-    <div class="text-center">
-      <p class="section-label">NEEINK Store</p>
-      <h2 class="section-title">니잉 스토어</h2>
-      <p class="section-desc">매일 시술하는 니잉이 직접 쓰는 래쉬애딕트마스터 3종입니다.</p>
-    </div>
-    <div class="grid-3">
-      <article class="prod-card"><div class="img-placeholder"><i data-lucide="image"></i></div><div class="prod-body"><span class="who-tag">Lash</span><p class="brand">래쉬애딕트마스터</p><h3>LashAddict</h3><p class="sum">속눈썹 세럼. 시술 후 고객 관리 루틴으로 이어서 권하기 좋습니다.</p><p class="price">29,000원</p></div></article>
-      <article class="prod-card"><div class="img-placeholder"><i data-lucide="image"></i></div><div class="prod-body"><span class="who-tag">Brow</span><p class="brand">래쉬애딕트마스터</p><h3>BrowAddict</h3><p class="sum">눈썹 세럼. 속눈썹 시술 고객에게 함께 제안하기 좋은 제품입니다.</p><p class="price">25,000원</p></div></article>
-      <article class="prod-card"><div class="img-placeholder"><i data-lucide="image"></i></div><div class="prod-body"><span class="who-tag">Hair</span><p class="brand">래쉬애딕트마스터</p><h3>HairAddict</h3><p class="sum">모발 밀도 세럼. 새로운 판매 라인을 넓히고 싶은 원장님께 권합니다.</p><p class="price">39,000원</p></div></article>
-    </div>
-    <div style="text-align:center;margin-top:40px"><a href="page_04.html" class="btn btn-secondary btn-arrow">니잉 스토어 전체 보기</a></div>
-  </div>
-</section>
 
 <!-- ================= 섹션 8 : 마스터크루 ================= -->
 <section class="v2-value">
@@ -1235,6 +1253,24 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
     </div>
   </div>
 </section>
+
+<!-- ================= 섹션 7 : 니잉 스토어 ================= -->
+<section class="section bg-mint v2-store">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">NEEINK Store</p>
+      <h2 class="section-title">니잉 스토어</h2>
+      <p class="section-desc">매일 시술하는 니잉이 직접 쓰는 래쉬애딕트마스터 3종입니다.</p>
+    </div>
+    <div class="grid-3">
+      <article class="prod-card"><div class="img-placeholder"><i data-lucide="image"></i></div><div class="prod-body"><p class="brand">래쉬애딕트마스터</p><h3>LashAddict</h3><p class="sum">속눈썹 세럼. 시술 후 고객 관리 루틴으로 이어서 권하기 좋습니다.</p><p class="price">29,000원</p></div></article>
+      <article class="prod-card"><div class="img-placeholder"><i data-lucide="image"></i></div><div class="prod-body"><p class="brand">래쉬애딕트마스터</p><h3>BrowAddict</h3><p class="sum">눈썹 세럼. 속눈썹 시술 고객에게 함께 제안하기 좋은 제품입니다.</p><p class="price">25,000원</p></div></article>
+      <article class="prod-card"><div class="img-placeholder"><i data-lucide="image"></i></div><div class="prod-body"><p class="brand">래쉬애딕트마스터</p><h3>HairAddict</h3><p class="sum">모발 밀도 세럼. 새로운 판매 라인을 넓히고 싶은 원장님께 권합니다.</p><p class="price">39,000원</p></div></article>
+    </div>
+    <div style="text-align:center;margin-top:40px"><a href="page_04.html" class="btn btn-secondary btn-arrow">니잉 스토어 전체 보기</a></div>
+  </div>
+</section>
+
 
 <!-- ================= 섹션 9 : 일반 고객 — 매장 찾기 ================= -->
 <section class="section v2-cta">
@@ -1381,6 +1417,18 @@ document.getElementById('hPrev').onclick=function(){go(hi-1);reset()};document.g
   els.forEach(function(e){var p=e.parentElement,i=[].indexOf.call(p.children,e);e.classList.add('v2-up');e.style.transitionDelay=Math.min(i,5)*90+'ms';io.observe(e)});
 })();
 
+</script>
+<script>
+/* 신뢰 지표: 화면에 들어오면 아이콘 선 그리기 + 숫자 카운트업 */
+(function(){var g=document.querySelector('.v2-info-stats .stats');if(!g)return;
+  g.querySelectorAll('.st-ic svg *').forEach(function(e){e.setAttribute('pathLength','1')});
+  var nums=[].slice.call(g.querySelectorAll('[data-count]'));
+  function run(){g.classList.add('is-on');var t0=performance.now(),D=1800;
+    (function f(t){var p=Math.min(1,(t-t0)/D),e=1-Math.pow(1-p,3);
+      nums.forEach(function(el){el.textContent=Math.round(+el.dataset.count*e).toLocaleString('en-US')+el.dataset.suf});
+      if(p<1)requestAnimationFrame(f)})(t0)}
+  if(!('IntersectionObserver' in window))return run();
+  var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();run()}},{threshold:.3});io.observe(g)})();
 </script>
 </body>
 </html>
