@@ -1147,6 +1147,10 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
   .rv-md-hl{font-size:21px}
   .rv-md-tx{font-size:15px}
 }
+/* 마스터크루 영상 */
+.v2-value .split>.img-placeholder.has-media{position:relative;overflow:hidden;background:#000}
+.v2-value .img-placeholder.has-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (max-width:768px){.v2-value .split>.img-placeholder.has-media{aspect-ratio:4/5!important}}
 /* 푸터 글로우 — 잘린 원 대신 넓고 부드러운 그라데이션 */
 .footer::before{right:-10%;top:-30%;width:70%;height:130%;border-radius:0;background:radial-gradient(closest-side,rgba(0,87,255,.16),rgba(0,87,255,.06) 55%,transparent);filter:blur(40px)}
 .footer::after{content:"";position:absolute;left:-10%;bottom:-40%;width:60%;height:110%;background:radial-gradient(closest-side,rgba(18,119,73,.08),transparent);filter:blur(40px);pointer-events:none}
@@ -1321,7 +1325,7 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 <section class="v2-value">
   <div class="v2-value-in">
     <div class="split">
-      <div class="img-placeholder" style="aspect-ratio:4/5"><i data-lucide="image"></i></div>
+      <div class="img-placeholder has-media" style="aspect-ratio:4/5"><video src="assets/crew.mp4" poster="assets/crew.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video></div>
       <div>
         <ul class="circle-ani" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li></ul>
         <p class="section-label">Master Crew</p>
