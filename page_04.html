@@ -827,6 +827,12 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 .img-placeholder.has-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.22,1,.36,1)}
 .prod-card:hover .img-placeholder.has-img img,.cls-card:hover .img-placeholder.has-img img{transform:scale(1.05)}
 .prod-card .img-placeholder.has-img{aspect-ratio:1/1;height:auto}
+/* 스토어 상단 — 페이지 헤드 대신 섹션 헤더 */
+#plist{padding-top:clamp(150px,13vw,210px)}
+.store-hd{margin-bottom:clamp(40px,4vw,64px)}
+.store-hd .section-title{font-family:var(--serif-ko);font-weight:400;font-size:clamp(34px,3.2vw,56px);letter-spacing:-.06em;color:#000;margin-bottom:16px}
+.store-hd .section-desc{margin:0 auto}
+@media (max-width:768px){#plist{padding-top:120px}}
 </style>
 </head>
 <body>
@@ -853,19 +859,13 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 
 
 <!-- ================= 섹션 1 : 페이지 헤드 ================= -->
-<section class="page-head">
-  <div class="container">
-    <h1>니잉 스토어</h1>
-    <p>매일 시술하는 니잉이 직접 쓰는 제품이에요. 래쉬애딕트마스터 속눈썹 · 눈썹 · 모발 세럼.</p>
-  </div>
-</section>
 
 <!-- ================= 섹션 2 : 상품 리스트 (회원 등급별 노출) ================= -->
 <section class="section" id="plist">
   <div class="container">
-    <div class="member-bar">
-      <p>지금 <b id="gradeLabel">일반 회원</b> 가격으로 보고 계세요. 사업자 회원은 승인 후 <b>공급가</b>와 사업자용 상품 이미지를 확인할 수 있어요.</p>
-      <div class="seg" id="seg"><button class="is-active" data-g="gen">일반 회원으로 보기</button><button data-g="biz">사업자 회원으로 보기</button></div>
+    <div class="text-center store-hd">
+      <h1 class="section-title">니잉 스토어</h1>
+      <p class="section-desc">매일 시술하는 니잉이 직접 쓰는 제품이에요. 래쉬애딕트마스터 속눈썹 · 눈썹 · 모발 세럼.</p>
     </div>
     <div class="grid-3">
       <article class="prod-card">
