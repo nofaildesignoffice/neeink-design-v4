@@ -1296,6 +1296,84 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 /* 서브 히어로 — 브라우저 세로폭 100% */
 .v2-sub.sub-hero{min-height:100vh;min-height:100svh}
 @media (max-width:768px){.v2-sub.sub-hero{min-height:100vh;min-height:100svh}}
+/* ===== 랜딩 확장 섹션 (레퍼런스 흐름) ===== */
+.v2-sub.sub-hero{align-items:center!important;padding:clamp(110px,10vw,150px) 0 clamp(60px,6vw,90px)!important}
+.lp-badges{list-style:none;margin:clamp(22px,2vw,30px) auto 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.lp-badges li{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-size:13px;font-weight:500;letter-spacing:-.02em}
+.lp-badges svg{width:14px;height:14px;color:#6fa0ff}
+.v2-sub.sub-hero[style*="background"] .lp-badges li,.v2-sub.sub-hero.is-light .lp-badges li{color:#000;border-color:rgba(0,0,0,.15);background:rgba(255,255,255,.7)}
+.lp-hd{margin-bottom:clamp(40px,4vw,64px)}
+.lp-hd .section-desc{margin-left:auto;margin-right:auto}
+.lp-combo{display:flex;align-items:stretch;justify-content:center;gap:clamp(12px,1.6vw,24px);max-width:880px;margin:0 auto}
+.lp-step{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;padding:clamp(28px,2.6vw,40px) 20px;border-radius:20px;background:#fff;border:1px solid rgba(0,0,0,.1);text-align:center}
+.lp-step em{font-style:normal;font-size:12px;font-weight:600;letter-spacing:.08em;color:#0057ff}
+.lp-step b{font-family:var(--serif-ko);font-weight:400;font-size:clamp(20px,1.6vw,28px);letter-spacing:-.05em;color:#000}
+.lp-step span{font-size:14px;color:var(--tx)}
+.lp-step.on{background:#000;border-color:#000}.lp-step.on b{color:#fff}.lp-step.on span{color:rgba(255,255,255,.7)}.lp-step.on em{color:#6fa0ff}
+.lp-plus{align-self:center;flex:none;width:44px;height:44px;border-radius:50%;background:#0057ff;color:#fff;font-style:normal;font-size:24px;line-height:44px;text-align:center}
+.lp-eq{margin:clamp(28px,2.6vw,40px) auto 0;text-align:center;font-family:var(--serif-ko);font-size:clamp(20px,1.8vw,30px);letter-spacing:-.05em;color:#000}
+.lp-eq span{color:#0057ff;margin-right:6px}
+.lp-note{margin-top:24px}
+.lp-ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.2vw,20px);max-width:1100px;margin:0 auto}
+.lp-ba-card{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:14px;padding:clamp(20px,2vw,30px);border-radius:16px;background:#fff;border:1px solid rgba(0,0,0,.08)}
+.lp-ba-card p{display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.5;letter-spacing:-.03em}
+.lp-ba-card em{font-style:normal;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.lp-ba-card .b{color:#8a8a8a}.lp-ba-card .b em{color:#b0b0b0}
+.lp-ba-card .a{color:#000;font-weight:600}.lp-ba-card .a em{color:#0057ff}
+.lp-ba-ar{width:34px;height:34px;border-radius:50%;background:#eef3ff;color:#0057ff;display:flex;align-items:center;justify-content:center}
+.lp-ba-ar svg{width:16px;height:16px;animation:lpNudge 1.6s ease-in-out infinite}
+@keyframes lpNudge{50%{transform:translateX(3px)}}
+.lp-ba-img{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.2vw,20px)}
+.lp-ba-img figure{margin:0;border-radius:16px;overflow:hidden;background:#fff;border:1px solid rgba(0,0,0,.08)}
+.lp-ba-img img{display:block;width:100%;aspect-ratio:1600/1000;object-fit:cover}
+.lp-ba-img figcaption{display:flex;justify-content:space-between;gap:8px;padding:14px 16px;font-size:13px;color:#8a8a8a}
+.lp-ba-img figcaption .on{color:#0057ff;font-weight:600}
+.lp-bridge{background:#000;color:#fff;position:relative;overflow:hidden}
+.lp-bridge::before{content:"";position:absolute;left:50%;top:50%;width:900px;height:600px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(0,87,255,.35),rgba(0,87,255,0));pointer-events:none}
+.lp-bridge .container{position:relative}
+.lp-bridge-t{font-family:var(--serif-ko);font-size:clamp(24px,2.4vw,42px);line-height:1.5;letter-spacing:-.05em;color:rgba(255,255,255,.75)}
+.lp-bridge-t em{font-style:normal;color:#fff;background:linear-gradient(transparent 62%,rgba(0,87,255,.6) 62%)}
+.lp-bridge-line{display:block;width:1px;height:clamp(40px,4vw,70px);margin:clamp(28px,2.6vw,40px) auto;background:rgba(255,255,255,.5)}
+.lp-bridge-s{font-size:clamp(16px,1.2vw,20px);color:rgba(255,255,255,.85);letter-spacing:-.03em}
+.lp-bridge-s b{color:#6fa0ff;font-weight:600}
+.lp-marquee{overflow:hidden;background:#0057ff;color:#fff;padding:18px 0;white-space:nowrap}
+.lp-mq-track{display:inline-flex;animation:lpMq 40s linear infinite}
+.lp-mq-track span{padding-right:28px;font-family:var(--serif-en);font-size:clamp(18px,1.6vw,26px);letter-spacing:.02em}
+@keyframes lpMq{to{transform:translateX(-50%)}}
+.lp-proof-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #000}
+.lp-proof-grid>div{padding:clamp(28px,2.6vw,44px) clamp(16px,1.6vw,26px);border-bottom:1px solid rgba(0,0,0,.12)}
+.lp-proof-grid>div+div{border-left:1px solid rgba(0,0,0,.12)}
+.lp-proof-grid .v{font-family:var(--serif-en);font-weight:300;font-size:clamp(34px,3vw,54px);letter-spacing:-.03em;color:#000;line-height:1.1}
+.lp-proof-grid .k{margin-top:14px;font-size:15px;font-weight:600;color:#000}
+.lp-proof-grid .s{margin-top:6px;font-size:13px;color:var(--tx)}
+.lp-gallery{overflow:hidden}
+.lp-gal{overflow:hidden;margin-top:-8px}
+.lp-gal-track{display:flex;width:max-content;animation:lpMq 60s linear infinite}
+.lp-gal:hover .lp-gal-track{animation-play-state:paused}
+.lp-gal figure{margin:0 clamp(8px,.8vw,14px) 0 0;width:clamp(220px,22vw,360px);aspect-ratio:4/5;border-radius:16px;overflow:hidden;flex:none;background:#ddd}
+.lp-gal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.lp-gal figure:hover img{transform:scale(1.05)}
+.lp-tagline{position:relative;overflow:hidden;background:#fefefe}
+.lp-tagline::before{content:"";position:absolute;left:50%;top:50%;width:1000px;height:520px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(0,87,255,.13),rgba(0,87,255,0));pointer-events:none}
+.lp-tag-t{position:relative;font-family:var(--serif-ko);font-size:clamp(26px,2.8vw,48px);line-height:1.45;letter-spacing:-.06em;color:#000}
+.lp-tag-t em{font-style:normal;color:#0057ff}
+.lp-offer{padding-top:0}
+.lp-offer-box{position:relative;overflow:hidden;border-radius:24px;padding:clamp(44px,4.6vw,80px) clamp(24px,4vw,72px);text-align:center;background:linear-gradient(135deg,#eef3ff 0%,#f7f9ff 55%,#e3ecff 100%);border:1px solid rgba(0,87,255,.12)}
+.lp-offer-box::before{content:"";position:absolute;right:-120px;top:-160px;width:420px;height:420px;background:radial-gradient(closest-side,rgba(0,87,255,.25),rgba(0,87,255,0));pointer-events:none}
+.lp-offer-box>*{position:relative}
+.lp-offer-box .circle-ani{display:flex;justify-content:center;list-style:none;padding:0;margin:0 0 18px}
+.lp-offer-box .section-desc{margin-left:auto;margin-right:auto}
+.lp-offer-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:28px}
+.lp-offer-box .micro{margin-top:16px}
+@media (max-width:1024px){.lp-proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lp-proof-grid>div:nth-child(3){border-left:none}}
+@media (max-width:768px){
+  .lp-combo{flex-direction:column}.lp-plus{margin:-4px auto}
+  .lp-ba{grid-template-columns:1fr}.lp-ba-card{grid-template-columns:1fr;text-align:left}.lp-ba-ar{transform:rotate(90deg)}
+  .lp-ba-img{grid-template-columns:1fr}
+  .lp-gal figure{width:62vw}
+  .lp-badges li{font-size:12px;padding:7px 11px}
+}
+@media (prefers-reduced-motion:reduce){.lp-mq-track,.lp-gal-track,.lp-ba-ar svg{animation:none}}
 </style>
 </head>
 <body>
@@ -1328,6 +1406,7 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
     <p class="label">Lash Lift Correction Class</p>
     <h1>배운 적은 있는데,<br>할 때마다 결과가 달라 불안하셨죠</h1>
     <p class="lead">기술이 부족해서가 아니에요. 눈매를 판단할 기준이 없었을 뿐이에요.<br>니잉 속눈썹펌 급속교정 클래스는, 그 기준을 만드는 수업입니다.</p>
+    <ul class="lp-badges"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>6년 · 시술 6,000건</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>래쉬애딕트 최고 교육지사상</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>100% 직접 실습</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>수료 후 카톡 피드백</li></ul>
     <div class="hstats">
       <div><p class="k">누적 시술</p><p class="v">6,000+</p></div>
       <div><p class="k">교육으로 만난 원장님</p><p class="v">500+</p></div>
@@ -1336,19 +1415,52 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
   </div>
 </section>
 
-<!-- ================= 섹션 2 : How It Works (클래스 구성) ================= -->
-<section class="section v2-adv">
+<!-- ================= LP : 핵심 한 줄 ================= -->
+<section class="section lp-key">
   <div class="container">
-    <div class="text-center">
-      <p class="section-label">How It Works</p>
-      <h2 class="section-title">급속교정 클래스,<br>이렇게 진행됩니다</h2>
-      <p class="section-desc">롯드 기초에서 이론, 그리고 실습까지. 지금 필요한 단계부터 시작하시면 돼요.</p>
+    <div class="text-center lp-hd">
+      <p class="section-label">Key Point</p>
+      <h2 class="section-title">배운 기술은 그대로,<br>판단 기준만 더하세요</h2>
+      <p class="section-desc">온라인 이론으로 기준을 먼저 세우고, 오프라인에서 내 손으로 반복해요. 두 단계가 이어질 때 결과가 일정해집니다.</p>
     </div>
-    <div class="hiw">
-      <div><h3>시작은 온라인으로</h3><p>세 클래스 모두 온라인 강의로 먼저 시작해요</p><div class="img-placeholder"><i data-lucide="image"></i></div></div>
-      <div><h3>롯드 → 이론 → 실습</h3><p>기초반, 이론 클래스, 패키지로 단계를 나눠 배워요</p><div class="img-placeholder"><i data-lucide="image"></i></div></div>
-      <div><h3>100% 직접 실습</h3><p>패키지는 모델·재료가 준비된 현장에서, 내 손으로 직접 완성해요</p><div class="img-placeholder"><i data-lucide="image"></i></div></div>
-      <div><h3>연화 특허 기술</h3><p>니잉이 특허를 출원하는 연화 기술을 직접 배워요 · [출원 확인 필요]</p><div class="img-placeholder"><i data-lucide="image"></i></div></div>
+    <div class="lp-combo">
+      <div class="lp-step"><em>STEP 1</em><b>온라인 강의</b><span>이론 · 데모 먼저 (6개월)</span></div>
+      <i class="lp-plus" aria-hidden="true">+</i>
+      <div class="lp-step on"><em>STEP 2</em><b>오프라인 실습</b><span>모델 · 재료 준비된 현장에서 100% 내 손으로</span></div>
+    </div>
+    <p class="lp-eq"><span>=</span> 눈매가 달라져도 흔들리지 않는 기준</p>
+    <p class="micro text-center lp-note">※ 패키지 기준 구성이에요. 롯드 기초반 · 이론 클래스는 결제 즉시 온라인으로 수강해요.</p>
+  </div>
+</section>
+
+<!-- ================= LP : 변화 ================= -->
+<section class="section bg-light lp-result">
+  <div class="container">
+    <div class="text-center lp-hd">
+      <p class="section-label">After Class</p>
+      <h2 class="section-title">수강 후,<br>이렇게 달라졌어요</h2>
+      <p class="section-desc">수강 원장님 후기에서 옮긴 변화예요.</p>
+    </div>
+    <div class="lp-ba"><div class="lp-ba-card"><p class="b"><em>Before</em>롯드를 감으로 골랐어요</p><span class="lp-ba-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><p class="a"><em>After</em>이제는 눈매를 직접 보고 판단해요</p></div><div class="lp-ba-card"><p class="b"><em>Before</em>될까? 매번 불안했어요</p><span class="lp-ba-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><p class="a"><em>After</em>작게나마 확신과 자신감이 생겼어요</p></div><div class="lp-ba-card"><p class="b"><em>Before</em>영상만 보고 따라 했어요</p><span class="lp-ba-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><p class="a"><em>After</em>왜 이렇게 하는지 알고 해요</p></div><div class="lp-ba-card"><p class="b"><em>Before</em>이론 따로, 실습 따로</p><span class="lp-ba-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><p class="a"><em>After</em>이론과 실습이 찰떡같이 연결돼요</p></div></div>
+    <p class="micro text-center lp-note">※ 수강 원장님 후기에서 옮긴 내용이며, 개인차가 있을 수 있어요.</p>
+  </div>
+</section>
+
+<!-- ================= 섹션 5 : Empathy ================= -->
+<section class="section bg-light v2-emp">
+  <div class="container">
+    <div class="split">
+      <div class="emp">
+        <p class="emp-big">Your Own Judgment</p>
+        <h2 class="section-title">실력이 없어서가 아닙니다</h2>
+        <blockquote style="margin-top:8px">“원래 이렇게 하는 거예요”라고 말하지 않아요. 왜 그렇게 하는지, 다른 경우엔 어떻게 달라지는지까지 알려드려요.</blockquote>
+        <ul>
+          <li>남의 기준만 따라 하면, 심화 케이스에서 결국 막힙니다.</li>
+          <li>처진 눈, 들린 눈, 컬이 높게 나오는 눈, 컬이 잘 나오지 않는 눈.</li>
+          <li>니잉은 원장님이 샵에 돌아가 혼자서도 판단하고 확신할 수 있는 기준을 세워드려요.</li>
+        </ul>
+      </div>
+      <div class="img-placeholder" style="aspect-ratio:4/5"><i data-lucide="user"></i></div>
     </div>
   </div>
 </section>
@@ -1388,25 +1500,6 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
   </div>
 </section>
 
-<!-- ================= 섹션 5 : Empathy ================= -->
-<section class="section bg-light v2-emp">
-  <div class="container">
-    <div class="split">
-      <div class="emp">
-        <p class="emp-big">Your Own Judgment</p>
-        <h2 class="section-title">실력이 없어서가 아닙니다</h2>
-        <blockquote style="margin-top:8px">“원래 이렇게 하는 거예요”라고 말하지 않아요. 왜 그렇게 하는지, 다른 경우엔 어떻게 달라지는지까지 알려드려요.</blockquote>
-        <ul>
-          <li>남의 기준만 따라 하면, 심화 케이스에서 결국 막힙니다.</li>
-          <li>처진 눈, 들린 눈, 컬이 높게 나오는 눈, 컬이 잘 나오지 않는 눈.</li>
-          <li>니잉은 원장님이 샵에 돌아가 혼자서도 판단하고 확신할 수 있는 기준을 세워드려요.</li>
-        </ul>
-      </div>
-      <div class="img-placeholder" style="aspect-ratio:4/5"><i data-lucide="user"></i></div>
-    </div>
-  </div>
-</section>
-
 <!-- ================= 섹션 6 : Cause 01~03 ================= -->
 <section class="section v2-cause">
   <div class="container">
@@ -1422,6 +1515,15 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
     <div class="ls-row"><div class="img-placeholder"><i data-lucide="image"></i></div><div class="txt"><p class="n">원인 03</p><h3>막혔을 때 물어볼 곳이 없었다</h3><p>심화 케이스에서 막혀도 확인해 줄 사람이 없으니, 늘 같은 자리에서 다시 걸리게 됩니다.</p></div></div>
   </div>
   <div class="container"><p class="answer">그렇기 때문에 니잉은 <b>처음부터 끝까지 내 손으로 반복</b>하고,<br><b>눈매별 판단 기준</b>을 세우고, <b>수료 후에도 질문 창구</b>를 열어둡니다.</p></div>
+</section>
+
+<!-- ================= LP : 전환 ================= -->
+<section class="section lp-bridge">
+  <div class="container text-center">
+    <p class="lp-bridge-t">영상으로 쌓은 지식은 <em>손에 남지 않고</em>,<br>남의 기준은 <em>심화 케이스에서 무너집니다.</em></p>
+    <span class="lp-bridge-line" aria-hidden="true"></span>
+    <p class="lp-bridge-s">그렇기 때문에 시술 전, <b>내 눈으로 판단하는 기준</b>을 먼저 세워야 합니다.</p>
+  </div>
 </section>
 
 <!-- ================= 섹션 7 : Solution 01~03 ================= -->
@@ -1440,20 +1542,25 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
   </div>
 </section>
 
-<!-- ================= 섹션 8 : Core — 11단계 상세 교정 ================= -->
-<section class="section v2-core">
+<!-- ================= 섹션 2 : How It Works (클래스 구성) ================= -->
+<section class="section v2-adv">
   <div class="container">
-    <div class="split" style="align-items:start">
-      <div>
-        <p class="section-label">Core</p>
-        <h2 class="section-title">시술 흐름 그대로,<br>11단계 상세 교정</h2>
-        <p class="section-desc" style="margin-bottom:16px">상담부터 마무리 멘트까지, 흐름의 어느 지점에서 막히든 거기서부터 잡아드려요. 핵심은 시간이 아니라 모발 상태로 연화를 판단하는 <b>유지력 8주 물광 연화법</b>입니다.</p>
-        <ul class="core-steps"><li><span class="s">STEP 01</span><span><b>상담 및 사진 촬영</b>눈매를 빠르게 읽고, 고객의 기대치까지 맞추는 설계 상담법</span></li><li><span class="s">STEP 02</span><span><b>클렌징 및 전처리</b>모질을 먼저 파악하고, 그에 맞춰 하는 전처리</span></li><li><span class="s">STEP 03</span><span><b>테이핑 및 연화롯드</b>어떤 눈매가 와도 흔들리지 않는 테이핑</span></li><li><span class="s">STEP 04</span><span><b>물광 레이어링 연화법</b>시간이 아니라, 모발 상태로 판단하는 연화</span></li><li><span class="s">STEP 05</span><span><b>디자인 롯드 교체</b>정확한 롯드 부착 위치, 교체할 때 결 정리 실수까지 막는 법</span></li><li><span class="s">STEP 06</span><span><b>산화</b>컬이 꺾이지 않게 만드는 산화 원리</span></li><li><span class="s">STEP 07</span><span><b>중화</b>컬 꺾임·모발 손상은 왜 생기는지, 중화는 왜 필요한지</span></li><li><span class="s">STEP 08</span><span><b>클렌징 및 마무리</b>손님이 거울을 보기 전, 내가 먼저 확인하는 마무리</span></li><li><span class="s">STEP 09</span><span><b>세럼 도포 및 결 정리</b>결을 가지런히 정리하는 세럼 활용법</span></li><li><span class="s">STEP 10</span><span><b>사진 촬영</b>결과물을 마케팅 자산으로 바꾸는 촬영과 보정</span></li><li><span class="s">STEP 11</span><span><b>안내 및 마무리</b>다음 방문으로 이어지는 마무리 멘트</span></li></ul>
-      </div>
-      <div class="img-placeholder" style="aspect-ratio:3/4;position:sticky;top:100px"><i data-lucide="play-circle"></i></div>
+    <div class="text-center">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-title">급속교정 클래스,<br>이렇게 진행됩니다</h2>
+      <p class="section-desc">롯드 기초에서 이론, 그리고 실습까지. 지금 필요한 단계부터 시작하시면 돼요.</p>
+    </div>
+    <div class="hiw">
+      <div><h3>시작은 온라인으로</h3><p>세 클래스 모두 온라인 강의로 먼저 시작해요</p><div class="img-placeholder"><i data-lucide="image"></i></div></div>
+      <div><h3>롯드 → 이론 → 실습</h3><p>기초반, 이론 클래스, 패키지로 단계를 나눠 배워요</p><div class="img-placeholder"><i data-lucide="image"></i></div></div>
+      <div><h3>100% 직접 실습</h3><p>패키지는 모델·재료가 준비된 현장에서, 내 손으로 직접 완성해요</p><div class="img-placeholder"><i data-lucide="image"></i></div></div>
+      <div><h3>연화 특허 기술</h3><p>니잉이 특허를 출원하는 연화 기술을 직접 배워요 · [출원 확인 필요]</p><div class="img-placeholder"><i data-lucide="image"></i></div></div>
     </div>
   </div>
 </section>
+
+<!-- ================= LP : 마퀴 ================= -->
+<div class="lp-marquee" aria-hidden="true"><div class="lp-mq-track"><span>LASH LIFT CORRECTION ◆ 11 STEPS ◆ 8 WEEKS RETENTION ◆ 100% HANDS-ON ◆</span><span>LASH LIFT CORRECTION ◆ 11 STEPS ◆ 8 WEEKS RETENTION ◆ 100% HANDS-ON ◆</span><span>LASH LIFT CORRECTION ◆ 11 STEPS ◆ 8 WEEKS RETENTION ◆ 100% HANDS-ON ◆</span><span>LASH LIFT CORRECTION ◆ 11 STEPS ◆ 8 WEEKS RETENTION ◆ 100% HANDS-ON ◆</span><span>LASH LIFT CORRECTION ◆ 11 STEPS ◆ 8 WEEKS RETENTION ◆ 100% HANDS-ON ◆</span><span>LASH LIFT CORRECTION ◆ 11 STEPS ◆ 8 WEEKS RETENTION ◆ 100% HANDS-ON ◆</span></div></div>
 
 <!-- ================= 섹션 9 : Difference ================= -->
 <section class="section bg-light v2-cmp">
@@ -1472,6 +1579,32 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
         <tr><th>막힐 때</th><td>물어볼 곳이 없음</td><td class="on">현장 1:1 코칭 + 수료 후 카톡 피드백</td></tr>
       </tbody>
     </table>
+  </div>
+</section>
+
+<!-- ================= 섹션 8 : Core — 11단계 상세 교정 ================= -->
+<section class="section v2-core">
+  <div class="container">
+    <div class="split" style="align-items:start">
+      <div>
+        <p class="section-label">Core</p>
+        <h2 class="section-title">시술 흐름 그대로,<br>11단계 상세 교정</h2>
+        <p class="section-desc" style="margin-bottom:16px">상담부터 마무리 멘트까지, 흐름의 어느 지점에서 막히든 거기서부터 잡아드려요. 핵심은 시간이 아니라 모발 상태로 연화를 판단하는 <b>유지력 8주 물광 연화법</b>입니다.</p>
+        <ul class="core-steps"><li><span class="s">STEP 01</span><span><b>상담 및 사진 촬영</b>눈매를 빠르게 읽고, 고객의 기대치까지 맞추는 설계 상담법</span></li><li><span class="s">STEP 02</span><span><b>클렌징 및 전처리</b>모질을 먼저 파악하고, 그에 맞춰 하는 전처리</span></li><li><span class="s">STEP 03</span><span><b>테이핑 및 연화롯드</b>어떤 눈매가 와도 흔들리지 않는 테이핑</span></li><li><span class="s">STEP 04</span><span><b>물광 레이어링 연화법</b>시간이 아니라, 모발 상태로 판단하는 연화</span></li><li><span class="s">STEP 05</span><span><b>디자인 롯드 교체</b>정확한 롯드 부착 위치, 교체할 때 결 정리 실수까지 막는 법</span></li><li><span class="s">STEP 06</span><span><b>산화</b>컬이 꺾이지 않게 만드는 산화 원리</span></li><li><span class="s">STEP 07</span><span><b>중화</b>컬 꺾임·모발 손상은 왜 생기는지, 중화는 왜 필요한지</span></li><li><span class="s">STEP 08</span><span><b>클렌징 및 마무리</b>손님이 거울을 보기 전, 내가 먼저 확인하는 마무리</span></li><li><span class="s">STEP 09</span><span><b>세럼 도포 및 결 정리</b>결을 가지런히 정리하는 세럼 활용법</span></li><li><span class="s">STEP 10</span><span><b>사진 촬영</b>결과물을 마케팅 자산으로 바꾸는 촬영과 보정</span></li><li><span class="s">STEP 11</span><span><b>안내 및 마무리</b>다음 방문으로 이어지는 마무리 멘트</span></li></ul>
+      </div>
+      <div class="img-placeholder" style="aspect-ratio:3/4;position:sticky;top:100px"><i data-lucide="play-circle"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 섹션 11 : CLASS (세부 클래스 3) ================= -->
+<section class="section bg-light v2-cls" id="class">
+  <div class="container">
+    <p class="section-label">Class</p>
+    <h2 class="section-title">나에게 필요한 클래스,<br>더 자세히 알아보세요</h2>
+    <p class="section-desc">급속교정 클래스는 롯드 기초반, 온라인 이론 클래스, 연화 특허기술 패키지, 세 가지로 나뉘어요.</p>
+    <div class="cls-grid"><article class="cls-card"><div class="img-placeholder"><i data-lucide="image"></i></div><span class="who-tag">온라인 + 오프라인</span><h3>속눈썹펌 연화 특허기술 패키지</h3><p>온라인 강의 6개월에 100% 실습을 더한 기존 급속교정 클래스</p><div class="hash"><span>온라인 6개월 + 실습</span><span>79만원부터</span></div><button class="btn btn-secondary btn-sm btn-block" data-open-pay="0">자세히 보기</button></article><article class="cls-card"><div class="img-placeholder"><i data-lucide="image"></i></div><span class="who-tag">VOD + 자료</span><h3>롯드 왕초보 온라인 기초반</h3><p>새 롯드가 나올 때마다 헷갈렸다면, 롯드의 방향·구간·사이즈부터 시작하세요</p><div class="hash"><span>온라인 1개월</span><span>5만 9천원부터</span></div><button class="btn btn-secondary btn-sm btn-block" data-open-pay="1">자세히 보기</button></article><article class="cls-card"><div class="img-placeholder"><i data-lucide="image"></i></div><span class="who-tag">VOD</span><h3>속눈썹펌 온라인 이론 클래스</h3><p>같은 방법인데 결과가 달라졌다면, 속눈썹펌의 메커니즘부터 이해하세요</p><div class="hash"><span>온라인 100일</span><span>29만 9천원</span></div><button class="btn btn-secondary btn-sm btn-block" data-open-pay="2">자세히 보기</button></article></div>
+    <p class="micro text-center">롯드 기초반 수강 시 패키지 할인쿠폰 제공 · 패스트캠퍼스 수강자는 패키지의 오프라인 실습만 진행 가능</p>
   </div>
 </section>
 
@@ -1494,14 +1627,45 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
   </div>
 </section>
 
-<!-- ================= 섹션 11 : CLASS (세부 클래스 3) ================= -->
-<section class="section bg-light v2-cls" id="class">
+<!-- ================= LP : 숫자·이력 ================= -->
+<section class="section lp-proof">
   <div class="container">
-    <p class="section-label">Class</p>
-    <h2 class="section-title">나에게 필요한 클래스,<br>더 자세히 알아보세요</h2>
-    <p class="section-desc">급속교정 클래스는 롯드 기초반, 온라인 이론 클래스, 연화 특허기술 패키지, 세 가지로 나뉘어요.</p>
-    <div class="cls-grid"><article class="cls-card"><div class="img-placeholder"><i data-lucide="image"></i></div><span class="who-tag">온라인 + 오프라인</span><h3>속눈썹펌 연화 특허기술 패키지</h3><p>온라인 강의 6개월에 100% 실습을 더한 기존 급속교정 클래스</p><div class="hash"><span>온라인 6개월 + 실습</span><span>79만원부터</span></div><button class="btn btn-secondary btn-sm btn-block" data-open-pay="0">자세히 보기</button></article><article class="cls-card"><div class="img-placeholder"><i data-lucide="image"></i></div><span class="who-tag">VOD + 자료</span><h3>롯드 왕초보 온라인 기초반</h3><p>새 롯드가 나올 때마다 헷갈렸다면, 롯드의 방향·구간·사이즈부터 시작하세요</p><div class="hash"><span>온라인 1개월</span><span>5만 9천원부터</span></div><button class="btn btn-secondary btn-sm btn-block" data-open-pay="1">자세히 보기</button></article><article class="cls-card"><div class="img-placeholder"><i data-lucide="image"></i></div><span class="who-tag">VOD</span><h3>속눈썹펌 온라인 이론 클래스</h3><p>같은 방법인데 결과가 달라졌다면, 속눈썹펌의 메커니즘부터 이해하세요</p><div class="hash"><span>온라인 100일</span><span>29만 9천원</span></div><button class="btn btn-secondary btn-sm btn-block" data-open-pay="2">자세히 보기</button></article></div>
-    <p class="micro text-center">롯드 기초반 수강 시 패키지 할인쿠폰 제공 · 패스트캠퍼스 수강자는 패키지의 오프라인 실습만 진행 가능</p>
+    <div class="text-center lp-hd">
+      <p class="section-label">Proof</p>
+      <h2 class="section-title">숫자와 이력으로,<br>먼저 보여드려요</h2>
+    </div>
+    <div class="lp-proof-grid"><div><p class="v">6,000+</p><p class="k">누적 시술</p><p class="s">교과서에 없는 케이스까지 판단 기준으로</p></div><div><p class="v">500+</p><p class="k">교육으로 만난 원장님</p><p class="s">샵에서 바로 쓰는 기준을 함께 만들었어요</p></div><div><p class="v">1,000+</p><p class="k">네이버 리뷰</p><p class="s">고객이 먼저 남긴 결과</p></div><div><p class="v">수상</p><p class="k">래쉬애딕트 최고 교육지사상</p><p class="s">교육으로 인정받은 기준</p></div></div>
+  </div>
+</section>
+
+<!-- ================= LP : 현장 갤러리 ================= -->
+<section class="section bg-light lp-gallery">
+  <div class="container">
+    <div class="text-center lp-hd">
+      <p class="section-label">In Class</p>
+      <h2 class="section-title">실제 수업 현장</h2>
+      <p class="section-desc">모델과 재료가 준비된 신논현 스튜디오에서, 처음부터 끝까지 내 손으로.</p>
+    </div>
+  </div>
+  <div class="lp-gal" aria-label="실제 수업 현장 사진"><div class="lp-gal-track"><figure><img src="assets/cls/lash-1.jpg" alt="" loading="lazy"></figure><figure><img src="assets/cls/lash-2.jpg" alt="" loading="lazy"></figure><figure><img src="assets/cls/edu-main.jpg" alt="" loading="lazy"></figure><figure><img src="assets/cls/lash-3.jpg" alt="" loading="lazy"></figure><figure><img src="assets/cls/lash-4.jpg" alt="" loading="lazy"></figure><figure><img src="assets/hero2.jpg" alt="" loading="lazy"></figure><figure><img src="assets/cls/lash-5.jpg" alt="" loading="lazy"></figure><figure><img src="assets/cls/lash-6.jpg" alt="" loading="lazy"></figure><figure><img src="assets/cls/lash-1.jpg" alt="" loading="lazy"></figure><figure><img src="assets/cls/lash-2.jpg" alt="" loading="lazy"></figure><figure><img src="assets/cls/edu-main.jpg" alt="" loading="lazy"></figure><figure><img src="assets/cls/lash-3.jpg" alt="" loading="lazy"></figure><figure><img src="assets/cls/lash-4.jpg" alt="" loading="lazy"></figure><figure><img src="assets/hero2.jpg" alt="" loading="lazy"></figure><figure><img src="assets/cls/lash-5.jpg" alt="" loading="lazy"></figure><figure><img src="assets/cls/lash-6.jpg" alt="" loading="lazy"></figure></div></div>
+</section>
+
+<!-- ================= LP : 마무리 한 줄 ================= -->
+<section class="section lp-tagline">
+  <div class="container text-center"><p class="lp-tag-t">결과가 매번 달랐던 이유는,<br>손이 아니라 <em>기준</em>이었습니다.</p></div>
+</section>
+
+<!-- ================= LP : 첫걸음 상담 ================= -->
+<section class="section lp-offer">
+  <div class="container">
+    <div class="lp-offer-box">
+      <ul class="circle-ani" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li></ul>
+      <p class="section-label">First Step</p>
+      <h2 class="section-title">처음이라 망설여진다면,<br>상담부터 시작하세요</h2>
+      <p class="section-desc">지금 어느 단계에서 막혀 있는지 남겨주시면, 맞는 클래스부터 안내해 드려요.</p>
+      <div class="lp-offer-btns"><a href="page_09.html" class="btn btn-primary btn-arrow">1:1 상담 남기기</a><a href="https://pf.kakao.com/_xdxkxkbG/chat" target="_blank" rel="noopener" class="btn btn-secondary">카카오톡 상담</a></div>
+      <p class="micro">카카오톡 상담 평일 10:30 ~ 19:00</p>
+    </div>
   </div>
 </section>
 
@@ -1529,7 +1693,6 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
     <a href="page_03.html" class="btn">AI 마케팅 클래스 더 알아보기 →</a>
   </div>
 </section>
-
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
@@ -1713,7 +1876,7 @@ window.addEventListener('scroll',function(){fx.classList.toggle('is-show',window
 (function(){
   if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   var SKIP='header,footer,.nav,.m-menu,.q-aside,.q-md,.rv-md,.md,.v2-hero,.hero,.loop-track,.arc-track,.ai-stage,.csel,.arc-ring,.page-head';
-  var CARD='.card,.prod-card,.cls-card,.v2-rv .loop-vp,#rvArc,.checks li,.stats>div,.hstats>div,.banner,.acc-item,.hiw>*,.ls-row,.core-steps li,.proc>*,.img-placeholder,.ai-stage,.loc-map,.loc-info li,.notice-pin,.tbl-scroll,.emp,.cmp,.split>video,.form-box,.ct-form,.store-list>*,.map-ph,.pc-img,.tabs,.search-box,.store-filter,.pager,.sub-form,.qline>*,.v2-cta .banner';
+  var CARD='.lp-step,.lp-ba-card,.lp-ba-img figure,.lp-proof-grid>div,.lp-offer-box,.card,.prod-card,.cls-card,.v2-rv .loop-vp,#rvArc,.checks li,.stats>div,.hstats>div,.banner,.acc-item,.hiw>*,.ls-row,.core-steps li,.proc>*,.img-placeholder,.ai-stage,.loc-map,.loc-info li,.notice-pin,.tbl-scroll,.emp,.cmp,.split>video,.form-box,.ct-form,.store-list>*,.map-ph,.pc-img,.tabs,.search-box,.store-filter,.pager,.sub-form,.qline>*,.v2-cta .banner';
   var TEXT='h1,h2,h3,h4,h5,p,blockquote,figcaption,dt,dd,.btn,.section-label,.circle-ani,label';
   function ok(e){return !e.closest(SKIP)||e.matches('.ai-stage')}
   var main=[].slice.call(document.querySelectorAll('body>section,body>div.v2-stack>section.v2-info'));
@@ -1743,7 +1906,7 @@ window.addEventListener('scroll',function(){fx.classList.toggle('is-show',window
 <script>
 /* 지표 숫자 카운트업 — .hstats/.stats 의 숫자 하나짜리 값 (화면에 보일 때 1회) */
 (function(){
-  var els=[].slice.call(document.querySelectorAll('.hstats .v,.stats .v')).filter(function(e){return !e.hasAttribute('data-count')});
+  var els=[].slice.call(document.querySelectorAll('.hstats .v,.stats .v,.lp-proof-grid .v')).filter(function(e){return !e.hasAttribute('data-count')});
   var items=els.map(function(e){var m=e.textContent.trim().match(/^(\D*?)(\d[\d,]*)(\D*)$/);if(!m)return null;var n=+m[2].replace(/,/g,'');e.textContent=m[1]+'0'+m[3];return{e:e,a:m[1],n:n,b:m[3],c:m[2].indexOf(',')>-1}}).filter(Boolean);
   if(!items.length)return;
   function fmt(v,c){return c?v.toLocaleString('en-US'):String(v)}

@@ -1270,6 +1270,84 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 /* 서브 히어로 — 브라우저 세로폭 100% */
 .v2-sub.sub-hero{min-height:100vh;min-height:100svh}
 @media (max-width:768px){.v2-sub.sub-hero{min-height:100vh;min-height:100svh}}
+/* ===== 랜딩 확장 섹션 (레퍼런스 흐름) ===== */
+.v2-sub.sub-hero{align-items:center!important;padding:clamp(110px,10vw,150px) 0 clamp(60px,6vw,90px)!important}
+.lp-badges{list-style:none;margin:clamp(22px,2vw,30px) auto 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.lp-badges li{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-size:13px;font-weight:500;letter-spacing:-.02em}
+.lp-badges svg{width:14px;height:14px;color:#6fa0ff}
+.v2-sub.sub-hero[style*="background"] .lp-badges li,.v2-sub.sub-hero.is-light .lp-badges li{color:#000;border-color:rgba(0,0,0,.15);background:rgba(255,255,255,.7)}
+.lp-hd{margin-bottom:clamp(40px,4vw,64px)}
+.lp-hd .section-desc{margin-left:auto;margin-right:auto}
+.lp-combo{display:flex;align-items:stretch;justify-content:center;gap:clamp(12px,1.6vw,24px);max-width:880px;margin:0 auto}
+.lp-step{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;padding:clamp(28px,2.6vw,40px) 20px;border-radius:20px;background:#fff;border:1px solid rgba(0,0,0,.1);text-align:center}
+.lp-step em{font-style:normal;font-size:12px;font-weight:600;letter-spacing:.08em;color:#0057ff}
+.lp-step b{font-family:var(--serif-ko);font-weight:400;font-size:clamp(20px,1.6vw,28px);letter-spacing:-.05em;color:#000}
+.lp-step span{font-size:14px;color:var(--tx)}
+.lp-step.on{background:#000;border-color:#000}.lp-step.on b{color:#fff}.lp-step.on span{color:rgba(255,255,255,.7)}.lp-step.on em{color:#6fa0ff}
+.lp-plus{align-self:center;flex:none;width:44px;height:44px;border-radius:50%;background:#0057ff;color:#fff;font-style:normal;font-size:24px;line-height:44px;text-align:center}
+.lp-eq{margin:clamp(28px,2.6vw,40px) auto 0;text-align:center;font-family:var(--serif-ko);font-size:clamp(20px,1.8vw,30px);letter-spacing:-.05em;color:#000}
+.lp-eq span{color:#0057ff;margin-right:6px}
+.lp-note{margin-top:24px}
+.lp-ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.2vw,20px);max-width:1100px;margin:0 auto}
+.lp-ba-card{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:14px;padding:clamp(20px,2vw,30px);border-radius:16px;background:#fff;border:1px solid rgba(0,0,0,.08)}
+.lp-ba-card p{display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.5;letter-spacing:-.03em}
+.lp-ba-card em{font-style:normal;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.lp-ba-card .b{color:#8a8a8a}.lp-ba-card .b em{color:#b0b0b0}
+.lp-ba-card .a{color:#000;font-weight:600}.lp-ba-card .a em{color:#0057ff}
+.lp-ba-ar{width:34px;height:34px;border-radius:50%;background:#eef3ff;color:#0057ff;display:flex;align-items:center;justify-content:center}
+.lp-ba-ar svg{width:16px;height:16px;animation:lpNudge 1.6s ease-in-out infinite}
+@keyframes lpNudge{50%{transform:translateX(3px)}}
+.lp-ba-img{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.2vw,20px)}
+.lp-ba-img figure{margin:0;border-radius:16px;overflow:hidden;background:#fff;border:1px solid rgba(0,0,0,.08)}
+.lp-ba-img img{display:block;width:100%;aspect-ratio:1600/1000;object-fit:cover}
+.lp-ba-img figcaption{display:flex;justify-content:space-between;gap:8px;padding:14px 16px;font-size:13px;color:#8a8a8a}
+.lp-ba-img figcaption .on{color:#0057ff;font-weight:600}
+.lp-bridge{background:#000;color:#fff;position:relative;overflow:hidden}
+.lp-bridge::before{content:"";position:absolute;left:50%;top:50%;width:900px;height:600px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(0,87,255,.35),rgba(0,87,255,0));pointer-events:none}
+.lp-bridge .container{position:relative}
+.lp-bridge-t{font-family:var(--serif-ko);font-size:clamp(24px,2.4vw,42px);line-height:1.5;letter-spacing:-.05em;color:rgba(255,255,255,.75)}
+.lp-bridge-t em{font-style:normal;color:#fff;background:linear-gradient(transparent 62%,rgba(0,87,255,.6) 62%)}
+.lp-bridge-line{display:block;width:1px;height:clamp(40px,4vw,70px);margin:clamp(28px,2.6vw,40px) auto;background:rgba(255,255,255,.5)}
+.lp-bridge-s{font-size:clamp(16px,1.2vw,20px);color:rgba(255,255,255,.85);letter-spacing:-.03em}
+.lp-bridge-s b{color:#6fa0ff;font-weight:600}
+.lp-marquee{overflow:hidden;background:#0057ff;color:#fff;padding:18px 0;white-space:nowrap}
+.lp-mq-track{display:inline-flex;animation:lpMq 40s linear infinite}
+.lp-mq-track span{padding-right:28px;font-family:var(--serif-en);font-size:clamp(18px,1.6vw,26px);letter-spacing:.02em}
+@keyframes lpMq{to{transform:translateX(-50%)}}
+.lp-proof-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #000}
+.lp-proof-grid>div{padding:clamp(28px,2.6vw,44px) clamp(16px,1.6vw,26px);border-bottom:1px solid rgba(0,0,0,.12)}
+.lp-proof-grid>div+div{border-left:1px solid rgba(0,0,0,.12)}
+.lp-proof-grid .v{font-family:var(--serif-en);font-weight:300;font-size:clamp(34px,3vw,54px);letter-spacing:-.03em;color:#000;line-height:1.1}
+.lp-proof-grid .k{margin-top:14px;font-size:15px;font-weight:600;color:#000}
+.lp-proof-grid .s{margin-top:6px;font-size:13px;color:var(--tx)}
+.lp-gallery{overflow:hidden}
+.lp-gal{overflow:hidden;margin-top:-8px}
+.lp-gal-track{display:flex;width:max-content;animation:lpMq 60s linear infinite}
+.lp-gal:hover .lp-gal-track{animation-play-state:paused}
+.lp-gal figure{margin:0 clamp(8px,.8vw,14px) 0 0;width:clamp(220px,22vw,360px);aspect-ratio:4/5;border-radius:16px;overflow:hidden;flex:none;background:#ddd}
+.lp-gal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.lp-gal figure:hover img{transform:scale(1.05)}
+.lp-tagline{position:relative;overflow:hidden;background:#fefefe}
+.lp-tagline::before{content:"";position:absolute;left:50%;top:50%;width:1000px;height:520px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(0,87,255,.13),rgba(0,87,255,0));pointer-events:none}
+.lp-tag-t{position:relative;font-family:var(--serif-ko);font-size:clamp(26px,2.8vw,48px);line-height:1.45;letter-spacing:-.06em;color:#000}
+.lp-tag-t em{font-style:normal;color:#0057ff}
+.lp-offer{padding-top:0}
+.lp-offer-box{position:relative;overflow:hidden;border-radius:24px;padding:clamp(44px,4.6vw,80px) clamp(24px,4vw,72px);text-align:center;background:linear-gradient(135deg,#eef3ff 0%,#f7f9ff 55%,#e3ecff 100%);border:1px solid rgba(0,87,255,.12)}
+.lp-offer-box::before{content:"";position:absolute;right:-120px;top:-160px;width:420px;height:420px;background:radial-gradient(closest-side,rgba(0,87,255,.25),rgba(0,87,255,0));pointer-events:none}
+.lp-offer-box>*{position:relative}
+.lp-offer-box .circle-ani{display:flex;justify-content:center;list-style:none;padding:0;margin:0 0 18px}
+.lp-offer-box .section-desc{margin-left:auto;margin-right:auto}
+.lp-offer-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:28px}
+.lp-offer-box .micro{margin-top:16px}
+@media (max-width:1024px){.lp-proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lp-proof-grid>div:nth-child(3){border-left:none}}
+@media (max-width:768px){
+  .lp-combo{flex-direction:column}.lp-plus{margin:-4px auto}
+  .lp-ba{grid-template-columns:1fr}.lp-ba-card{grid-template-columns:1fr;text-align:left}.lp-ba-ar{transform:rotate(90deg)}
+  .lp-ba-img{grid-template-columns:1fr}
+  .lp-gal figure{width:62vw}
+  .lp-badges li{font-size:12px;padding:7px 11px}
+}
+@media (prefers-reduced-motion:reduce){.lp-mq-track,.lp-gal-track,.lp-ba-ar svg{animation:none}}
 </style>
 </head>
 <body>
@@ -1302,6 +1380,7 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
     <p class="label">LashAddict Master Crew</p>
     <h1>아침부터 밤 9시까지 혼자 시술했는데,<br>정작 손에 남는 건 얼마 안 돼요</h1>
     <p class="lead">시술 매출은 그대로, 제품 판매 매출을 더하세요.<br>이미 200여 명의 원장님이 마스터크루에서 함께하고 있어요.</p>
+    <ul class="lp-badges"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>200여 명 원장님 단톡방</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>래쉬애딕트 최고 교육지사상</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>상담 가이드 · 세일즈 특강</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>사업자 공급가 발주</li></ul>
     <div class="hstats">
       <div><p class="k">마스터크루 원장님</p><p class="v">200+</p></div>
       <div><p class="k">래쉬애딕트</p><p class="v">최고 교육지사상</p></div>
@@ -1310,19 +1389,55 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
   </div>
 </section>
 
-<!-- ================= 섹션 2 : How It Works ================= -->
-<section class="section v2-adv">
+<!-- ================= LP : 핵심 한 줄 ================= -->
+<section class="section lp-key">
   <div class="container">
-    <div class="text-center">
-      <p class="section-label">How It Works</p>
-      <h2 class="section-title">가입부터 판매까지,<br>이렇게 함께합니다</h2>
-      <p class="section-desc">제품만 들여오고 끝나지 않아요. 상담 가이드부터 질문 창구까지, 네 가지 지원이 계속 이어집니다.</p>
+    <div class="text-center lp-hd">
+      <p class="section-label">Key Point</p>
+      <h2 class="section-title">시술 시간은 그대로,<br>매출 경로만 하나 더</h2>
+      <p class="section-desc">같은 고객에게 시술 후 관리 제품을 함께 제안하면, 시술 시간을 늘리지 않고 두 번째 매출이 생겨요.</p>
     </div>
-    <div class="hiw">
-      <div><h3>단톡방 즉시 Q&amp;A</h3><p>궁금한 순간 바로 물어보세요. 대부분 1분 안에 답이 와요</p><div class="img-placeholder"><i data-lucide="image"></i></div></div>
-      <div><h3>세미나 · 세일즈 특강</h3><p>제품 지식부터 상담 화법까지 차근차근 배워요</p><div class="img-placeholder"><i data-lucide="image"></i></div></div>
-      <div><h3>상담 가이드</h3><p>외울 필요 없이, 그대로 따라 하면 돼요</p><div class="img-placeholder"><i data-lucide="image"></i></div></div>
-      <div><h3>케이스 스터디</h3><p>다른 원장님의 성공 사례와 시행착오까지 함께 나눠요</p><div class="img-placeholder"><i data-lucide="image"></i></div></div>
+    <div class="lp-combo">
+      <div class="lp-step"><em>STEP 1</em><b>시술 매출</b><span>지금처럼 시술</span></div>
+      <i class="lp-plus" aria-hidden="true">+</i>
+      <div class="lp-step on"><em>STEP 2</em><b>제품 판매 매출</b><span>래쉬애딕트 3종 제안</span></div>
+    </div>
+    <p class="lp-eq"><span>=</span> 시술 시간을 늘리지 않는 두 번째 매출</p>
+    <p class="micro text-center lp-note">※ 매출은 고객 수 · 판매량 · 가격 · 재구매에 따라 달라지며, 특정 금액을 보장하지 않아요.</p>
+  </div>
+</section>
+
+<!-- ================= LP : 변화 ================= -->
+<section class="section bg-light lp-result">
+  <div class="container">
+    <div class="text-center lp-hd">
+      <p class="section-label">After Crew</p>
+      <h2 class="section-title">크루 합류 후,<br>이렇게 달라져요</h2>
+      <p class="section-desc">혼자 팔 때와 마스터크루일 때를 나란히 놓았어요.</p>
+    </div>
+    <div class="lp-ba"><div class="lp-ba-card"><p class="b"><em>Before</em>권할 타이밍을 매번 고민</p><span class="lp-ba-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><p class="a"><em>After</em>그대로 따라 하는 상담 가이드</p></div><div class="lp-ba-card"><p class="b"><em>Before</em>설명서와 검색에 의존</p><span class="lp-ba-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><p class="a"><em>After</em>영양제 세미나 · 세일즈 특강</p></div><div class="lp-ba-card"><p class="b"><em>Before</em>어디까지 말해도 되는지 모름</p><span class="lp-ba-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><p class="a"><em>After</em>쓰면 안 되는 표현까지 정리</p></div><div class="lp-ba-card"><p class="b"><em>Before</em>막힐 때 물어볼 동료가 없음</p><span class="lp-ba-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><p class="a"><em>After</em>200여 명 원장님 단톡방</p></div></div>
+    <p class="micro text-center lp-note">※ 판매 결과는 샵 상황에 따라 다를 수 있어요.</p>
+  </div>
+</section>
+
+<!-- ================= 섹션 5 : Empathy ================= -->
+<section class="section bg-light v2-emp">
+  <div class="container">
+    <div class="split">
+      <div class="emp">
+        <p class="emp-big">Not Alone</p>
+        <h2 class="section-title">저도 처음엔<br>혼자 공부했습니다</h2>
+        <blockquote style="margin-top:8px">영양제를 팔아보고 싶어도 제대로 배울 곳이 없었고, 궁금한 게 생겨도 물어볼 곳이 없었어요.</blockquote>
+        <p class="section-desc" style="margin-top:20px;margin-bottom:8px">그래서 니잉 마스터크루를 만들었습니다. 제가 혼자 헤맸던 시간을, 원장님들은 겪지 않으시도록요.</p>
+        <p style="font-size:14px;font-weight:700;color:var(--text-black);margin-top:20px">등록이 망설여지는 마음도 알아요 — 상담에서 실제로 듣는 걱정들</p>
+        <ul>
+          <li>“막상 등록하고 나면 관리 안 해주는 거 아니야?”</li>
+          <li>“혼자서도 잘 할 수 있을까?”</li>
+          <li>“제품, 진짜 다 판매할 수 있을까?”</li>
+        </ul>
+        <a href="#product" class="link-inline">제품 살펴보기 →</a>
+      </div>
+      <div class="img-placeholder" style="aspect-ratio:4/5"><i data-lucide="user"></i></div>
     </div>
   </div>
 </section>
@@ -1362,29 +1477,6 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
   </div>
 </section>
 
-<!-- ================= 섹션 5 : Empathy ================= -->
-<section class="section bg-light v2-emp">
-  <div class="container">
-    <div class="split">
-      <div class="emp">
-        <p class="emp-big">Not Alone</p>
-        <h2 class="section-title">저도 처음엔<br>혼자 공부했습니다</h2>
-        <blockquote style="margin-top:8px">영양제를 팔아보고 싶어도 제대로 배울 곳이 없었고, 궁금한 게 생겨도 물어볼 곳이 없었어요.</blockquote>
-        <p class="section-desc" style="margin-top:20px;margin-bottom:8px">그래서 니잉 마스터크루를 만들었습니다. 제가 혼자 헤맸던 시간을, 원장님들은 겪지 않으시도록요.</p>
-        <p style="font-size:14px;font-weight:700;color:var(--text-black);margin-top:20px">등록이 망설여지는 마음도 알아요 — 상담에서 실제로 듣는 걱정들</p>
-        <ul>
-          <li>“막상 등록하고 나면 관리 안 해주는 거 아니야?”</li>
-          <li>“혼자서도 잘 할 수 있을까?”</li>
-          <li>“제품, 진짜 다 판매할 수 있을까?”</li>
-        </ul>
-        <a href="#product" class="link-inline">제품 살펴보기 →</a>
-      </div>
-      <div class="img-placeholder" style="aspect-ratio:4/5"><i data-lucide="user"></i></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= 섹션 6~7 : Cause / Solution ================= -->
 <!-- ================= 섹션 6 : Cause 01~03 ================= -->
 <section class="section v2-cause">
   <div class="container">
@@ -1400,6 +1492,15 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
     <div class="ls-row"><div class="img-placeholder"><i data-lucide="image"></i></div><div class="txt"><p class="n">원인 03</p><h3>고객이 듣고 싶은 설명과, 말할 수 있는 표현 사이엔 간격이 있어요</h3><p>고객은 눈 시림은 없는지, 정말 효과가 있는지 물어요. 하지만 화장품은 “자란다 · 발모 · 손상 복구”라고 광고할 수 없습니다. 제품 지식과 함께 “어디까지 말할 수 있는지”를 알아야, 자신 있게 설명할 수 있어요.</p><p class="src" style="text-align:inherit">글로우픽 소비자 리뷰 · 식약처 온라인 불법유통 신고 가이드 · 화장품법 제13조</p></div></div>
   </div>
   <div class="container"><p class="answer">그렇기 때문에 마스터크루는 <b>시술 시간을 늘리지 않는 두 번째 매출 경로</b>와,<br><b>강요하지 않고 정확하게 설명하는 방법</b>을 함께 드립니다.</p></div>
+</section>
+
+<!-- ================= LP : 전환 ================= -->
+<section class="section lp-bridge">
+  <div class="container text-center">
+    <p class="lp-bridge-t">제품이 좋아도 <em>권할 말이 없으면</em> 팔리지 않고,<br>혼자서는 <em>막히는 순간마다 멈춥니다.</em></p>
+    <span class="lp-bridge-line" aria-hidden="true"></span>
+    <p class="lp-bridge-s">그렇기 때문에 판매 전, <b>함께 설명하고 묻는 구조</b>가 필요합니다.</p>
+  </div>
 </section>
 
 <!-- ================= 섹션 7 : Solution 01~03 ================= -->
@@ -1418,20 +1519,25 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
   </div>
 </section>
 
-<!-- ================= 섹션 8 : Core — 크루가 드리는 것 ================= -->
-<section class="section v2-core">
+<!-- ================= 섹션 2 : How It Works ================= -->
+<section class="section v2-adv">
   <div class="container">
-    <div class="split" style="align-items:start">
-      <div>
-        <p class="section-label">Core</p>
-        <h2 class="section-title">가입은 끝이 아니라,<br>시작입니다</h2>
-        <p class="section-desc" style="margin-bottom:16px">등록 이후에도 단톡방, 특강, 케이스 스터디로 계속 이어지는 파트너십이에요.</p>
-        <ul class="core-steps"><li><span class="s">01</span><span><b>단톡방 즉시 Q&amp;A</b>궁금한 순간 바로 물어보세요. 대부분 1분 안에 답이 와요</span></li><li><span class="s">02</span><span><b>영양제 세미나 · 세일즈 특강</b>제품 지식부터 상담 화법까지, 눈높이에 맞춘 특강으로 배워요</span></li><li><span class="s">03</span><span><b>직접 제작한 상담 가이드</b>외울 필요 없이, 그대로 따라 하면 되는 상담 가이드</span></li><li><span class="s">04</span><span><b>케이스 스터디</b>다른 원장님들의 성공 사례와 시행착오까지 함께 나눠요</span></li></ul>
-      </div>
-      <div class="img-placeholder" style="aspect-ratio:3/4;position:sticky;top:100px"><i data-lucide="image"></i></div>
+    <div class="text-center">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-title">가입부터 판매까지,<br>이렇게 함께합니다</h2>
+      <p class="section-desc">제품만 들여오고 끝나지 않아요. 상담 가이드부터 질문 창구까지, 네 가지 지원이 계속 이어집니다.</p>
+    </div>
+    <div class="hiw">
+      <div><h3>단톡방 즉시 Q&amp;A</h3><p>궁금한 순간 바로 물어보세요. 대부분 1분 안에 답이 와요</p><div class="img-placeholder"><i data-lucide="image"></i></div></div>
+      <div><h3>세미나 · 세일즈 특강</h3><p>제품 지식부터 상담 화법까지 차근차근 배워요</p><div class="img-placeholder"><i data-lucide="image"></i></div></div>
+      <div><h3>상담 가이드</h3><p>외울 필요 없이, 그대로 따라 하면 돼요</p><div class="img-placeholder"><i data-lucide="image"></i></div></div>
+      <div><h3>케이스 스터디</h3><p>다른 원장님의 성공 사례와 시행착오까지 함께 나눠요</p><div class="img-placeholder"><i data-lucide="image"></i></div></div>
     </div>
   </div>
 </section>
+
+<!-- ================= LP : 마퀴 ================= -->
+<div class="lp-marquee" aria-hidden="true"><div class="lp-mq-track"><span>LASHADDICT MASTER CREW ◆ 200+ DIRECTORS ◆ SALES GUIDE ◆ SEMINAR ◆</span><span>LASHADDICT MASTER CREW ◆ 200+ DIRECTORS ◆ SALES GUIDE ◆ SEMINAR ◆</span><span>LASHADDICT MASTER CREW ◆ 200+ DIRECTORS ◆ SALES GUIDE ◆ SEMINAR ◆</span><span>LASHADDICT MASTER CREW ◆ 200+ DIRECTORS ◆ SALES GUIDE ◆ SEMINAR ◆</span><span>LASHADDICT MASTER CREW ◆ 200+ DIRECTORS ◆ SALES GUIDE ◆ SEMINAR ◆</span><span>LASHADDICT MASTER CREW ◆ 200+ DIRECTORS ◆ SALES GUIDE ◆ SEMINAR ◆</span></div></div>
 
 <!-- ================= 섹션 9 : Difference ================= -->
 <section class="section bg-light v2-cmp">
@@ -1455,6 +1561,31 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
   </div>
 </section>
 
+<!-- ================= 섹션 8 : Core — 크루가 드리는 것 ================= -->
+<section class="section v2-core">
+  <div class="container">
+    <div class="split" style="align-items:start">
+      <div>
+        <p class="section-label">Core</p>
+        <h2 class="section-title">가입은 끝이 아니라,<br>시작입니다</h2>
+        <p class="section-desc" style="margin-bottom:16px">등록 이후에도 단톡방, 특강, 케이스 스터디로 계속 이어지는 파트너십이에요.</p>
+        <ul class="core-steps"><li><span class="s">01</span><span><b>단톡방 즉시 Q&amp;A</b>궁금한 순간 바로 물어보세요. 대부분 1분 안에 답이 와요</span></li><li><span class="s">02</span><span><b>영양제 세미나 · 세일즈 특강</b>제품 지식부터 상담 화법까지, 눈높이에 맞춘 특강으로 배워요</span></li><li><span class="s">03</span><span><b>직접 제작한 상담 가이드</b>외울 필요 없이, 그대로 따라 하면 되는 상담 가이드</span></li><li><span class="s">04</span><span><b>케이스 스터디</b>다른 원장님들의 성공 사례와 시행착오까지 함께 나눠요</span></li></ul>
+      </div>
+      <div class="img-placeholder" style="aspect-ratio:3/4;position:sticky;top:100px"><i data-lucide="image"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 섹션 11 : PRODUCT ================= -->
+<section class="section bg-light v2-cls" id="product">
+  <div class="container">
+    <p class="section-label">Product</p>
+    <h2 class="section-title">함께 판매할<br>래쉬애딕트마스터 3종</h2>
+    <p class="section-desc">마스터크루가 되면 사업자 공급가로 들여와 판매하는 제품이에요. 공급가와 가입 조건은 상담에서 알려드려요.</p>
+    <div class="cls-grid"><article class="cls-card"><div class="img-placeholder has-img"><img src="assets/prod/LashAddict.jpg" alt="래쉬애딕트마스터 LashAddict" loading="lazy"></div><p class="brand">래쉬애딕트마스터</p><h3>LashAddict</h3><p>속눈썹 세럼. 시술 후 고객 관리 루틴으로 자연스럽게 이어 권하기 좋아요.</p><div class="hash"><span>사업자 공급가</span><span>상담 시 안내</span></div></article><article class="cls-card"><div class="img-placeholder has-img"><img src="assets/prod/BrowAddict.jpg" alt="래쉬애딕트마스터 BrowAddict" loading="lazy"></div><p class="brand">래쉬애딕트마스터</p><h3>BrowAddict</h3><p>눈썹 세럼. 속눈썹 시술 고객에게 함께 제안하기 좋은 제품이에요.</p><div class="hash"><span>사업자 공급가</span><span>상담 시 안내</span></div></article><article class="cls-card"><div class="img-placeholder has-img"><img src="assets/prod/HairAddict.jpg" alt="래쉬애딕트마스터 HairAddict" loading="lazy"></div><p class="brand">래쉬애딕트마스터</p><h3>HairAddict</h3><p>모발 밀도 세럼. 판매 라인을 새롭게 넓히고 싶은 원장님께 권해요.</p><div class="hash"><span>사업자 공급가</span><span>상담 시 안내</span></div></article></div>
+  </div>
+</section>
+
 <!-- ================= 섹션 10 : Process — 가입 단계 ================= -->
 <section class="section v2-step">
   <div class="container">
@@ -1473,13 +1604,45 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
   </div>
 </section>
 
-<!-- ================= 섹션 11 : PRODUCT ================= -->
-<section class="section bg-light v2-cls" id="product">
+<!-- ================= LP : 숫자·이력 ================= -->
+<section class="section lp-proof">
   <div class="container">
-    <p class="section-label">Product</p>
-    <h2 class="section-title">함께 판매할<br>래쉬애딕트마스터 3종</h2>
-    <p class="section-desc">마스터크루가 되면 사업자 공급가로 들여와 판매하는 제품이에요. 공급가와 가입 조건은 상담에서 알려드려요.</p>
-    <div class="cls-grid"><article class="cls-card"><div class="img-placeholder has-img"><img src="assets/prod/LashAddict.jpg" alt="래쉬애딕트마스터 LashAddict" loading="lazy"></div><p class="brand">래쉬애딕트마스터</p><h3>LashAddict</h3><p>속눈썹 세럼. 시술 후 고객 관리 루틴으로 자연스럽게 이어 권하기 좋아요.</p><div class="hash"><span>사업자 공급가</span><span>상담 시 안내</span></div></article><article class="cls-card"><div class="img-placeholder has-img"><img src="assets/prod/BrowAddict.jpg" alt="래쉬애딕트마스터 BrowAddict" loading="lazy"></div><p class="brand">래쉬애딕트마스터</p><h3>BrowAddict</h3><p>눈썹 세럼. 속눈썹 시술 고객에게 함께 제안하기 좋은 제품이에요.</p><div class="hash"><span>사업자 공급가</span><span>상담 시 안내</span></div></article><article class="cls-card"><div class="img-placeholder has-img"><img src="assets/prod/HairAddict.jpg" alt="래쉬애딕트마스터 HairAddict" loading="lazy"></div><p class="brand">래쉬애딕트마스터</p><h3>HairAddict</h3><p>모발 밀도 세럼. 판매 라인을 새롭게 넓히고 싶은 원장님께 권해요.</p><div class="hash"><span>사업자 공급가</span><span>상담 시 안내</span></div></article></div>
+    <div class="text-center lp-hd">
+      <p class="section-label">Proof</p>
+      <h2 class="section-title">숫자와 이력으로,<br>먼저 보여드려요</h2>
+    </div>
+    <div class="lp-proof-grid"><div><p class="v">200+</p><p class="k">마스터크루 원장님</p><p class="s">이미 함께 판매하고 있어요</p></div><div><p class="v">1분</p><p class="k">단톡방 응답</p><p class="s">대부분 1분 안에 답이 와요</p></div><div><p class="v">3종</p><p class="k">함께 판매하는 세럼</p><p class="s">Lash · Brow · Hair</p></div><div><p class="v">수상</p><p class="k">래쉬애딕트 최고 교육지사상</p><p class="s">교육으로 인정받은 크루</p></div></div>
+  </div>
+</section>
+
+<!-- ================= LP : 현장 갤러리 ================= -->
+<section class="section bg-light lp-gallery">
+  <div class="container">
+    <div class="text-center lp-hd">
+      <p class="section-label">Crew</p>
+      <h2 class="section-title">크루가 함께하는 현장</h2>
+      <p class="section-desc">세미나와 특강, 단톡방에서 쌓이는 사례까지 함께 나눠요.</p>
+    </div>
+  </div>
+  <div class="lp-gal" aria-label="크루가 함께하는 현장 사진"><div class="lp-gal-track"><figure><img src="assets/crew/crew_proof1.jpg" alt="" loading="lazy"></figure><figure><img src="assets/hero3.jpg" alt="" loading="lazy"></figure><figure><img src="assets/crew/crew_proof2.jpg" alt="" loading="lazy"></figure><figure><img src="assets/prod/LashAddict.jpg" alt="" loading="lazy"></figure><figure><img src="assets/crew/crew_proof4.jpg" alt="" loading="lazy"></figure><figure><img src="assets/prod/BrowAddict.jpg" alt="" loading="lazy"></figure><figure><img src="assets/prod/HairAddict.jpg" alt="" loading="lazy"></figure><figure><img src="assets/cta-bg.jpg" alt="" loading="lazy"></figure><figure><img src="assets/crew/crew_proof1.jpg" alt="" loading="lazy"></figure><figure><img src="assets/hero3.jpg" alt="" loading="lazy"></figure><figure><img src="assets/crew/crew_proof2.jpg" alt="" loading="lazy"></figure><figure><img src="assets/prod/LashAddict.jpg" alt="" loading="lazy"></figure><figure><img src="assets/crew/crew_proof4.jpg" alt="" loading="lazy"></figure><figure><img src="assets/prod/BrowAddict.jpg" alt="" loading="lazy"></figure><figure><img src="assets/prod/HairAddict.jpg" alt="" loading="lazy"></figure><figure><img src="assets/cta-bg.jpg" alt="" loading="lazy"></figure></div></div>
+</section>
+
+<!-- ================= LP : 마무리 한 줄 ================= -->
+<section class="section lp-tagline">
+  <div class="container text-center"><p class="lp-tag-t">혼자 팔던 제품이,<br><em>함께라서</em> 설명되기 시작합니다.</p></div>
+</section>
+
+<!-- ================= LP : 첫걸음 상담 ================= -->
+<section class="section lp-offer">
+  <div class="container">
+    <div class="lp-offer-box">
+      <ul class="circle-ani" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li></ul>
+      <p class="section-label">First Step</p>
+      <h2 class="section-title">가입 조건이 궁금하다면,<br>먼저 물어보세요</h2>
+      <p class="section-desc">샵 고객층과 판매 계획을 알려주시면, 가입 조건과 공급가를 상담으로 안내해 드려요.</p>
+      <div class="lp-offer-btns"><a href="page_09.html" class="btn btn-primary btn-arrow">1:1 상담 남기기</a><a href="https://pf.kakao.com/_xdxkxkbG/chat" target="_blank" rel="noopener" class="btn btn-secondary">카카오톡 상담</a></div>
+      <p class="micro">카카오톡 상담 평일 10:30 ~ 19:00</p>
+    </div>
   </div>
 </section>
 
@@ -1512,7 +1675,6 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
     <button class="btn" data-open-pay="-1">마스터크루 가입 상담하기</button>
   </div>
 </section>
-
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
@@ -1685,7 +1847,7 @@ window.addEventListener('scroll',function(){fx.classList.toggle('is-show',window
 (function(){
   if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   var SKIP='header,footer,.nav,.m-menu,.q-aside,.q-md,.rv-md,.md,.v2-hero,.hero,.loop-track,.arc-track,.ai-stage,.csel,.arc-ring,.page-head';
-  var CARD='.card,.prod-card,.cls-card,.v2-rv .loop-vp,#rvArc,.checks li,.stats>div,.hstats>div,.banner,.acc-item,.hiw>*,.ls-row,.core-steps li,.proc>*,.img-placeholder,.ai-stage,.loc-map,.loc-info li,.notice-pin,.tbl-scroll,.emp,.cmp,.split>video,.form-box,.ct-form,.store-list>*,.map-ph,.pc-img,.tabs,.search-box,.store-filter,.pager,.sub-form,.qline>*,.v2-cta .banner';
+  var CARD='.lp-step,.lp-ba-card,.lp-ba-img figure,.lp-proof-grid>div,.lp-offer-box,.card,.prod-card,.cls-card,.v2-rv .loop-vp,#rvArc,.checks li,.stats>div,.hstats>div,.banner,.acc-item,.hiw>*,.ls-row,.core-steps li,.proc>*,.img-placeholder,.ai-stage,.loc-map,.loc-info li,.notice-pin,.tbl-scroll,.emp,.cmp,.split>video,.form-box,.ct-form,.store-list>*,.map-ph,.pc-img,.tabs,.search-box,.store-filter,.pager,.sub-form,.qline>*,.v2-cta .banner';
   var TEXT='h1,h2,h3,h4,h5,p,blockquote,figcaption,dt,dd,.btn,.section-label,.circle-ani,label';
   function ok(e){return !e.closest(SKIP)||e.matches('.ai-stage')}
   var main=[].slice.call(document.querySelectorAll('body>section,body>div.v2-stack>section.v2-info'));
@@ -1715,7 +1877,7 @@ window.addEventListener('scroll',function(){fx.classList.toggle('is-show',window
 <script>
 /* 지표 숫자 카운트업 — .hstats/.stats 의 숫자 하나짜리 값 (화면에 보일 때 1회) */
 (function(){
-  var els=[].slice.call(document.querySelectorAll('.hstats .v,.stats .v')).filter(function(e){return !e.hasAttribute('data-count')});
+  var els=[].slice.call(document.querySelectorAll('.hstats .v,.stats .v,.lp-proof-grid .v')).filter(function(e){return !e.hasAttribute('data-count')});
   var items=els.map(function(e){var m=e.textContent.trim().match(/^(\D*?)(\d[\d,]*)(\D*)$/);if(!m)return null;var n=+m[2].replace(/,/g,'');e.textContent=m[1]+'0'+m[3];return{e:e,a:m[1],n:n,b:m[3],c:m[2].indexOf(',')>-1}}).filter(Boolean);
   if(!items.length)return;
   function fmt(v,c){return c?v.toLocaleString('en-US'):String(v)}
