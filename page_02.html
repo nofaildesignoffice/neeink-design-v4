@@ -1244,6 +1244,55 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 @media (max-width:768px){.v2-target .qline .qi{left:14px;top:16px;width:30px;height:30px}}
 @media (prefers-reduced-motion:reduce){.qi *{animation:none!important}}
 .v2-rv .rv-card .img-placeholder.has-img{border:.5px solid #dcdcdc}
+/* 프로세스 — 단계별 SVG 애니메이션 */
+.v2-step .proc .img-placeholder.ps-box{background:linear-gradient(160deg,#f5f8ff 0%,#e8efff 100%);color:#111;display:flex;align-items:center;justify-content:center}
+.v2-step .proc .ps{width:46%;height:46%;overflow:visible}
+.ps *{transform-box:view-box}.ps .acf{fill:#0057ff}.ps .acs{stroke:#0057ff}
+.ps .dr{stroke-dasharray:1;stroke-dashoffset:1;animation:psDraw 3.4s ease-in-out infinite}
+.ps-write .dr{stroke-width:2.4}.ps-write .d2{animation-delay:.4s}.ps-write .d3{animation-delay:.8s}
+@keyframes psDraw{0%{stroke-dashoffset:1}25%,80%{stroke-dashoffset:0}95%,100%{stroke-dashoffset:1}}
+.ps-write .pen{animation:psPen 3.4s ease-in-out infinite}
+@keyframes psPen{0%{transform:translate(15px,22px)}12%{transform:translate(45px,22px)}14%{transform:translate(15px,29px)}26%{transform:translate(39px,29px)}28%{transform:translate(15px,36px)}38%,85%{transform:translate(31px,36px)}100%{transform:translate(15px,22px)}}
+.ps-check .mag{animation:psMag 3.4s ease-in-out infinite}.ps-check .ck{stroke-width:2.6}
+@keyframes psMag{0%,100%{transform:translate(0,0)}30%{transform:translate(-14px,-22px)}60%{transform:translate(-4px,-12px)}}
+.ps-cal .ring{transform-origin:45px 44px;animation:psRing 1.8s ease-out infinite}
+@keyframes psRing{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.8);opacity:0}}
+.ps-play .pl{transform-origin:33px 27px;animation:psPulse 1.8s ease-in-out infinite}
+.ps-play .bar{transform-origin:12px 39px;animation:psBar 3.6s linear infinite}
+@keyframes psPulse{50%{transform:scale(1.15)}}
+@keyframes psBar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.ps-grad .cap{transform-origin:32px 40px;animation:psToss 2.8s cubic-bezier(.45,0,.55,1) infinite}
+.ps-grad .tsl{transform-origin:56px 26px;animation:psSwing 2.8s ease-in-out infinite}
+.ps-grad .spk{transform-origin:10px 9px;animation:psTw 2.8s ease-in-out infinite}
+@keyframes psToss{0%,60%,100%{transform:none}25%{transform:translateY(-7px) rotate(-8deg)}}
+@keyframes psSwing{0%,100%{transform:rotate(0)}30%{transform:rotate(20deg)}55%{transform:rotate(-12deg)}}
+@keyframes psTw{0%,100%{transform:scale(.3) rotate(0);opacity:.2}50%{transform:scale(1.1) rotate(90deg);opacity:1}}
+.ps-pick .sel{animation:psSel 3.6s steps(1) infinite}
+@keyframes psSel{0%{transform:translateX(0)}33.33%{transform:translateX(18px)}66.66%{transform:translateX(36px)}}
+.ps-gear .gr{transform-origin:32px 32px;animation:psSpin 6s linear infinite}
+.ps-gear .knob{animation:psKnob 3s ease-in-out infinite alternate}
+@keyframes psSpin{to{transform:rotate(360deg)}}@keyframes psKnob{to{transform:translateX(32px)}}
+.ps-magic .wand{transform-origin:38px 54px;animation:psWand 2.4s ease-in-out infinite}
+.ps-magic .s1{transform-origin:54px 17px;animation:psTw 2.4s ease-in-out infinite}.ps-magic .s2{transform-origin:46px 29.4px;animation:psTw 2.4s ease-in-out -1.2s infinite}
+@keyframes psWand{0%,100%{transform:rotate(0)}50%{transform:rotate(-12deg)}}
+.ps-pub .ck2{stroke-width:2.6}.ps-pub .up{animation:psUp 2s ease-in-out infinite}
+@keyframes psUp{0%{transform:translateY(6px);opacity:0}40%,70%{transform:none;opacity:1}100%{transform:translateY(-6px);opacity:0}}
+.ps-fb .b1{transform-origin:12px 39px;animation:psQ 2.8s ease-in-out infinite}.ps-fb .b2{transform-origin:56px 58px;animation:psA 2.8s ease-in-out infinite}
+.ps .dt{animation:psDot 1.2s ease-in-out infinite}.ps .t2{animation-delay:.15s}.ps .t3{animation-delay:.3s}
+@keyframes psQ{0%,100%{transform:scale(1)}12%{transform:scale(1.08)}24%{transform:scale(1)}}
+@keyframes psA{0%,40%,100%{transform:scale(1)}52%{transform:scale(1.08)}64%{transform:scale(1)}}
+@keyframes psDot{0%,60%,100%{transform:none;opacity:.55}30%{transform:translateY(-2px);opacity:1}}
+.ps-talk .bb{transform-origin:32px 24px;animation:psPop 2.6s ease-in-out infinite}
+@keyframes psPop{0%,100%{transform:scale(1)}10%{transform:scale(.9)}20%{transform:scale(1.08)}30%{transform:scale(1)}}
+.ps-doc .scan{animation:psScan 2.4s ease-in-out infinite alternate}
+@keyframes psScan{to{transform:translateY(42px)}}
+.ps-ok .ok{stroke-width:3}.ps-ok .pulse{transform-origin:32px 31px;animation:psRing 2.4s ease-out infinite;stroke-width:1.4}
+.ps-cart .cart{animation:psCart 3s ease-in-out infinite}.ps-cart .box{transform-origin:33px 33px;animation:psBox 3s ease-in-out infinite}
+@keyframes psCart{0%,100%{transform:translateX(-3px)}50%{transform:translateX(4px)}}
+@keyframes psBox{0%,20%{transform:translateY(-16px);opacity:0}40%,100%{transform:none;opacity:1}}
+.ps-grow .gw{stroke-width:2.8}
+.v2-step .proc>div:hover .ps *{animation-duration:1.4s}
+@media (prefers-reduced-motion:reduce){.ps *{animation:none!important}.ps .dr{stroke-dashoffset:0}}
 </style>
 </head>
 <body>
@@ -1432,11 +1481,11 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
       <p class="section-desc">롯드 기초반과 이론 클래스는 결제 즉시 온라인으로 바로 수강할 수 있어요. 실습이 포함된 패키지는 아래 순서로 진행합니다.</p>
     </div>
     <div class="proc">
-      <div><div class="img-placeholder"><i data-lucide="image"></i></div><p class="n">01</p><h4>상담 신청</h4><p>지금 어느 단계에서 막혀 있는지 남겨주세요</p></div>
-      <div><div class="img-placeholder"><i data-lucide="image"></i></div><p class="n">02</p><h4>사전 문제점 체크</h4><p>상담을 통해 막힌 지점과 맞는 클래스를 정해요</p></div>
-      <div><div class="img-placeholder"><i data-lucide="image"></i></div><p class="n">03</p><h4>일정 협의 · 등록</h4><p>실습 인원에 맞춰 개별 일정을 확정해요</p></div>
-      <div><div class="img-placeholder"><i data-lucide="image"></i></div><p class="n">04</p><h4>온라인 강의 (6개월)</h4><p>이론과 데모를 먼저 보고 준비해요</p></div>
-      <div><div class="img-placeholder"><i data-lucide="image"></i></div><p class="n">05</p><h4>오프라인 실습 · 수료</h4><p>신논현 스튜디오 실습 → 디플로마 → 카톡 피드백</p></div>
+      <div><div class="img-placeholder ps-box"><svg class="ps ps-write" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 12h40a5 5 0 0 1 5 5v22a5 5 0 0 1-5 5H26l-10 9v-9h-6a5 5 0 0 1-5-5V17a5 5 0 0 1 5-5z"/><path class="dr d1" pathLength="1" d="M15 22h30"/><path class="dr d2" pathLength="1" d="M15 29h24"/><path class="dr d3" pathLength="1" d="M15 36h16"/><circle class="acf pen" stroke="none" cx="0" cy="0" r="2.6"/></svg></div><p class="n">01</p><h4>상담 신청</h4><p>지금 어느 단계에서 막혀 있는지 남겨주세요</p></div>
+      <div><div class="img-placeholder ps-box"><svg class="ps ps-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="8" width="32" height="44" rx="5"/><path d="M17 20h18M17 28h18M17 36h10" opacity=".35"/><path class="dr acs ck" pathLength="1" d="M16 44l4 4 7-8"/><g class="mag"><circle cx="42" cy="38" r="9" fill="#fff"/><circle class="acf" stroke="none" cx="42" cy="38" r="9" opacity=".12"/><circle cx="42" cy="38" r="9"/><path stroke-width="3.2" d="M49 45l7 7"/></g></svg></div><p class="n">02</p><h4>사전 문제점 체크</h4><p>상담을 통해 막힌 지점과 맞는 클래스를 정해요</p></div>
+      <div><div class="img-placeholder ps-box"><svg class="ps ps-cal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="12" width="48" height="42" rx="6"/><path d="M8 24h48M20 7v10M44 7v10"/><g opacity=".35"><circle cx="19" cy="33" r="1.6" fill="currentColor"/><circle cx="32" cy="33" r="1.6" fill="currentColor"/><circle cx="19" cy="44" r="1.6" fill="currentColor"/><circle cx="32" cy="44" r="1.6" fill="currentColor"/><circle cx="45" cy="33" r="1.6" fill="currentColor"/></g><circle class="ring acs" cx="45" cy="44" r="6.5"/><circle class="acf" stroke="none" cx="45" cy="44" r="3"/></svg></div><p class="n">03</p><h4>일정 협의 · 등록</h4><p>실습 인원에 맞춰 개별 일정을 확정해요</p></div>
+      <div><div class="img-placeholder ps-box"><svg class="ps ps-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="10" width="52" height="34" rx="4"/><path d="M2 50h60"/><path class="acf pl" stroke="none" d="M28 20v14l12-7z"/><rect x="12" y="38" width="40" height="2.4" rx="1.2" fill="currentColor" stroke="none" opacity=".15"/><rect class="acf bar" stroke="none" x="12" y="38" width="40" height="2.4" rx="1.2"/></svg></div><p class="n">04</p><h4>온라인 강의 (6개월)</h4><p>이론과 데모를 먼저 보고 준비해요</p></div>
+      <div><div class="img-placeholder ps-box"><svg class="ps ps-grad" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="cap"><path d="M4 24L32 12l28 12-28 12z"/><path d="M15 29v12q17 9 34 0V29"/><g class="tsl"><path d="M56 26v13"/><circle class="acf" stroke="none" cx="56" cy="42" r="2.8"/></g></g><path class="acs spk" stroke-width="2.4" d="M10 6v6M7 9h6"/></svg></div><p class="n">05</p><h4>오프라인 실습 · 수료</h4><p>신논현 스튜디오 실습 → 디플로마 → 카톡 피드백</p></div>
     </div>
     <p class="micro text-center">TIP — 상담 단계에서는 ‘이런 것까지 물어봐도 되나’ 싶은 것도 편하게 물어봐 주세요.</p>
   </div>
@@ -1687,6 +1736,19 @@ window.addEventListener('scroll',function(){fx.classList.toggle('is-show',window
   map.forEach(function(v,t){io.observe(t)});
 })();
 
+</script>
+<script>
+/* 지표 숫자 카운트업 — .hstats/.stats 의 숫자 하나짜리 값 (화면에 보일 때 1회) */
+(function(){
+  var els=[].slice.call(document.querySelectorAll('.hstats .v,.stats .v')).filter(function(e){return !e.hasAttribute('data-count')});
+  var items=els.map(function(e){var m=e.textContent.trim().match(/^(\D*?)(\d[\d,]*)(\D*)$/);if(!m)return null;var n=+m[2].replace(/,/g,'');e.textContent=m[1]+'0'+m[3];return{e:e,a:m[1],n:n,b:m[3],c:m[2].indexOf(',')>-1}}).filter(Boolean);
+  if(!items.length)return;
+  function fmt(v,c){return c?v.toLocaleString('en-US'):String(v)}
+  function run(it){var t0=performance.now(),D=1800;(function f(t){var k=Math.min(1,(t-t0)/D),e=1-Math.pow(1-k,3);it.e.textContent=it.a+fmt(Math.round(it.n*e),it.c)+it.b;if(k<1)requestAnimationFrame(f)})(t0)}
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){items.forEach(function(it){it.e.textContent=it.a+fmt(it.n,it.c)+it.b});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){var it=items.filter(function(i){return i.e===x.target})[0];if(it)setTimeout(function(){run(it)},250);io.unobserve(x.target)}})},{threshold:.4});
+  items.forEach(function(it){io.observe(it.e)});
+})();
 </script>
 </body>
 </html>

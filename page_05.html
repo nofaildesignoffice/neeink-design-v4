@@ -1218,6 +1218,55 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 @keyframes procFlow{0%{transform:translateY(0);opacity:0}12%{opacity:1}85%{transform:translateY(52px);opacity:1}100%{transform:translateY(56px);opacity:0}}
 @keyframes procNode{0%{box-shadow:0 0 0 5px #e9e9e9,0 0 0 5px rgba(0,87,255,.35)}60%,100%{box-shadow:0 0 0 5px #e9e9e9,0 0 0 14px rgba(0,87,255,0)}}
 @media (prefers-reduced-motion:reduce){.v2-step .proc .img-placeholder::before,.v2-step .proc .img-placeholder::after{animation:none}}
+/* 프로세스 — 단계별 SVG 애니메이션 */
+.v2-step .proc .img-placeholder.ps-box{background:linear-gradient(160deg,#f5f8ff 0%,#e8efff 100%);color:#111;display:flex;align-items:center;justify-content:center}
+.v2-step .proc .ps{width:46%;height:46%;overflow:visible}
+.ps *{transform-box:view-box}.ps .acf{fill:#0057ff}.ps .acs{stroke:#0057ff}
+.ps .dr{stroke-dasharray:1;stroke-dashoffset:1;animation:psDraw 3.4s ease-in-out infinite}
+.ps-write .dr{stroke-width:2.4}.ps-write .d2{animation-delay:.4s}.ps-write .d3{animation-delay:.8s}
+@keyframes psDraw{0%{stroke-dashoffset:1}25%,80%{stroke-dashoffset:0}95%,100%{stroke-dashoffset:1}}
+.ps-write .pen{animation:psPen 3.4s ease-in-out infinite}
+@keyframes psPen{0%{transform:translate(15px,22px)}12%{transform:translate(45px,22px)}14%{transform:translate(15px,29px)}26%{transform:translate(39px,29px)}28%{transform:translate(15px,36px)}38%,85%{transform:translate(31px,36px)}100%{transform:translate(15px,22px)}}
+.ps-check .mag{animation:psMag 3.4s ease-in-out infinite}.ps-check .ck{stroke-width:2.6}
+@keyframes psMag{0%,100%{transform:translate(0,0)}30%{transform:translate(-14px,-22px)}60%{transform:translate(-4px,-12px)}}
+.ps-cal .ring{transform-origin:45px 44px;animation:psRing 1.8s ease-out infinite}
+@keyframes psRing{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.8);opacity:0}}
+.ps-play .pl{transform-origin:33px 27px;animation:psPulse 1.8s ease-in-out infinite}
+.ps-play .bar{transform-origin:12px 39px;animation:psBar 3.6s linear infinite}
+@keyframes psPulse{50%{transform:scale(1.15)}}
+@keyframes psBar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.ps-grad .cap{transform-origin:32px 40px;animation:psToss 2.8s cubic-bezier(.45,0,.55,1) infinite}
+.ps-grad .tsl{transform-origin:56px 26px;animation:psSwing 2.8s ease-in-out infinite}
+.ps-grad .spk{transform-origin:10px 9px;animation:psTw 2.8s ease-in-out infinite}
+@keyframes psToss{0%,60%,100%{transform:none}25%{transform:translateY(-7px) rotate(-8deg)}}
+@keyframes psSwing{0%,100%{transform:rotate(0)}30%{transform:rotate(20deg)}55%{transform:rotate(-12deg)}}
+@keyframes psTw{0%,100%{transform:scale(.3) rotate(0);opacity:.2}50%{transform:scale(1.1) rotate(90deg);opacity:1}}
+.ps-pick .sel{animation:psSel 3.6s steps(1) infinite}
+@keyframes psSel{0%{transform:translateX(0)}33.33%{transform:translateX(18px)}66.66%{transform:translateX(36px)}}
+.ps-gear .gr{transform-origin:32px 32px;animation:psSpin 6s linear infinite}
+.ps-gear .knob{animation:psKnob 3s ease-in-out infinite alternate}
+@keyframes psSpin{to{transform:rotate(360deg)}}@keyframes psKnob{to{transform:translateX(32px)}}
+.ps-magic .wand{transform-origin:38px 54px;animation:psWand 2.4s ease-in-out infinite}
+.ps-magic .s1{transform-origin:54px 17px;animation:psTw 2.4s ease-in-out infinite}.ps-magic .s2{transform-origin:46px 29.4px;animation:psTw 2.4s ease-in-out -1.2s infinite}
+@keyframes psWand{0%,100%{transform:rotate(0)}50%{transform:rotate(-12deg)}}
+.ps-pub .ck2{stroke-width:2.6}.ps-pub .up{animation:psUp 2s ease-in-out infinite}
+@keyframes psUp{0%{transform:translateY(6px);opacity:0}40%,70%{transform:none;opacity:1}100%{transform:translateY(-6px);opacity:0}}
+.ps-fb .b1{transform-origin:12px 39px;animation:psQ 2.8s ease-in-out infinite}.ps-fb .b2{transform-origin:56px 58px;animation:psA 2.8s ease-in-out infinite}
+.ps .dt{animation:psDot 1.2s ease-in-out infinite}.ps .t2{animation-delay:.15s}.ps .t3{animation-delay:.3s}
+@keyframes psQ{0%,100%{transform:scale(1)}12%{transform:scale(1.08)}24%{transform:scale(1)}}
+@keyframes psA{0%,40%,100%{transform:scale(1)}52%{transform:scale(1.08)}64%{transform:scale(1)}}
+@keyframes psDot{0%,60%,100%{transform:none;opacity:.55}30%{transform:translateY(-2px);opacity:1}}
+.ps-talk .bb{transform-origin:32px 24px;animation:psPop 2.6s ease-in-out infinite}
+@keyframes psPop{0%,100%{transform:scale(1)}10%{transform:scale(.9)}20%{transform:scale(1.08)}30%{transform:scale(1)}}
+.ps-doc .scan{animation:psScan 2.4s ease-in-out infinite alternate}
+@keyframes psScan{to{transform:translateY(42px)}}
+.ps-ok .ok{stroke-width:3}.ps-ok .pulse{transform-origin:32px 31px;animation:psRing 2.4s ease-out infinite;stroke-width:1.4}
+.ps-cart .cart{animation:psCart 3s ease-in-out infinite}.ps-cart .box{transform-origin:33px 33px;animation:psBox 3s ease-in-out infinite}
+@keyframes psCart{0%,100%{transform:translateX(-3px)}50%{transform:translateX(4px)}}
+@keyframes psBox{0%,20%{transform:translateY(-16px);opacity:0}40%,100%{transform:none;opacity:1}}
+.ps-grow .gw{stroke-width:2.8}
+.v2-step .proc>div:hover .ps *{animation-duration:1.4s}
+@media (prefers-reduced-motion:reduce){.ps *{animation:none!important}.ps .dr{stroke-dashoffset:0}}
 </style>
 </head>
 <body>
@@ -1412,11 +1461,11 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
       <p class="section-desc">상담부터 판매 시작까지, 니잉이 한 단계씩 함께 안내해요.</p>
     </div>
     <div class="proc">
-      <div><div class="img-placeholder"><i data-lucide="image"></i></div><p class="n">01</p><h4>가입 상담</h4><p>샵 고객층과 판매 계획을 함께 살펴봐요</p></div>
-      <div><div class="img-placeholder"><i data-lucide="image"></i></div><p class="n">02</p><h4>사업자등록증 확인</h4><p>회원가입 후 사업자등록증을 제출해 주세요</p></div>
-      <div><div class="img-placeholder"><i data-lucide="image"></i></div><p class="n">03</p><h4>사업자 회원 승인</h4><p>승인이 완료되면 공급가가 보여요</p></div>
-      <div><div class="img-placeholder"><i data-lucide="image"></i></div><p class="n">04</p><h4>공급가로 발주</h4><p>평일 10:30 ~ 15:00 발주</p></div>
-      <div><div class="img-placeholder"><i data-lucide="image"></i></div><p class="n">05</p><h4>크루 합류 · 판매</h4><p>상담 가이드와 특강으로 판매를 시작해요</p></div>
+      <div><div class="img-placeholder ps-box"><svg class="ps ps-talk" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="20" cy="30" r="7"/><path d="M8 54c0-8 5-12 12-12s12 4 12 12"/><circle cx="44" cy="30" r="7"/><path d="M32 54c0-8 5-12 12-12s12 4 12 12"/><g class="bb"><path class="acf" stroke="none" d="M24 6h16a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-5l-3 4-3-4h-5a4 4 0 0 1-4-4v-6a4 4 0 0 1 4-4z"/><circle fill="#fff" stroke="none" class="dt t1" cx="27" cy="13" r="1.6"/><circle fill="#fff" stroke="none" class="dt t2" cx="32" cy="13" r="1.6"/><circle fill="#fff" stroke="none" class="dt t3" cx="37" cy="13" r="1.6"/></g></svg></div><p class="n">01</p><h4>가입 상담</h4><p>샵 고객층과 판매 계획을 함께 살펴봐요</p></div>
+      <div><div class="img-placeholder ps-box"><svg class="ps ps-doc" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="6" width="40" height="52" rx="5"/><path d="M20 18h24M20 26h24M20 34h14" opacity=".4"/><circle cx="40" cy="45" r="6"/><path d="M36 52l-1 5 5-2 5 2-1-5" opacity=".6"/><path class="scan acs" stroke-width="2.6" d="M8 12h48"/></svg></div><p class="n">02</p><h4>사업자등록증 확인</h4><p>회원가입 후 사업자등록증을 제출해 주세요</p></div>
+      <div><div class="img-placeholder ps-box"><svg class="ps ps-ok" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="shield" d="M32 6l20 8v14c0 14-9 23-20 28-11-5-20-14-20-28V14z"/><path class="dr acs ok" pathLength="1" d="M23 31l6 6 12-13"/><circle class="pulse acs" cx="32" cy="31" r="22"/></svg></div><p class="n">03</p><h4>사업자 회원 승인</h4><p>승인이 완료되면 공급가가 보여요</p></div>
+      <div><div class="img-placeholder ps-box"><svg class="ps ps-cart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="cart"><path d="M4 12h8l7 28h30l6-20H15"/><circle cx="22" cy="48" r="4"/><circle cx="45" cy="48" r="4"/><rect class="box acf" stroke="none" x="25" y="20" width="16" height="13" rx="2"/></g><path d="M2 56h60" opacity=".25"/></svg></div><p class="n">04</p><h4>공급가로 발주</h4><p>평일 10:30 ~ 15:00 발주</p></div>
+      <div><div class="img-placeholder ps-box"><svg class="ps ps-grow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14" cy="38" r="5"/><path d="M5 56c0-6 4-9 9-9s9 3 9 9"/><circle cx="30" cy="34" r="5"/><path d="M21 56c0-6 4-9 9-9s9 3 9 9"/><path class="acs" stroke-width="2.6" d="M38 30l8-8 6 5 9-11"/><path class="dr acs gw" pathLength="1" d="M38 30l8-8 6 5 9-11"/><path class="acs" stroke-width="2.6" d="M54 16h7v7"/></svg></div><p class="n">05</p><h4>크루 합류 · 판매</h4><p>상담 가이드와 특강으로 판매를 시작해요</p></div>
     </div>
   </div>
 </section>
@@ -1659,6 +1708,19 @@ window.addEventListener('scroll',function(){fx.classList.toggle('is-show',window
   map.forEach(function(v,t){io.observe(t)});
 })();
 
+</script>
+<script>
+/* 지표 숫자 카운트업 — .hstats/.stats 의 숫자 하나짜리 값 (화면에 보일 때 1회) */
+(function(){
+  var els=[].slice.call(document.querySelectorAll('.hstats .v,.stats .v')).filter(function(e){return !e.hasAttribute('data-count')});
+  var items=els.map(function(e){var m=e.textContent.trim().match(/^(\D*?)(\d[\d,]*)(\D*)$/);if(!m)return null;var n=+m[2].replace(/,/g,'');e.textContent=m[1]+'0'+m[3];return{e:e,a:m[1],n:n,b:m[3],c:m[2].indexOf(',')>-1}}).filter(Boolean);
+  if(!items.length)return;
+  function fmt(v,c){return c?v.toLocaleString('en-US'):String(v)}
+  function run(it){var t0=performance.now(),D=1800;(function f(t){var k=Math.min(1,(t-t0)/D),e=1-Math.pow(1-k,3);it.e.textContent=it.a+fmt(Math.round(it.n*e),it.c)+it.b;if(k<1)requestAnimationFrame(f)})(t0)}
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){items.forEach(function(it){it.e.textContent=it.a+fmt(it.n,it.c)+it.b});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){var it=items.filter(function(i){return i.e===x.target})[0];if(it)setTimeout(function(){run(it)},250);io.unobserve(x.target)}})},{threshold:.4});
+  items.forEach(function(it){io.observe(it.e)});
+})();
 </script>
 </body>
 </html>

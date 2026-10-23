@@ -1015,5 +1015,18 @@ document.querySelectorAll('[data-car]').forEach(function(c){
 })();
 
 </script>
+<script>
+/* 지표 숫자 카운트업 — .hstats/.stats 의 숫자 하나짜리 값 (화면에 보일 때 1회) */
+(function(){
+  var els=[].slice.call(document.querySelectorAll('.hstats .v,.stats .v')).filter(function(e){return !e.hasAttribute('data-count')});
+  var items=els.map(function(e){var m=e.textContent.trim().match(/^(\D*?)(\d[\d,]*)(\D*)$/);if(!m)return null;var n=+m[2].replace(/,/g,'');e.textContent=m[1]+'0'+m[3];return{e:e,a:m[1],n:n,b:m[3],c:m[2].indexOf(',')>-1}}).filter(Boolean);
+  if(!items.length)return;
+  function fmt(v,c){return c?v.toLocaleString('en-US'):String(v)}
+  function run(it){var t0=performance.now(),D=1800;(function f(t){var k=Math.min(1,(t-t0)/D),e=1-Math.pow(1-k,3);it.e.textContent=it.a+fmt(Math.round(it.n*e),it.c)+it.b;if(k<1)requestAnimationFrame(f)})(t0)}
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){items.forEach(function(it){it.e.textContent=it.a+fmt(it.n,it.c)+it.b});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){var it=items.filter(function(i){return i.e===x.target})[0];if(it)setTimeout(function(){run(it)},250);io.unobserve(x.target)}})},{threshold:.4});
+  items.forEach(function(it){io.observe(it.e)});
+})();
+</script>
 </body>
 </html>
