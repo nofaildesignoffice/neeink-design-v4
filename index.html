@@ -1251,6 +1251,11 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 .ai-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#6fa0ff,#fff);transition:width .5s ease}
 .ai-pct{flex:none;width:38px;text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
 @media (max-width:768px){.ai-stage{max-width:none}.ai-hud{font-size:12px;padding:9px 11px;left:10px;right:10px;bottom:10px}.ai-st{min-width:96px}.ai-box em{font-size:10px}}
+/* 스토어 전체 보기 — 마스터크루 버튼과 같은 채움 효과 */
+.v2-store .btn-secondary{position:relative;isolation:isolate;overflow:hidden;background:transparent;color:#000;border-color:#000;transition:color .45s cubic-bezier(.65,0,.35,1),border-color .3s}
+.v2-store .btn-secondary::before{content:"";position:absolute;inset:0;z-index:-1;background:#000;transform:scaleX(0);transform-origin:left center;transition:transform .45s cubic-bezier(.65,0,.35,1)}
+.v2-store .btn-secondary:hover{background:transparent;color:#fff;border-color:#000}
+.v2-store .btn-secondary:hover::before{transform:scaleX(1)}
 </style>
 </head>
 <body>
