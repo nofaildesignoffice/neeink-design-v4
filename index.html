@@ -1264,6 +1264,15 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 /* 매장 찾기 배너 v2 — 이미지 오른쪽 정렬·높이 맞춤 + 왼쪽 회색 그라디언트 연결 */
 .v2-cta .banner{background:linear-gradient(90deg,#f6f6f6 0%,#f6f6f6 30%,rgba(246,246,246,.85) 45%,rgba(246,246,246,.35) 65%,rgba(246,246,246,0) 85%),url(assets/cta-bg.jpg) right center/auto 100% no-repeat,#f6f6f6}
 @media (max-width:768px){.v2-cta .banner{background:linear-gradient(180deg,#f6f6f6 0%,rgba(246,246,246,.92) 55%,rgba(246,246,246,.55) 100%),url(assets/cta-bg.jpg) 70% center/auto 100% no-repeat,#f6f6f6}}
+/* 차별점 → 급속교정 → AI 마케팅: 섹션은 분리, 배경은 하나로 이어지는 블루 그라디언트 */
+.flow-bg{position:relative;background:#fff;overflow:hidden;isolation:isolate}
+.flow-bg::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:
+ radial-gradient(760px 640px at -6% 6%,rgba(0,87,255,.14),rgba(0,87,255,0) 70%),
+ radial-gradient(900px 760px at 104% 30%,rgba(0,87,255,.12),rgba(0,87,255,0) 70%),
+ radial-gradient(820px 700px at -4% 58%,rgba(0,87,255,.11),rgba(0,87,255,0) 70%),
+ radial-gradient(900px 760px at 102% 86%,rgba(0,87,255,.13),rgba(0,87,255,0) 70%),
+ linear-gradient(180deg,#fefefe 0%,#f7f9fe 50%,#fefefe 100%)}
+.flow-bg>section,.flow-bg>.section.v2-svc-a,.flow-bg>.section.v2-svc-b{background:transparent!important}
 </style>
 </head>
 <body>
@@ -1358,6 +1367,7 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 </section>
 </div>
 
+<div class="flow-bg">
 <!-- ================= 섹션 6 : 차별점 3축 ================= -->
 <section class="section v2-prog">
   <div class="container v2-prog-in">
@@ -1426,6 +1436,7 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
     </div>
   </div>
 </section>
+</div>
 
 
 <!-- ================= 섹션 8 : 마스터크루 ================= -->
@@ -1606,7 +1617,7 @@ document.getElementById('hPrev').onclick=function(){go(hi-1);reset()};document.g
   var CARD='.card,.prod-card,.cls-card,.v2-rv .loop-vp,#rvArc,.checks li,.stats>div,.hstats>div,.banner,.acc-item,.hiw>*,.ls-row,.core-steps li,.proc>*,.img-placeholder,.ai-stage,.loc-map,.loc-info li,.notice-pin,.tbl-scroll,.emp,.cmp,.split>video,.form-box,.ct-form,.store-list>*,.map-ph,.pc-img,.tabs,.search-box,.store-filter,.pager,.sub-form,.qline>*,.v2-cta .banner';
   var TEXT='h1,h2,h3,h4,h5,p,blockquote,figcaption,dt,dd,.btn,.section-label,.circle-ani,label';
   function ok(e){return !e.closest(SKIP)||e.matches('.ai-stage')}
-  var main=[].slice.call(document.querySelectorAll('body>section,body>div.v2-stack>section.v2-info'));
+  var main=[].slice.call(document.querySelectorAll('body>section,body>.flow-bg>section,body>div.v2-stack>section.v2-info'));
   var cards=[],texts=[];
   main.forEach(function(sec){
     [].forEach.call(sec.querySelectorAll(CARD),function(e){if(ok(e)&&!e.parentElement.closest('.rv-c')){e.classList.add('rv-c');cards.push(e)}});
