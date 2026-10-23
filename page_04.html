@@ -842,6 +842,33 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 #plist .prod-body{padding:20px 2px 0}
 @media (max-width:1024px){#plist .grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:480px){#plist .grid-3{gap:24px 14px}#plist .prod-body{padding-top:14px}}
+/* 마스터크루 배너 — 메인 For customers 배너와 동일 */
+.circle-ani{display:flex;list-style:none;padding:0;margin:0}
+.circle-ani li{width:12px;height:12px;border-radius:50%;background:var(--pp);margin-right:-3px;animation:v2dot 2.4s ease-in-out infinite}
+.circle-ani li:nth-child(2){opacity:.85;animation-delay:.12s}
+.circle-ani li:nth-child(3){opacity:.7;animation-delay:.24s}
+.circle-ani li:nth-child(4){opacity:.55;animation-delay:.36s}
+.circle-ani li:nth-child(5){opacity:.4;animation-delay:.48s}
+@keyframes v2dot{0%,100%{transform:none}50%{transform:translateY(-4px)}}
+.banner{display:flex;align-items:center;justify-content:space-between}
+.v2-cta .banner .section-label{font-weight:300}
+.v2-cta .banner{background:var(--iv-4);border:1px solid rgba(0,0,0,.07);border-radius:20px;padding:clamp(40px,4vw,76px) clamp(28px,4vw,76px);gap:40px;position:relative;overflow:hidden}
+.v2-cta .banner::before{content:"";position:absolute;left:-120px;bottom:-200px;width:420px;height:420px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,87,255,.28),transparent),radial-gradient(closest-side at 70% 50%,rgba(0,87,255,.18),transparent);filter:blur(30px);pointer-events:none}
+.v2-cta .banner>*{position:relative}
+.v2-cta .banner .section-label{font-size:clamp(36px,3.33vw,64px);color:#000;letter-spacing:-.04em;line-height:1.1;margin-bottom:18px!important;display:flex;flex-direction:column;gap:18px}
+.v2-cta .banner .circle-ani{margin-bottom:18px}
+.v2-cta .banner .section-label::after{content:none}
+.v2-cta .banner h3{font-family:var(--serif-ko);font-weight:400;font-size:clamp(20px,1.6vw,30px);letter-spacing:-.06em;color:#000;margin-bottom:12px;line-height:1.4}
+.v2-cta .banner p{font-size:16px;color:var(--tx)}
+.v2-cta .banner{background:linear-gradient(rgba(246,246,246,.55),rgba(246,246,246,.55)),url(assets/cta-bg.jpg) center/cover no-repeat;border-color:rgba(0,0,0,.05)}
+@media (max-width:768px){.v2-cta .banner{background:linear-gradient(rgba(246,246,246,.72),rgba(246,246,246,.72)),url(assets/cta-bg.jpg) 62% center/cover no-repeat}}
+.v2-cta .banner{background:linear-gradient(90deg,#f6f6f6 0%,#f6f6f6 30%,rgba(246,246,246,.85) 45%,rgba(246,246,246,.35) 65%,rgba(246,246,246,0) 85%),url(assets/cta-bg.jpg) right center/auto 100% no-repeat,#f6f6f6}
+@media (max-width:768px){.v2-cta .banner{background:linear-gradient(180deg,#f6f6f6 0%,rgba(246,246,246,.92) 55%,rgba(246,246,246,.55) 100%),url(assets/cta-bg.jpg) 70% center/auto 100% no-repeat,#f6f6f6}}
+@media (max-width:768px){.v2-cta .banner{flex-direction:column;align-items:flex-start;padding:36px 22px;border-radius:16px}.v2-cta .banner h3{font-size:20px}.v2-cta .banner p{font-size:14px}}
+.v2-cta .btn-primary{position:relative;isolation:isolate;overflow:hidden;background:transparent;color:#000;border-color:#000;transition:color .45s cubic-bezier(.65,0,.35,1),border-color .3s}
+.v2-cta .btn-primary::before{content:"";position:absolute;inset:0;z-index:-1;background:#000;transform:scaleX(0);transform-origin:left center;transition:transform .45s cubic-bezier(.65,0,.35,1)}
+.v2-cta .btn-primary:hover{background:transparent;color:#fff;border-color:#000}
+.v2-cta .btn-primary:hover::before{transform:scaleX(1)}
 </style>
 </head>
 <body>
@@ -922,25 +949,19 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 </section>
 
 <!-- ================= 섹션 3 : 마스터크루 연결 ================= -->
-<section class="section bg-light" style="padding:64px 0">
+<section class="section v2-cta">
   <div class="container">
-    <a href="page_05.html" class="cross">
-      <div><p class="t">제품만이 아니라, 판매하는 법까지 배우고 싶다면</p><h3>니잉 마스터크루</h3></div>
-      <i data-lucide="arrow-right"></i>
-    </a>
+    <div class="banner">
+      <div>
+        <ul class="circle-ani" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li></ul>
+        <p class="section-label" style="margin-bottom:8px">Master Crew</p>
+        <h3>니잉 마스터크루</h3>
+        <p>제품만이 아니라, 판매하는 법까지 배우고 싶다면</p>
+      </div>
+      <a href="page_05.html" class="btn btn-primary btn-arrow">마스터크루 자세히 보기</a>
+    </div>
   </div>
 </section>
-
-<!-- ================= 최하단 : Contact Us ================= -->
-<section class="section bg-dark v2-contact" id="contact">
-  <div class="container text-center">
-    <p class="section-label" style="color:rgba(255,255,255,.45)">Contact</p>
-    <h2 class="section-title">어떤 제품부터 들여야 할지<br>모르겠다면</h2>
-    <p class="section-desc">샵 고객층을 말씀해 주시면, 도입 순서와 조건을 카카오톡으로 안내해 드려요.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href="page_09.html" class="btn btn-primary">1:1 문의하기</a><a href="https://pf.kakao.com/_xdxkxkbG/chat" class="btn btn-secondary" target="_blank">카카오톡 상담</a></div><p class="micro">카카오톡 상담 평일 10:30 ~ 19:00</p>
-  </div>
-</section>
-
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">

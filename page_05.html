@@ -1208,6 +1208,16 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 .prod-card:hover .img-placeholder.has-img img,.cls-card:hover .img-placeholder.has-img img{transform:scale(1.05)}
 .v2-sub .hero-ph.has-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
 .v2-sub .hero-ph.has-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.4) 0%,rgba(0,0,0,.5) 60%,rgba(0,0,0,.7) 100%)}
+/* 프로세스 — 이미지 ↔ 스텝 박스 연결선 위로 흐르는 원 */
+.v2-step .proc .img-placeholder::before{content:"";position:absolute;left:50%;top:100%;z-index:2;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:#0057ff;box-shadow:0 0 10px 2px rgba(0,87,255,.45);animation:procFlow 2.2s cubic-bezier(.45,0,.55,1) infinite}
+.v2-step .proc>div:nth-child(2) .img-placeholder::before{animation-delay:.44s}.v2-step .proc>div:nth-child(3) .img-placeholder::before{animation-delay:.88s}
+.v2-step .proc>div:nth-child(4) .img-placeholder::before{animation-delay:1.32s}.v2-step .proc>div:nth-child(5) .img-placeholder::before{animation-delay:1.76s}
+.v2-step .proc .img-placeholder::after{animation:procNode 2.2s ease-out infinite}
+.v2-step .proc>div:nth-child(2) .img-placeholder::after{animation-delay:.44s}.v2-step .proc>div:nth-child(3) .img-placeholder::after{animation-delay:.88s}
+.v2-step .proc>div:nth-child(4) .img-placeholder::after{animation-delay:1.32s}.v2-step .proc>div:nth-child(5) .img-placeholder::after{animation-delay:1.76s}
+@keyframes procFlow{0%{transform:translateY(0);opacity:0}12%{opacity:1}85%{transform:translateY(52px);opacity:1}100%{transform:translateY(56px);opacity:0}}
+@keyframes procNode{0%{box-shadow:0 0 0 5px #e9e9e9,0 0 0 5px rgba(0,87,255,.35)}60%,100%{box-shadow:0 0 0 5px #e9e9e9,0 0 0 14px rgba(0,87,255,0)}}
+@media (prefers-reduced-motion:reduce){.v2-step .proc .img-placeholder::before,.v2-step .proc .img-placeholder::after{animation:none}}
 </style>
 </head>
 <body>

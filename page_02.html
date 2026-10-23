@@ -1197,6 +1197,53 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 @media (max-width:768px){.rv-md .rv-split .img-placeholder.has-img{min-height:0;aspect-ratio:4/5}}
 .v2-sub .hero-ph.has-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
 .v2-sub .hero-ph.has-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.45) 60%,rgba(0,0,0,.65) 100%)}
+/* 프로세스 — 이미지 ↔ 스텝 박스 연결선 위로 흐르는 원 */
+.v2-step .proc .img-placeholder::before{content:"";position:absolute;left:50%;top:100%;z-index:2;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:#0057ff;box-shadow:0 0 10px 2px rgba(0,87,255,.45);animation:procFlow 2.2s cubic-bezier(.45,0,.55,1) infinite}
+.v2-step .proc>div:nth-child(2) .img-placeholder::before{animation-delay:.44s}.v2-step .proc>div:nth-child(3) .img-placeholder::before{animation-delay:.88s}
+.v2-step .proc>div:nth-child(4) .img-placeholder::before{animation-delay:1.32s}.v2-step .proc>div:nth-child(5) .img-placeholder::before{animation-delay:1.76s}
+.v2-step .proc .img-placeholder::after{animation:procNode 2.2s ease-out infinite}
+.v2-step .proc>div:nth-child(2) .img-placeholder::after{animation-delay:.44s}.v2-step .proc>div:nth-child(3) .img-placeholder::after{animation-delay:.88s}
+.v2-step .proc>div:nth-child(4) .img-placeholder::after{animation-delay:1.32s}.v2-step .proc>div:nth-child(5) .img-placeholder::after{animation-delay:1.76s}
+@keyframes procFlow{0%{transform:translateY(0);opacity:0}12%{opacity:1}85%{transform:translateY(52px);opacity:1}100%{transform:translateY(56px);opacity:0}}
+@keyframes procNode{0%{box-shadow:0 0 0 5px #e9e9e9,0 0 0 5px rgba(0,87,255,.35)}60%,100%{box-shadow:0 0 0 5px #e9e9e9,0 0 0 14px rgba(0,87,255,0)}}
+@media (prefers-reduced-motion:reduce){.v2-step .proc .img-placeholder::before,.v2-step .proc .img-placeholder::after{animation:none}}
+/* 고민 카드 — 카피별 애니메이션 아이콘 */
+.v2-target .qline>div::before{content:none!important}
+.v2-target .qline .qi{position:absolute;left:22px;top:clamp(18px,1.5vw,26px);width:36px;height:36px;color:#111;overflow:visible}
+.qi *{transform-box:view-box}.qi .acf{fill:#0057ff}.qi .acs{stroke:#0057ff}
+.qi-dice .dice{transform-origin:24px 24px;animation:qiRoll 3s cubic-bezier(.45,0,.55,1) infinite}
+.qi-dice .pb,.qi-dice .pc{animation:qiBlink 3s steps(1) infinite}.qi-dice .pc{animation-delay:-1.5s}
+@keyframes qiRoll{0%,60%,100%{transform:rotate(0)}20%{transform:rotate(-14deg)}40%{transform:rotate(10deg)}}
+@keyframes qiBlink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.qi-phone .ph{transform-origin:24px 40px;animation:qiShake 2.4s ease-in-out infinite}
+.qi-phone .badge{transform-origin:35px 9px;animation:qiPop 2.4s ease-in-out infinite}
+@keyframes qiShake{0%,40%,100%{transform:none}5%,15%,25%{transform:rotate(-7deg)}10%,20%,30%{transform:rotate(7deg)}}
+@keyframes qiPop{0%,100%{transform:scale(1)}8%{transform:scale(1.25)}16%{transform:scale(1)}}
+.qi-rod .qm{animation:qiHop 1.8s ease-in-out infinite}
+@keyframes qiHop{0%,100%{transform:translateX(0) translateY(0)}25%{transform:translateX(-12px) translateY(-2px)}50%{transform:translateX(0) translateY(0)}75%{transform:translateX(12px) translateY(-2px)}}
+.qi-vids .v1{animation:qiStack 2.6s cubic-bezier(.22,1,.36,1) infinite}.qi-vids .plus{transform-origin:41px 36px;animation:qiPop 2.6s ease-in-out infinite}
+@keyframes qiStack{0%{transform:translateY(-6px);opacity:0}20%,80%{transform:none;opacity:1}100%{transform:translateY(4px);opacity:.6}}
+.qi-eye .lash{transform-origin:24px 22px;animation:qiLash 2.4s ease-in-out infinite}
+@keyframes qiLash{0%,100%{transform:scaleY(1)}35%,55%{transform:translateY(3px) scaleY(.35)}}
+.qi-ask .empty{animation:qiFade 2.2s ease-in-out infinite}
+@keyframes qiFade{0%,100%{opacity:.15}50%{opacity:1}}
+.qi-up .arw{animation:qiPush 2.4s ease-in-out infinite}.qi-up .lock{transform-origin:39px 43px;animation:qiShake 2.4s ease-in-out .5s infinite}
+@keyframes qiPush{0%,100%{transform:translateY(4px);opacity:.4}40%,60%{transform:translateY(-3px);opacity:1}}
+.qi-mosaic .m1{animation:qiFade 1.6s ease-in-out infinite}.qi-mosaic .m2{animation:qiFade 1.6s ease-in-out -.5s infinite}.qi-mosaic .m3{animation:qiFade 1.6s ease-in-out -1s infinite}
+.qi-coin .drop{animation:qiCoin 2s cubic-bezier(.55,0,1,.45) infinite}
+@keyframes qiCoin{0%{transform:translateY(-6px);opacity:0}15%{opacity:1}70%{transform:translateY(18px);opacity:1}85%,100%{transform:translateY(18px);opacity:0}}
+.qi-warp .wrp{transform-origin:24px 26px;animation:qiWarp 2.6s ease-in-out infinite}.qi-warp .wave{animation:qiWave 1.3s linear infinite}
+@keyframes qiWarp{0%,100%{transform:none}30%{transform:skewX(-12deg) scaleY(.9)}60%{transform:skewX(10deg) scaleY(1.05)}}
+@keyframes qiWave{to{transform:translateX(-10px)}}
+.qi-hour .hg{transform-origin:24px 24px;animation:qiFlip 3.2s cubic-bezier(.65,0,.35,1) infinite}
+.qi-hour .sand1{animation:qiSandA 3.2s linear infinite}.qi-hour .sand2{animation:qiSandB 3.2s linear infinite}
+@keyframes qiFlip{0%,80%{transform:rotate(0)}100%{transform:rotate(180deg)}}
+@keyframes qiSandA{0%{opacity:1}75%,100%{opacity:.1}}@keyframes qiSandB{0%{opacity:.1}75%,100%{opacity:1}}
+.qi-en .cr{animation:qiBlink 1s steps(1) infinite}.qi-en .qf{transform-origin:38px 10px;animation:qiPop 2.2s ease-in-out infinite}
+.v2-target .qline>div:hover .qi *{animation-duration:1.2s}
+@media (max-width:768px){.v2-target .qline .qi{left:14px;top:16px;width:30px;height:30px}}
+@media (prefers-reduced-motion:reduce){.qi *{animation:none!important}}
+.v2-rv .rv-card .img-placeholder.has-img{border:.5px solid #dcdcdc}
 </style>
 </head>
 <body>
@@ -1278,12 +1325,12 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
       <p class="section-desc">하나라도 해당된다면, 지금 막혀 있는 바로 그 지점부터 다시 잡아드려요.</p>
     </div>
     <div class="qline">
-      <div><b>“매번 결과가 달라요.”</b><p>잘 될 때도 있고 안 될 때도 있는데, 그게 왜 그런지를 모르겠어요.</p></div>
-      <div><b>“고객 카톡이 올 때마다 겁나요.”</b><p>컴플레인일까 봐, 일 자체를 그만두고 싶을 때가 있어요.</p></div>
-      <div><b>“롯드를 감으로 골라요.”</b><p>눈 모양마다 무엇을 보고 골라야 하는지 기준이 없어요.</p></div>
-      <div><b>“영상은 몇백 개 저장했어요.”</b><p>영상마다 방식이 다 달라서 뭐가 맞는 건지 더 헷갈려요.</p></div>
-      <div><b>“잘 안 올라가는 눈이 제일 무서워요.”</b><p>그런 고객님이 오시면 ‘이번엔 어떡하지?’ 걱정이 먼저 들어요.</p></div>
-      <div><b>“물어볼 사람이 없어요.”</b><p>뭘 고쳐야 할지도 모르겠고, 피드백 받을 곳이 없어요.</p></div>
+      <div><svg class="qi qi-dice" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="dice"><rect x="9" y="9" width="30" height="30" rx="7"/><circle class="pa acf" stroke="none" cx="17" cy="17" r="2.6"/><circle class="pb acf" stroke="none" cx="24" cy="24" r="2.6"/><circle class="pa acf" stroke="none" cx="31" cy="31" r="2.6"/><circle class="pc acf" stroke="none" cx="31" cy="17" r="2.6"/><circle class="pc acf" stroke="none" cx="17" cy="31" r="2.6"/></g></svg><b>“매번 결과가 달라요.”</b><p>잘 될 때도 있고 안 될 때도 있는데, 그게 왜 그런지를 모르겠어요.</p></div>
+      <div><svg class="qi qi-phone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="ph"><rect x="13" y="5" width="22" height="38" rx="4.5"/><path d="M21 9h6M22 38h4"/><path d="M18 17h9M18 22h12M18 27h7" opacity=".45"/></g><g class="badge"><circle class="acf" stroke="none" cx="35" cy="9" r="6"/><path stroke="#fff" stroke-width="2" d="M35 6v3.6M35 12.2v.1"/></g></svg><b>“고객 카톡이 올 때마다 겁나요.”</b><p>컴플레인일까 봐, 일 자체를 그만두고 싶을 때가 있어요.</p></div>
+      <div><svg class="qi qi-rod" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="26" width="7" height="16" rx="3.5"/><rect x="20.5" y="22" width="7" height="20" rx="3.5"/><rect x="33" y="18" width="7" height="24" rx="3.5"/><g class="qm"><path class="acs" stroke-width="2.2" d="M20 8.5a4.5 4.5 0 1 1 6.4 4.1c-1.5.7-2.4 1.6-2.4 3.2"/><circle class="acf" stroke="none" cx="24" cy="19.2" r="1.4"/></g></svg><b>“롯드를 감으로 골라요.”</b><p>눈 모양마다 무엇을 보고 골라야 하는지 기준이 없어요.</p></div>
+      <div><svg class="qi qi-vids" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="v3" x="11" y="7" width="28" height="18" rx="3" opacity=".35"/><rect class="v2" x="8" y="12" width="30" height="19" rx="3" fill="#fff" opacity=".7"/><g class="v1"><rect x="5" y="17" width="32" height="21" rx="3.5" fill="#fff"/><path class="acf" stroke="none" d="M18 23v9l7.5-4.5z"/></g><path d="M41 31v10M36 36h10" class="plus"/></svg><b>“영상은 몇백 개 저장했어요.”</b><p>영상마다 방식이 다 달라서 뭐가 맞는 건지 더 헷갈려요.</p></div>
+      <div><svg class="qi qi-eye" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 28q19-16 38 0q-19 14-38 0z"/><circle class="acf" stroke="none" cx="24" cy="27.5" r="4.6"/><g class="lash"><path d="M11 22.5l-2.5-4M17 19.2l-1.3-4.6M24 18v-4.8M31 19.2l1.3-4.6M37 22.5l2.5-4"/></g></svg><b>“잘 안 올라가는 눈이 제일 무서워요.”</b><p>그런 고객님이 오시면 ‘이번엔 어떡하지?’ 걱정이 먼저 들어요.</p></div>
+      <div><svg class="qi qi-ask" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h22a3.5 3.5 0 0 1 3.5 3.5v9A3.5 3.5 0 0 1 27 24H14l-6 5v-5H5a3.5 3.5 0 0 1-3.5-3.5v-9A3.5 3.5 0 0 1 5 8z"/><text x="16" y="20.5" text-anchor="middle" font-family="Pretendard,sans-serif" font-size="11" font-weight="700" fill="currentColor" stroke="none">?</text><path class="empty acs" stroke-dasharray="3 3" d="M43 25H22a3.5 3.5 0 0 0-3.5 3.5v8A3.5 3.5 0 0 0 22 40h14l5.5 4.5V40h1.5a3.5 3.5 0 0 0 3.5-3.5v-8A3.5 3.5 0 0 0 43 25z"/></svg><b>“물어볼 사람이 없어요.”</b><p>뭘 고쳐야 할지도 모르겠고, 피드백 받을 곳이 없어요.</p></div>
     </div>
     <p class="src text-center">수강 원장님 후기 원문에서 옮긴 고민이에요</p>
   </div>

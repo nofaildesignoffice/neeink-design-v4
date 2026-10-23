@@ -1199,6 +1199,53 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 .rv-md .rv-split .img-placeholder.has-img{background:#0d0d0d;min-height:560px}
 .rv-md .rv-split .img-placeholder.has-img img{object-fit:contain;object-position:center}
 @media (max-width:768px){.rv-md .rv-split .img-placeholder.has-img{min-height:0;aspect-ratio:4/5}}
+/* 프로세스 — 이미지 ↔ 스텝 박스 연결선 위로 흐르는 원 */
+.v2-step .proc .img-placeholder::before{content:"";position:absolute;left:50%;top:100%;z-index:2;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:#0057ff;box-shadow:0 0 10px 2px rgba(0,87,255,.45);animation:procFlow 2.2s cubic-bezier(.45,0,.55,1) infinite}
+.v2-step .proc>div:nth-child(2) .img-placeholder::before{animation-delay:.44s}.v2-step .proc>div:nth-child(3) .img-placeholder::before{animation-delay:.88s}
+.v2-step .proc>div:nth-child(4) .img-placeholder::before{animation-delay:1.32s}.v2-step .proc>div:nth-child(5) .img-placeholder::before{animation-delay:1.76s}
+.v2-step .proc .img-placeholder::after{animation:procNode 2.2s ease-out infinite}
+.v2-step .proc>div:nth-child(2) .img-placeholder::after{animation-delay:.44s}.v2-step .proc>div:nth-child(3) .img-placeholder::after{animation-delay:.88s}
+.v2-step .proc>div:nth-child(4) .img-placeholder::after{animation-delay:1.32s}.v2-step .proc>div:nth-child(5) .img-placeholder::after{animation-delay:1.76s}
+@keyframes procFlow{0%{transform:translateY(0);opacity:0}12%{opacity:1}85%{transform:translateY(52px);opacity:1}100%{transform:translateY(56px);opacity:0}}
+@keyframes procNode{0%{box-shadow:0 0 0 5px #e9e9e9,0 0 0 5px rgba(0,87,255,.35)}60%,100%{box-shadow:0 0 0 5px #e9e9e9,0 0 0 14px rgba(0,87,255,0)}}
+@media (prefers-reduced-motion:reduce){.v2-step .proc .img-placeholder::before,.v2-step .proc .img-placeholder::after{animation:none}}
+/* 고민 카드 — 카피별 애니메이션 아이콘 */
+.v2-target .qline>div::before{content:none!important}
+.v2-target .qline .qi{position:absolute;left:22px;top:clamp(18px,1.5vw,26px);width:36px;height:36px;color:#111;overflow:visible}
+.qi *{transform-box:view-box}.qi .acf{fill:#0057ff}.qi .acs{stroke:#0057ff}
+.qi-dice .dice{transform-origin:24px 24px;animation:qiRoll 3s cubic-bezier(.45,0,.55,1) infinite}
+.qi-dice .pb,.qi-dice .pc{animation:qiBlink 3s steps(1) infinite}.qi-dice .pc{animation-delay:-1.5s}
+@keyframes qiRoll{0%,60%,100%{transform:rotate(0)}20%{transform:rotate(-14deg)}40%{transform:rotate(10deg)}}
+@keyframes qiBlink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.qi-phone .ph{transform-origin:24px 40px;animation:qiShake 2.4s ease-in-out infinite}
+.qi-phone .badge{transform-origin:35px 9px;animation:qiPop 2.4s ease-in-out infinite}
+@keyframes qiShake{0%,40%,100%{transform:none}5%,15%,25%{transform:rotate(-7deg)}10%,20%,30%{transform:rotate(7deg)}}
+@keyframes qiPop{0%,100%{transform:scale(1)}8%{transform:scale(1.25)}16%{transform:scale(1)}}
+.qi-rod .qm{animation:qiHop 1.8s ease-in-out infinite}
+@keyframes qiHop{0%,100%{transform:translateX(0) translateY(0)}25%{transform:translateX(-12px) translateY(-2px)}50%{transform:translateX(0) translateY(0)}75%{transform:translateX(12px) translateY(-2px)}}
+.qi-vids .v1{animation:qiStack 2.6s cubic-bezier(.22,1,.36,1) infinite}.qi-vids .plus{transform-origin:41px 36px;animation:qiPop 2.6s ease-in-out infinite}
+@keyframes qiStack{0%{transform:translateY(-6px);opacity:0}20%,80%{transform:none;opacity:1}100%{transform:translateY(4px);opacity:.6}}
+.qi-eye .lash{transform-origin:24px 22px;animation:qiLash 2.4s ease-in-out infinite}
+@keyframes qiLash{0%,100%{transform:scaleY(1)}35%,55%{transform:translateY(3px) scaleY(.35)}}
+.qi-ask .empty{animation:qiFade 2.2s ease-in-out infinite}
+@keyframes qiFade{0%,100%{opacity:.15}50%{opacity:1}}
+.qi-up .arw{animation:qiPush 2.4s ease-in-out infinite}.qi-up .lock{transform-origin:39px 43px;animation:qiShake 2.4s ease-in-out .5s infinite}
+@keyframes qiPush{0%,100%{transform:translateY(4px);opacity:.4}40%,60%{transform:translateY(-3px);opacity:1}}
+.qi-mosaic .m1{animation:qiFade 1.6s ease-in-out infinite}.qi-mosaic .m2{animation:qiFade 1.6s ease-in-out -.5s infinite}.qi-mosaic .m3{animation:qiFade 1.6s ease-in-out -1s infinite}
+.qi-coin .drop{animation:qiCoin 2s cubic-bezier(.55,0,1,.45) infinite}
+@keyframes qiCoin{0%{transform:translateY(-6px);opacity:0}15%{opacity:1}70%{transform:translateY(18px);opacity:1}85%,100%{transform:translateY(18px);opacity:0}}
+.qi-warp .wrp{transform-origin:24px 26px;animation:qiWarp 2.6s ease-in-out infinite}.qi-warp .wave{animation:qiWave 1.3s linear infinite}
+@keyframes qiWarp{0%,100%{transform:none}30%{transform:skewX(-12deg) scaleY(.9)}60%{transform:skewX(10deg) scaleY(1.05)}}
+@keyframes qiWave{to{transform:translateX(-10px)}}
+.qi-hour .hg{transform-origin:24px 24px;animation:qiFlip 3.2s cubic-bezier(.65,0,.35,1) infinite}
+.qi-hour .sand1{animation:qiSandA 3.2s linear infinite}.qi-hour .sand2{animation:qiSandB 3.2s linear infinite}
+@keyframes qiFlip{0%,80%{transform:rotate(0)}100%{transform:rotate(180deg)}}
+@keyframes qiSandA{0%{opacity:1}75%,100%{opacity:.1}}@keyframes qiSandB{0%{opacity:.1}75%,100%{opacity:1}}
+.qi-en .cr{animation:qiBlink 1s steps(1) infinite}.qi-en .qf{transform-origin:38px 10px;animation:qiPop 2.2s ease-in-out infinite}
+.v2-target .qline>div:hover .qi *{animation-duration:1.2s}
+@media (max-width:768px){.v2-target .qline .qi{left:14px;top:16px;width:30px;height:30px}}
+@media (prefers-reduced-motion:reduce){.qi *{animation:none!important}}
+.v2-rv .rv-card .img-placeholder.has-img{border:.5px solid #dcdcdc}
 </style>
 </head>
 <body>
@@ -1280,12 +1327,12 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
       <p class="section-desc">하나라도 해당된다면, 실력이 아니라 보여주는 방법의 문제예요.</p>
     </div>
     <div class="qline">
-      <div><b>“사진은 마음에 드는데 못 올려요.”</b><p>고객님 초상권 때문에, 그날 작업 사진을 한 장도 못 쓰는 날이 있어요.</p></div>
-      <div><b>“가리면 실력이 안 보여요.”</b><p>마스크, 모자이크, 스티커로 가리면 고객이 결과를 상상하지 못해요.</p></div>
-      <div><b>“프롬프트를 사도 안 나와요.”</b><p>10장을 돌려도 1장 건질까 말까. 결제한 비용만 쌓였어요.</p></div>
-      <div><b>“AI가 시술 결과까지 바꿔요.”</b><p>얼굴만 바꾸고 싶은데 속눈썹·눈썹까지 뭉개지고 달라져요.</p></div>
-      <div><b>“한 장 만드는 데 며칠 걸려요.”</b><p>편집이 오래 걸리니 매일 올리는 건 엄두가 안 나요.</p></div>
-      <div><b>“영어 프롬프트가 막막해요.”</b><p>AI는 어려운 사람들만 하는 거 같고, 컴퓨터도 약해요.</p></div>
+      <div><svg class="qi qi-up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="14" width="26" height="22" rx="3"/><path d="M8 32l6-6 4 4 4-3 6 5"/><circle cx="23" cy="20.5" r="2.2"/><g class="arw"><path class="acs" stroke-width="2.2" d="M39 30V12M33.5 17.5L39 12l5.5 5.5"/></g><g class="lock"><rect class="acf" stroke="none" x="33" y="33" width="12" height="10" rx="2"/><path class="acs" d="M35.5 33v-2.5a3.5 3.5 0 0 1 7 0V33"/></g></svg><b>“사진은 마음에 드는데 못 올려요.”</b><p>고객님 초상권 때문에, 그날 작업 사진을 한 장도 못 쓰는 날이 있어요.</p></div>
+      <div><svg class="qi qi-mosaic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="24" cy="21" rx="11" ry="13"/><path d="M8 44c2-7 8-10 16-10s14 3 16 10"/><g class="mz"><rect class="m1 acf" stroke="none" x="16" y="21" width="5.3" height="5.3"/><rect class="m2" fill="currentColor" stroke="none" x="21.3" y="21" width="5.3" height="5.3" opacity=".7"/><rect class="m3 acf" stroke="none" x="26.6" y="21" width="5.3" height="5.3" opacity=".6"/><rect class="m2" fill="currentColor" stroke="none" x="16" y="26.3" width="5.3" height="5.3" opacity=".5"/><rect class="m3 acf" stroke="none" x="21.3" y="26.3" width="5.3" height="5.3"/><rect class="m1" fill="currentColor" stroke="none" x="26.6" y="26.3" width="5.3" height="5.3" opacity=".8"/></g></svg><b>“가리면 실력이 안 보여요.”</b><p>마스크, 모자이크, 스티커로 가리면 고객이 결과를 상상하지 못해요.</p></div>
+      <div><svg class="qi qi-coin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="24" cy="40" rx="12" ry="3.5"/><path d="M12 40v-4c0 1.9 5.4 3.5 12 3.5s12-1.6 12-3.5v4"/><ellipse cx="24" cy="34" rx="12" ry="3.5"/><g class="drop"><circle class="acf" stroke="none" cx="24" cy="12" r="7"/><path stroke="#fff" stroke-width="1.6" d="M26.2 9.5c-.6-.8-1.4-1.1-2.3-1.1-1.4 0-2.4.7-2.4 1.8 0 2.6 4.9 1.4 4.9 4 0 1.1-1.1 1.9-2.5 1.9-1.1 0-2-.4-2.6-1.2M24 7v1.4M24 15.9v1.3"/></g></svg><b>“프롬프트를 사도 안 나와요.”</b><p>10장을 돌려도 1장 건질까 말까. 결제한 비용만 쌓였어요.</p></div>
+      <div><svg class="qi qi-warp" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="wrp"><path d="M5 27q19-16 38 0q-19 14-38 0z"/><circle class="acf" stroke="none" cx="24" cy="26.5" r="4.6"/><path d="M11 21.5l-2.5-4M17 18.2l-1.3-4.6M24 17v-4.8M31 18.2l1.3-4.6M37 21.5l2.5-4"/></g><path class="wave acs" stroke-width="2" d="M4 40q5-4 10 0t10 0 10 0 10 0"/></svg><b>“AI가 시술 결과까지 바꿔요.”</b><p>얼굴만 바꾸고 싶은데 속눈썹·눈썹까지 뭉개지고 달라져요.</p></div>
+      <div><svg class="qi qi-hour" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g class="hg"><path d="M13 5h22M13 43h22"/><path d="M15 5c0 9 9 12 9 19s-9 10-9 19M33 5c0 9-9 12-9 19s9 10 9 19"/><path class="sand1 acf" stroke="none" d="M18 10h12c-1 4-6 7-6 9-0-2-5-5-6-9z"/><path class="sand2 acf" stroke="none" d="M24 30c0 2 5 5 6 9H18c1-4 6-7 6-9z"/></g></svg><b>“한 장 만드는 데 며칠 걸려요.”</b><p>편집이 오래 걸리니 매일 올리는 건 엄두가 안 나요.</p></div>
+      <div><svg class="qi qi-en" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="12" width="40" height="24" rx="5"/><text x="11" y="28.5" font-family="Pretendard,sans-serif" font-size="12" font-weight="700" fill="currentColor" stroke="none">Aa</text><path class="cr acs" stroke-width="2" d="M28 18v12"/><g class="qf"><circle class="acf" stroke="none" cx="38" cy="10" r="6.5"/><text x="38" y="14" text-anchor="middle" font-family="Pretendard,sans-serif" font-size="10" font-weight="700" fill="#fff" stroke="none">?</text></g></svg><b>“영어 프롬프트가 막막해요.”</b><p>AI는 어려운 사람들만 하는 거 같고, 컴퓨터도 약해요.</p></div>
     </div>
     <p class="src text-center">AI 마케팅 클래스 수강 원장님 후기 원문과 니잉 수강 대상 정리에서 옮긴 고민입니다</p>
   </div>
