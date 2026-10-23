@@ -1215,8 +1215,8 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 .ai-stage{position:relative;align-self:center;width:100%;max-width:560px;margin:0 auto;aspect-ratio:793/1000;border-radius:16px;overflow:hidden;background:#111;isolation:isolate;box-shadow:0 30px 60px -30px rgba(0,0,0,.35)}
 .ai-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .ai-after{clip-path:inset(0 0 100% 0);filter:blur(4px) saturate(.92)}
-.ai-stage.is-gen .ai-after{clip-path:inset(0 0 0 0);filter:blur(4px) saturate(.92);transition:clip-path 2.6s linear}
-.ai-stage.is-done .ai-after{clip-path:inset(0 0 0 0);filter:none;transition:filter .9s ease}
+.ai-stage.is-gen .ai-after{clip-path:inset(0 0 0 0);filter:blur(4px) saturate(.92);transition:clip-path 1.53s linear}
+.ai-stage.is-done .ai-after{clip-path:inset(0 0 0 0);filter:none;transition:filter .53s ease}
 .ai-stage.is-reset .ai-after{opacity:0;transition:opacity .6s ease}
 .ai-grid{position:absolute;inset:0;z-index:2;background-image:radial-gradient(rgba(255,255,255,.55) 1px,transparent 1.4px);background-size:16px 16px;opacity:0;transition:opacity .6s;-webkit-mask:radial-gradient(70% 60% at 55% 55%,#000 30%,transparent 80%);mask:radial-gradient(70% 60% at 55% 55%,#000 30%,transparent 80%)}
 .ai-stage.is-detect .ai-grid,.ai-stage.is-lock .ai-grid,.ai-stage.is-gen .ai-grid{opacity:.55}
@@ -1228,13 +1228,13 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 .ai-eyes em{background:#0057ff;color:#fff}
 .ai-stage.is-detect .ai-face,.ai-stage.is-lock .ai-face,.ai-stage.is-gen .ai-face{opacity:1;transform:none}
 .ai-stage.is-lock .ai-eyes,.ai-stage.is-gen .ai-eyes{opacity:1;transform:none}
-.ai-stage.is-gen .ai-face{animation:aiPulse 1.2s ease-in-out infinite}
+.ai-stage.is-gen .ai-face{animation:aiPulse .7s ease-in-out infinite}
 @keyframes aiPulse{50%{opacity:.55}}
-.ai-stage.is-done .ai-face,.ai-stage.is-done .ai-grid{opacity:0;transition:opacity .6s .3s}
-.ai-stage.is-done .ai-eyes{opacity:0;transition:opacity .6s 1.4s}
+.ai-stage.is-done .ai-face,.ai-stage.is-done .ai-grid{opacity:0;transition:opacity .35s .18s}
+.ai-stage.is-done .ai-eyes{opacity:0;transition:opacity .35s .82s}
 .ai-stage.is-done .ai-face{animation:none}
 .ai-scan{position:absolute;left:0;right:0;top:0;z-index:4;height:90px;margin-top:-90px;opacity:0;background:linear-gradient(180deg,rgba(0,87,255,0) 0%,rgba(0,87,255,.28) 100%);border-bottom:2px solid #6fa0ff;box-shadow:0 8px 24px 2px rgba(0,87,255,.55)}
-.ai-stage.is-gen .ai-scan{opacity:1;transform:translateY(calc(var(--h) + 90px));transition:transform 2.6s linear}
+.ai-stage.is-gen .ai-scan{opacity:1;transform:translateY(calc(var(--h) + 90px));transition:transform 1.53s linear}
 .ai-stage.is-done .ai-scan{opacity:0;transform:translateY(calc(var(--h) + 90px));transition:opacity .4s}
 .ai-tag{z-index:5}
 .ai-tag b{font-weight:inherit}
@@ -1652,12 +1652,12 @@ document.getElementById('hPrev').onclick=function(){go(hi-1);reset()};document.g
   function size(){st.style.setProperty('--h',st.offsetHeight+'px')}
   function set(c,t,p){P.forEach(function(x){st.classList.toggle(x,x===c||(c==='is-gen'&&x==='is-lock')||(c==='is-done'&&x==='is-gen'))});if(t!=null)lab.textContent=t;if(p!=null){bar.style.width=p+'%';pct.textContent=p+'%'}}
   function count(a,b,d){var t0=performance.now();cancelAnimationFrame(raf);(function f(t){var k=Math.min(1,(t-t0)/d),v=Math.round(a+(b-a)*k);bar.style.transition='none';bar.style.width=v+'%';pct.textContent=v+'%';if(k<1)raf=requestAnimationFrame(f);else bar.style.transition=''})(t0)}
-  function at(ms,fn){T.push(setTimeout(fn,ms))}
+  var S=1.7;function at(ms,fn){T.push(setTimeout(fn,ms/S))}
   function run(){T.forEach(clearTimeout);T=[];size();
     set('is-idle','대기 중',0);
     at(1300,function(){set('is-detect','얼굴 영역 인식 중',18)});
     at(2600,function(){set('is-lock','시술 부위 보호',36)});
-    at(3800,function(){set('is-gen','AI 얼굴 생성 중');count(36,100,2600)});
+    at(3800,function(){set('is-gen','AI 얼굴 생성 중');count(36,100,2600/S)});
     at(6500,function(){set('is-done','변환 완료',100)});
     at(9600,function(){set('is-reset','대기 중',0)});
     at(10300,function(){if(on)run()});}
