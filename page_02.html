@@ -1374,6 +1374,18 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
   .lp-badges li{font-size:12px;padding:7px 11px}
 }
 @media (prefers-reduced-motion:reduce){.lp-mq-track,.lp-gal-track,.lp-ba-ar svg{animation:none}}
+/* 세로선 삭제 · 솔루션 카드 = 원인 카드 디자인 */
+.v2-sub .lead::before{content:none!important;display:none!important}
+.v2-sol .ls{max-width:1440px;padding:0 20px;gap:clamp(14px,1.5vw,28px);counter-reset:sz}
+.v2-sol .ls-row,.v2-sol .ls-row.rev{display:flex;flex-direction:column;border:1px solid rgba(0,0,0,.15);border-radius:20px;background:#fff;overflow:hidden;position:relative;transition:transform .26s var(--ease),box-shadow .26s}
+.v2-sol .ls-row:hover{transform:translateY(-6px);box-shadow:var(--hv-shadow)}
+.v2-sol .ls-row .img-placeholder{order:0;aspect-ratio:4/3;border-radius:0;margin:0;background:linear-gradient(160deg,#f2f5fd 0%,#e6edfc 100%);color:var(--placeholder-icon)}
+.v2-sol .ls-row .txt{padding:clamp(26px,2.2vw,42px) clamp(22px,2vw,38px) clamp(30px,2.5vw,46px);position:relative;display:block;flex:1}
+.v2-sol .ls-row .n{margin:0 0 12px;padding:0;background:none;border-radius:0;font-family:var(--serif-en);font-size:15px;color:var(--pp);text-align:left}
+.v2-sol .ls-row h3{margin:0 0 12px;padding:0;background:none;border-radius:0;font-family:var(--serif-ko);font-weight:400;font-size:clamp(20px,1.4vw,26px);letter-spacing:-.06em;color:#000;line-height:1.35;text-align:left}
+.v2-sol .ls-row p{margin:0;padding:0;font-size:15px;color:var(--tx);line-height:1.65;text-align:left}
+.v2-sol .ls-row .txt::after{counter-increment:sz;content:"0" counter(sz);position:absolute;right:20px;top:-.55em;font-family:var(--serif-en);font-size:clamp(60px,5.2vw,100px);line-height:1;color:#505257;opacity:.07;pointer-events:none}
+@media (max-width:768px){.v2-sol .ls-row p{font-size:14px}}
 </style>
 </head>
 <body>
@@ -1406,7 +1418,7 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
     <p class="label">Lash Lift Correction Class</p>
     <h1>배운 적은 있는데,<br>할 때마다 결과가 달라 불안하셨죠</h1>
     <p class="lead">기술이 부족해서가 아니에요. 눈매를 판단할 기준이 없었을 뿐이에요.<br>니잉 속눈썹펌 급속교정 클래스는, 그 기준을 만드는 수업입니다.</p>
-    <ul class="lp-badges"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>6년 · 시술 6,000건</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>래쉬애딕트 최고 교육지사상</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>100% 직접 실습</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>수료 후 카톡 피드백</li></ul>
+    <ul class="lp-badges"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>래쉬애딕트 최고 교육지사상</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>100% 직접 실습</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>수료 후 카톡 피드백</li></ul>
     <div class="hstats">
       <div><p class="k">누적 시술</p><p class="v">6,000+</p></div>
       <div><p class="k">교육으로 만난 원장님</p><p class="v">500+</p></div>
@@ -1558,9 +1570,6 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
     </div>
   </div>
 </section>
-
-<!-- ================= LP : 마퀴 ================= -->
-<div class="lp-marquee" aria-hidden="true"><div class="lp-mq-track"><span>LASH LIFT CORRECTION ◆ 11 STEPS ◆ 8 WEEKS RETENTION ◆ 100% HANDS-ON ◆</span><span>LASH LIFT CORRECTION ◆ 11 STEPS ◆ 8 WEEKS RETENTION ◆ 100% HANDS-ON ◆</span><span>LASH LIFT CORRECTION ◆ 11 STEPS ◆ 8 WEEKS RETENTION ◆ 100% HANDS-ON ◆</span><span>LASH LIFT CORRECTION ◆ 11 STEPS ◆ 8 WEEKS RETENTION ◆ 100% HANDS-ON ◆</span><span>LASH LIFT CORRECTION ◆ 11 STEPS ◆ 8 WEEKS RETENTION ◆ 100% HANDS-ON ◆</span><span>LASH LIFT CORRECTION ◆ 11 STEPS ◆ 8 WEEKS RETENTION ◆ 100% HANDS-ON ◆</span></div></div>
 
 <!-- ================= 섹션 9 : Difference ================= -->
 <section class="section bg-light v2-cmp">
