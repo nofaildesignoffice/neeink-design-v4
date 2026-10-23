@@ -515,12 +515,12 @@ body{word-break:keep-all}
 /* =====================================================================
    DESIGN v2 — 신유외과(shinyuclinic) 디자인 시스템 이식
    토큰: 퍼플 #0057ff / 딥퍼플 #000000 / 본문 #505257 / 라벤더 라인 #dfe8fb / 소프트퍼플 #4d8bff
-         아이보리 바탕 #fefefe · 섹션 #f6f6f6 · 카드 #f7f7f7 / 다크 플럼 #0d0d0d / 골드 #127749
+         아이보리 바탕 #fefefe · 섹션 #f6f6f6 · 카드 #f7f7f7 / 다크 플럼 #0d0d0d / 골드 #0057ff
    타이포: 제목 나눔명조(400, -0.06em, 1.2) + 영문·숫자 Geist(프리텐다드와 같은 결의 고딕) + 본문 Pretendard
    ===================================================================== */
 :root{
   --pp:#0057ff; --pp-d:#000000; --pp-s:#4d8bff; --pp-l:#dfe8fb; --pp-xl:#eef3ff;
-  --tx:#505257; --ink:#000000; --plum:#0d0d0d; --plum-2:#1a1a1a; --gold:#127749;
+  --tx:#505257; --ink:#000000; --plum:#0d0d0d; --plum-2:#1a1a1a; --gold:#0057ff;
   --iv:#fefefe; --iv-2:#f6f6f6; --iv-3:#f7f7f7; --iv-4:#f6f6f6;
   --line:rgba(0,0,0,.15); --line-2:rgba(0,0,0,.08);
   --text-black:#000; --text-dark:#000000; --text-gray:#505257; --text-light:rgba(0,0,0,.5); --text-muted:rgba(0,0,0,.35);
@@ -812,8 +812,8 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 .nav-item>a::after{content:none}
 .nav-utils{align-self:center}
 
-/* ===== 니잉 브랜드 컬러 — 메인 #000 · 서브 블루 #0057ff · 그린 #127749 ===== */
-:root{--brand:#000;--blue:#0057ff;--green:#127749}
+/* ===== 니잉 브랜드 컬러 — 메인 #000 · 서브 블루 #0057ff ===== */
+:root{--brand:#000;--blue:#0057ff;--green:#0057ff}
 .nav-logo{color:#000}
 .btn-primary{background:#000;border-color:#000;color:#fff}
 .btn-primary:hover{background:var(--blue);border-color:var(--blue)}
@@ -821,7 +821,7 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 .bg-dark .btn-primary:hover,.hero .btn-primary:hover{background:var(--blue);border-color:var(--blue);color:#fff}
 /* 푸터 글로우 — 잘린 원 대신 넓고 부드러운 그라데이션 */
 .footer::before{right:-10%;top:-30%;width:70%;height:130%;border-radius:0;background:radial-gradient(closest-side,rgba(0,87,255,.16),rgba(0,87,255,.06) 55%,transparent);filter:blur(40px)}
-.footer::after{content:"";position:absolute;left:-10%;bottom:-40%;width:60%;height:110%;background:radial-gradient(closest-side,rgba(18,119,73,.08),transparent);filter:blur(40px);pointer-events:none}
+.footer::after{content:"";position:absolute;left:-10%;bottom:-40%;width:60%;height:110%;background:radial-gradient(closest-side,rgba(0,87,255,.08),transparent);filter:blur(40px);pointer-events:none}
 </style>
 </head>
 <body>
