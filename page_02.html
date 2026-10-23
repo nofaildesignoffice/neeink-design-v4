@@ -1195,6 +1195,8 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 .rv-md .rv-split .img-placeholder.has-img{background:#0d0d0d;min-height:560px}
 .rv-md .rv-split .img-placeholder.has-img img{object-fit:contain;object-position:center}
 @media (max-width:768px){.rv-md .rv-split .img-placeholder.has-img{min-height:0;aspect-ratio:4/5}}
+.v2-sub .hero-ph.has-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.v2-sub .hero-ph.has-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.45) 60%,rgba(0,0,0,.65) 100%)}
 </style>
 </head>
 <body>
@@ -1222,7 +1224,7 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 
 <!-- ================= 섹션 1 : Hero ================= -->
 <section class="sub-hero v2-sub">
-  <div class="hero-ph"><i data-lucide="image"></i><span>[히어로 배경 · 1920×1080 · 신논현 스튜디오 수업 현장]</span></div>
+  <div class="hero-ph has-media"><img src="assets/hero2.jpg" alt="" aria-hidden="true"></div>
   <div class="inner">
     <p class="label">Lash Lift Correction Class</p>
     <h1>배운 적은 있는데,<br>할 때마다 결과가 달라 불안하셨죠</h1>
@@ -1240,7 +1242,7 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
   <div class="container">
     <div class="text-center">
       <p class="section-label">How It Works</p>
-      <h2 class="section-title">급속교정 클래스,<br>이렇게 이어집니다</h2>
+      <h2 class="section-title">급속교정 클래스,<br>이렇게 진행됩니다</h2>
       <p class="section-desc">롯드 기초에서 이론, 그리고 실습까지. 지금 필요한 단계부터 시작하시면 돼요.</p>
     </div>
     <div class="hiw">

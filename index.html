@@ -1261,6 +1261,9 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 /* 매장 찾기 배너 — 제품 이미지 배경 + 회색 반투명 오버레이 + 블루 그라디언트 */
 .v2-cta .banner{background:linear-gradient(rgba(246,246,246,.55),rgba(246,246,246,.55)),url(assets/cta-bg.jpg) center/cover no-repeat;border-color:rgba(0,0,0,.05)}
 @media (max-width:768px){.v2-cta .banner{background:linear-gradient(rgba(246,246,246,.72),rgba(246,246,246,.72)),url(assets/cta-bg.jpg) 62% center/cover no-repeat}}
+/* 매장 찾기 배너 v2 — 이미지 오른쪽 정렬·높이 맞춤 + 왼쪽 회색 그라디언트 연결 */
+.v2-cta .banner{background:linear-gradient(90deg,#f6f6f6 0%,#f6f6f6 30%,rgba(246,246,246,.85) 45%,rgba(246,246,246,.35) 65%,rgba(246,246,246,0) 85%),url(assets/cta-bg.jpg) right center/auto 100% no-repeat,#f6f6f6}
+@media (max-width:768px){.v2-cta .banner{background:linear-gradient(180deg,#f6f6f6 0%,rgba(246,246,246,.92) 55%,rgba(246,246,246,.55) 100%),url(assets/cta-bg.jpg) 70% center/auto 100% no-repeat,#f6f6f6}}
 </style>
 </head>
 <body>
@@ -1304,7 +1307,7 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
     </div>
   </div>
   <div class="hero-slide">
-    <div class="hero-ph"><i data-lucide="image"></i><span>[히어로 배경 3 · 1920×1080 · 래쉬애딕트 3종]</span></div>
+    <div class="hero-ph has-media"><img src="assets/hero3.jpg" alt="" aria-hidden="true"></div>
     <div class="hero-body">
       <h2>시술 매출 옆에,<br>판매 매출까지</h2>
       <p>래쉬애딕트 3종, 그리고 200여 명의 마스터크루</p>
