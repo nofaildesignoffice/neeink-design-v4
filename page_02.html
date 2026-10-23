@@ -1386,6 +1386,21 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 .v2-sol .ls-row p{margin:0;padding:0;font-size:15px;color:var(--tx);line-height:1.65;text-align:left}
 .v2-sol .ls-row .txt::after{counter-increment:sz;content:"0" counter(sz);position:absolute;right:20px;top:-.55em;font-family:var(--serif-en);font-size:clamp(60px,5.2vw,100px);line-height:1;color:#505257;opacity:.07;pointer-events:none}
 @media (max-width:768px){.v2-sol .ls-row p{font-size:14px}}
+/* 수강 후 변화 — 결과 한 줄 + 후기 원문 카드 */
+.vc-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.2vw,20px);max-width:1100px;margin:0 auto}
+.vc-list.is-collapsed .voice-card:nth-child(n+7){display:none}
+.voice-card{display:flex;flex-direction:column;gap:14px;padding:clamp(24px,2.2vw,34px);border-radius:18px;background:#fff;border:1px solid rgba(0,0,0,.08);transition:box-shadow .3s,transform .3s}
+.voice-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -20px rgba(0,0,0,.18)}
+.vc-result{font-size:clamp(17px,1.2vw,20px);font-weight:700;line-height:1.45;letter-spacing:-.04em;color:#000;word-break:keep-all}
+.vc-u{color:#0057ff;background:linear-gradient(transparent 62%,rgba(0,87,255,.14) 62%)}
+.vc-orig{font-family:'Pretendard',sans-serif;font-style:normal;letter-spacing:-.02em;margin:0;padding:0 0 0 14px;border-left:2px solid #e3e8f5;font-size:14.5px;line-height:1.75;color:var(--tx);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
+.voice-card.is-open .vc-orig{-webkit-line-clamp:unset;display:block}
+.vc-toggle{align-self:flex-start;padding:0;border:0;background:none;font-size:13px;font-weight:500;color:#000;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.vc-meta{display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:14px;border-top:1px solid rgba(0,0,0,.07);font-size:13px}
+.vc-meta b{font-weight:600;color:#000}.vc-meta span{color:#8a8a8a}
+.vc-more-wrap{text-align:center;margin-top:28px}
+.vc-wrap.is-all .vc-more-wrap{display:none}
+@media (max-width:768px){.vc-list{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1451,10 +1466,20 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
     <div class="text-center lp-hd">
       <p class="section-label">After Class</p>
       <h2 class="section-title">수강 후,<br>이렇게 달라졌어요</h2>
-      <p class="section-desc">수강 원장님 후기에서 옮긴 변화예요.</p>
+      <p class="section-desc">수업이 끝난 뒤 원장님들이 보내주신 메시지, 원문 그대로예요.</p>
     </div>
-    <div class="lp-ba"><div class="lp-ba-card"><p class="b"><em>Before</em>롯드를 감으로 골랐어요</p><span class="lp-ba-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><p class="a"><em>After</em>이제는 눈매를 직접 보고 판단해요</p></div><div class="lp-ba-card"><p class="b"><em>Before</em>될까? 매번 불안했어요</p><span class="lp-ba-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><p class="a"><em>After</em>작게나마 확신과 자신감이 생겼어요</p></div><div class="lp-ba-card"><p class="b"><em>Before</em>영상만 보고 따라 했어요</p><span class="lp-ba-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><p class="a"><em>After</em>왜 이렇게 하는지 알고 해요</p></div><div class="lp-ba-card"><p class="b"><em>Before</em>이론 따로, 실습 따로</p><span class="lp-ba-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><p class="a"><em>After</em>이론과 실습이 찰떡같이 연결돼요</p></div></div>
-    <p class="micro text-center lp-note">※ 수강 원장님 후기에서 옮긴 내용이며, 개인차가 있을 수 있어요.</p>
+    <div class="vc-wrap"><div class="vc-list is-collapsed">
+      <div class="voice-card"><p class="vc-result">무쌍만 오면 떨리던 손, 이제는 <span class="vc-u">눈매를 직접 보고 판단</span></p><blockquote class="vc-orig">펌을 오래한 편은 아닌데 유독 무쌍만 오면 손이 덜덜 떨려서 부담스러웠거든요 정보도 예전에 머물러 있다 보니까 자연스럽게 로만사 씨나 엘만 골랐어요 익숙한 것도 좋지만 제가 만족할 수 있는 시술을 하고 싶은데 방법을 몰라서 한 참 방황했어요 원데이 듣고 가장 크게 바뀌었다고 생각한 건 예전엔 무쌍이다 하면 롯드를 정해두고 맞췄는데 이제는 눈매를 직접 보고 판단 할 수 있단거예요 물론 연습이 더 필요하지만 겁나지 않아요 쫄지말라는 말씀 꼭 기억하면서 시술하겠습니다 좋은 수업을 들어서 정말 다행이고 진짜 좋았던 건 돈이 아깝지 않았어요 원장님 좋은 수업 감사합니다</blockquote><button type="button" class="vc-toggle">원문 전체 보기</button><div class="vc-meta"><b>수강 원장님</b><span>원데이 수강</span></div></div>
+      <div class="voice-card"><p class="vc-result">“이론 몰라도 된다”던 생각이 바뀌고, <span class="vc-u">이론·실습이 찰떡같이 연결</span></p><blockquote class="vc-orig">초보 때는 이론 몰라도 고객만 만족하면 되는 줄 알았거든요? 오늘 수업 듣고 그런 생각 싹 다 쓰레기통에 버리기로 했어요!!! 제가 속눈썹펌이 그 동안 오ㅐ그렇게 힘들었나 곰곰히 생각해보니까 납득이 안 돼서 힘들었던 거더라구욬ㅋ (ISTJ......) 원장님 이론은 딱 필요한 것만 친절하고 쉽게 알려주시는 거 같아요 들으면서 내 문제점이 뭔지도 생각해보고 아 이렇게 해볼 수도 있겠구나~ 이런 생각까지 들더라구요! 뭐랄까.... 이론이랑 실습이 진짜 찰떡같이 연결돼 있어요 재료를 고르는 것부터 다 이유가 있었어요.... 신기해.... 이해가 쏙쏙 됐던 것도 놀랍고 이제는 뭘 확인하면서 연화를 봐야 하는지 시술을 해야 하는지 아니까 힘들지 않을 거 같아요 앞으로 제 펌 인생이! 그리고 원장님이 느끼하지 않아서 개인적으로 더 좋았습니다 ㅋㅋㅋㅋㅋㅋㅋ 다른 데는 좋은 말만 해주고 잘한다 잘한다만 해주는데 여기는 그냥 다시 무새원장님...ㅋㅋㅋㅋㅋ 그 만큼 연습을 더 단단히 했다고 생각해요 더 빨리 들었으면 제 펌인생이 좀 더 빨리 쉬워졌었겠죠? 이제라도 들은게 어디나며~</blockquote><button type="button" class="vc-toggle">원문 전체 보기</button><div class="vc-meta"><b>수강 원장님</b><span>급속교정 클래스 수강</span></div></div>
+      <div class="voice-card"><p class="vc-result">손 습관과 브러쉬 잡는 법까지 <span class="vc-u">한 번에 파악해 교정</span></p><blockquote class="vc-orig">원장님 잘 들어가셨어요? 저는 집에와서 남편이랑 저녁 먹고 수업 때 찍은 영상 돌려보고 있어요 내일부터 하루에 한번씩 복습해볼게요 수업 때 말씀드렸던 거 처럼 네일샵 운영 중인데 속눈썹을 계속 잘하고 싶었거든요 괜히 욕심냈다가 오히려 분산되는 거 아닌가 걱정많이 했는데 고객님들이 좋아해주시는 모습 보니까 스킬업을 안 할수 없었어요 제 욕심에 배우기로 결심한건데 원장님께 가길 정말 잘한 거 같아요 오늘 처음 뵙는건데 제 손의 습관이나 브러쉬 잡는거 한번에 파악하셔서 교정해주시는거 보고 사실 놀랐어요 원장님이 잘 가르쳐주신 만큼 저도 열심히 계속 정진하겠습니다 오늘 정말 감사했어요 피드백 신청 많이 하라고 하셨으니까 제가 종종 연락드릴게요 저 귀찮아 하시면 안돼요~ 좋은 밤 되세요</blockquote><button type="button" class="vc-toggle">원문 전체 보기</button><div class="vc-meta"><b>수강 원장님</b><span>네일샵 운영 · 급속교정 클래스</span></div></div>
+      <div class="voice-card"><p class="vc-result">재료 탓만 하던 과거와 이별, <span class="vc-u">팩폭과 응원</span>이 함께한 수업</p><blockquote class="vc-orig">그동안 재료 탓만 했던 과거의 나 반성합니다...ㅋㅋㅋㅋ 저 좀 자아비대였나 봐요 ㅠㅠ 내가 잘못했다는 생각은 1도 안 하고 걍 재료가 문제겠지~ 했던 듯요 알고 보니 터치 너무 많이 하고 있었고, 원장님이 말씀하신 보호제품도 언제 써야 하는지 몰랐더라구요 클리닉이면 무조건 다 좋은 줄 알았는데 오늘 제품에 대한 생각까지 싹 다 갈아엎어 주셔서 진짜 감사해요 오늘 팩폭이랑 응원 완전 채찍과 당근 그 자체였어요 ㅋㅋㅋ 꿈에도 나올 각인데 진짜 너무 잘 가르쳐주셔서 감사합니당 오늘 배운 거 절대 안 까먹고 열심히 할게요 헤헤 데모 일정 텀 너무 길다고 하셔서 바로 조정 완료했어요 니잉 말이 곧 진리... 시키는 대로 잘 해볼게요 지켜봐주세요!!</blockquote><button type="button" class="vc-toggle">원문 전체 보기</button><div class="vc-meta"><b>수강 원장님</b><span>급속교정 클래스 수강</span></div></div>
+      <div class="voice-card"><p class="vc-result">정리 안 되던 머릿속이 풀리고, <span class="vc-u">왜 이렇게 하는지 알고</span> 시술</p><blockquote class="vc-orig">원장님!! 후기가 너무 늦었죠!!!!! 수강 듣고 연습해보느라 정신없었어요 진짜 수업 너무 좋았어요 연습하면서도 후기를 얼마나 보내드리고 싶었는지ㅋㅋㅋ 속눈썹펌 시작한 지 얼마 안됐는데, 배우면서도 뭔가 머릿속에 정리가 안되는 느낌이 계속 있었거든요 어디 물어볼데도 없고ㅠㅠㅠㅠㅠ 그게 너무 답답해서 신청했는데, 수업 들으면서 딱 정리되는 느낌이었어요 원장님 설명하시는 방식이 저한테 너무 잘 맞아요 어렵게 돌려 말씀하시는게 아니라 바로바로 핵심 짚어주셔서 머릿속에 쏙쏙 들어오고 기억에도 잘 남아요 수업 중간에 이해 안갔던것도 다시 질문하면 아 이게 이런거였구나!! 하는 순간이 진짜 많았어요 연습 꼭 바로 해보라고 하셔서 모델 구했는데 손이 달라진게 느껴졌어요 이 전에는 그냥 인스타보고 따라하고 제 기준없이 하는 느낌이었다면 이제는 내가 왜 이렇게 하는지 알고 하는 느낌 그 차이가 제가 느껴질 정도로 크더라구요 원장님이 하시는 모든 수업 진짜 다들을거예요!!! 아프지마시고 잠 좀 주무시고 항상 건강하게 교육해주세요 정말 감사합니다</blockquote><button type="button" class="vc-toggle">원문 전체 보기</button><div class="vc-meta"><b>수강 원장님</b><span>급속교정 클래스 수강</span></div></div>
+      <div class="voice-card"><p class="vc-result">시간이 아닌 원리로 배운 연화법, <span class="vc-u">응용이 되겠다</span>는 확신</p><blockquote class="vc-orig">허,,,,, 원장님 저 지금 집 도착이요 갈떼마다 느끼는데 서울 너무 멀어요ㅡㅠ 힝// 그래도 오늘 진짜 유익했습니다 좋은 클래스 들은 덕분인지 저 하나도 안피곤해여 오늘 저의 감동뽀인트 연화방법이 진짜 좋았어요 다른 데서는 그냥 시간을 정해줬었거든요 근데 원장님은 원리 설명하면서 엄청 자세하게 알려주시니까 응용이 되겠단 생각이 들었어요 그리고 두번쨰는 원장님 인스타에서 보던 느낌을 제가 실제로 해볼 수 있었다는게 찐이라고 느꼈어요 잘하는거랑 잘 가르치는 거랑 다르다잖아요 하루매출 포기하고 차비들여서 아침부터 부산에서 서울까지간 보람 미쳤어요진짜 다들 니잉했으면!!!! AI 수업도 곧 들으러 갈게요!!!!!!</blockquote><button type="button" class="vc-toggle">원문 전체 보기</button><div class="vc-meta"><b>수강 원장님</b><span>급속교정 클래스 수강</span></div></div>
+      <div class="voice-card"><p class="vc-result">어려운 만큼 직접 해봐서, <span class="vc-u">첫 시작을 함께해 정말 잘했다</span></p><blockquote class="vc-orig">처음에 속눈썹펌을 배워야지 라는 생각을 하면서 과연 혼자 할 수 있을까? 했었는데 막상 하나 하나 따라가보니까 더 어렵더라구요 ㅠㅠ 롯드 붙이는 것도 맘 처럼 안되고 결정리도 자꾸 삐뚤빼뚤 해져서 계속 다시 하고 다시하고 귀에서 원장님 다시 다시 맴돌아요..ㅋㅋ 근데 어려운 만큼 원장님 설명 듣고 직접 해볼 수 있어서 좋았어요 처음에는 많이 느리고 중간에 막히는 부분도 많았지만 혼자 해봐야 한다는 원장님 말씀 오히려 너무 좋았어요! 녹화한거 보면서 다시 복습하는데 여기서 내가 이런 걸 못하는 구나 알게되더라구요 아직 완전 잘하는건 절대 아니지만 첫 시작을 원장님이랑 같이해서 정말 잘했다는 생각이 들어요 저 어려워도 절대 포기 안하고 열심히 해볼게용 오늘 수업 감사합니다</blockquote><button type="button" class="vc-toggle">원문 전체 보기</button><div class="vc-meta"><b>수강 원장님</b><span>급속교정 클래스 수강</span></div></div>
+      <div class="voice-card"><p class="vc-result">수업 전날 잠도 못 잔 완전 초보, <span class="vc-u">모델 혼자 해보길 잘했다</span></p><blockquote class="vc-orig">원장님께서 혼자 다해야한다고 하셔서 사실 등록 고민했잖아요....ㅠㅠ 완전 초보라 혼자 다 할 수 있을까 수업 전날 잠도 못잤어요... 롯드 붙이는 것도 손이 안 따라주고 결 정리도 계속 풀리고 혼자 하면 내가 어디서 잘못한건지 몰라서 더 눈물나고ㅠㅠ 그래도 수업 들으면서 한 단계씩 해보니까 아 여기서 다시 봐야하는구나 하는 순간이 생기더라구요 아직 느리고 부족하지만 그냥 겁먹고 안 하는 것보단 모델 혼자 해보길 잘했다 싶어요 내일 또 모델 잡아놨는데 쪼금 덜 떨릴거 같아요 감사합니다 원장님!</blockquote><button type="button" class="vc-toggle">원문 전체 보기</button><div class="vc-meta"><b>수강 원장님</b><span>급속교정 클래스 수강</span></div></div>
+      <div class="voice-card"><p class="vc-result">9시간 원데이, <span class="vc-u">넘치게 배운 후회 없는 시간</span></p><blockquote class="vc-orig">장장 9시간의 원데이(라 쓰고 정규반이라 읽습니다) 이론부터 실습까지 부족함없이 아니 오히려 넘치게 배운거같아 후회없는 시간이였다고 단호하게 말할 수 있을꺼 같아요 펌린이시절 뭔가 문제인지도 몰라 허덕이며 아예 포기해야 하나 할때 알고리즘의 선택으로 원장님계정을 보게된 뒤로 다시 속펌을 시작하게 되고 점점 하면 할수록 이론+클리닉 세부적으로 부족하다고 느끼게 되었던 찰나에 원데이 오픈해주신 원장님께 닝렐루야 외치며 신청하게 되었는데 오늘 드디어 수업듣고 ‘역시는 역시다’ 되뇌이며 귀가중입니다...! 교재분량부터 장난이 아니라 감동먹었고여, 제가 있는 재료, 롯드들을 기준으로 저한테 맞는 방법 만들어주시는거에서 완전 끝-! 이제 그냥 저는 원장님이 북한 땅을 사라해도 살려구요 오늘 다시한번 저의 정체성에 대해 진지하게 생각하게 되는 하루이기도 했습니다 오늘 하루 너무 수고많으셨습니다 감사합니다</blockquote><button type="button" class="vc-toggle">원문 전체 보기</button><div class="vc-meta"><b>수강 원장님</b><span>원데이 수강</span></div></div>
+      <div class="voice-card"><p class="vc-result">확신 없던 시술에, <span class="vc-u">작게나마 확신과 자신감</span></p><blockquote class="vc-orig">원장님 안녕하세요 !! 버스타구 이제야 카톡 남겨요 .. 그동안 제대로 된 수업을 못 들어서 항상 시술할 때마다 제 실력에 확신도 없고 걱정이 많았었는데 항상 원장님 라방 보면서 새로 알게 된 내용들이 너무 많고 도움이 많이 되어서 &#x27;꼭 제대로 배워야겠다&#x27; 마음먹고 요번에 찾아뵙게 되었어요 ..! 조금 늦게 원장님을 찾아온 게 너무 너무 아쉽지만 이제라도 제대로 배울 수 있어서 너무 다행이고 감사한 시간이었습니다 늘 자신감이 부족했는데 오늘 수업 덕분에 작게나마 확신과 자신감이 생긴 것 같아요 !! 앞으로 알려주신 대로 차근차근 잘해나갈 수 있을 것 같아요 오늘 귀한 배움 주셔서 정말 너무 너무 감사드립니다 오늘도 편안한 밤 되세요</blockquote><button type="button" class="vc-toggle">원문 전체 보기</button><div class="vc-meta"><b>수강 원장님</b><span>급속교정 클래스 수강</span></div></div>
+    </div><div class="vc-more-wrap"><button type="button" class="vc-more btn btn-secondary">후기 더 보기</button></div></div><p class="micro text-center lp-note">※ 수강 원장님 후기에서 옮긴 내용이며, 개인차가 있을 수 있어요.</p>
   </div>
 </section>
 
@@ -1876,7 +1901,7 @@ window.addEventListener('scroll',function(){fx.classList.toggle('is-show',window
 (function(){
   if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   var SKIP='header,footer,.nav,.m-menu,.q-aside,.q-md,.rv-md,.md,.v2-hero,.hero,.loop-track,.arc-track,.ai-stage,.csel,.arc-ring,.page-head';
-  var CARD='.lp-step,.lp-ba-card,.lp-ba-img figure,.lp-proof-grid>div,.lp-offer-box,.card,.prod-card,.cls-card,.v2-rv .loop-vp,#rvArc,.checks li,.stats>div,.hstats>div,.banner,.acc-item,.hiw>*,.ls-row,.core-steps li,.proc>*,.img-placeholder,.ai-stage,.loc-map,.loc-info li,.notice-pin,.tbl-scroll,.emp,.cmp,.split>video,.form-box,.ct-form,.store-list>*,.map-ph,.pc-img,.tabs,.search-box,.store-filter,.pager,.sub-form,.qline>*,.v2-cta .banner';
+  var CARD='.voice-card,.lp-step,.lp-ba-card,.lp-ba-img figure,.lp-proof-grid>div,.lp-offer-box,.card,.prod-card,.cls-card,.v2-rv .loop-vp,#rvArc,.checks li,.stats>div,.hstats>div,.banner,.acc-item,.hiw>*,.ls-row,.core-steps li,.proc>*,.img-placeholder,.ai-stage,.loc-map,.loc-info li,.notice-pin,.tbl-scroll,.emp,.cmp,.split>video,.form-box,.ct-form,.store-list>*,.map-ph,.pc-img,.tabs,.search-box,.store-filter,.pager,.sub-form,.qline>*,.v2-cta .banner';
   var TEXT='h1,h2,h3,h4,h5,p,blockquote,figcaption,dt,dd,.btn,.section-label,.circle-ani,label';
   function ok(e){return !e.closest(SKIP)||e.matches('.ai-stage')}
   var main=[].slice.call(document.querySelectorAll('body>section,body>div.v2-stack>section.v2-info'));
@@ -1915,6 +1940,13 @@ window.addEventListener('scroll',function(){fx.classList.toggle('is-show',window
   var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){var it=items.filter(function(i){return i.e===x.target})[0];if(it)setTimeout(function(){run(it)},250);io.unobserve(x.target)}})},{threshold:.4});
   items.forEach(function(it){io.observe(it.e)});
 })();
+</script>
+<script>
+/* 후기 카드 — 원문 펼치기, 후기 더 보기 */
+(function(){document.querySelectorAll('.voice-card').forEach(function(c){var q=c.querySelector('.vc-orig'),b=c.querySelector('.vc-toggle');
+  function chk(){if(!c.classList.contains('is-open'))b.hidden=q.scrollHeight<=q.clientHeight+2}chk();addEventListener('resize',chk);
+  b.onclick=function(){var o=c.classList.toggle('is-open');b.textContent=o?'접기':'원문 전체 보기'}});
+  document.querySelectorAll('.vc-more').forEach(function(b){b.onclick=function(){var w=b.closest('.vc-wrap');w.classList.add('is-all');w.querySelector('.vc-list').classList.remove('is-collapsed');setTimeout(function(){w.querySelectorAll('.voice-card').forEach(function(c){var q=c.querySelector('.vc-orig'),t=c.querySelector('.vc-toggle');t.hidden=q.scrollHeight<=q.clientHeight+2})},50)}})})();
 </script>
 </body>
 </html>
