@@ -822,6 +822,12 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 /* 푸터 글로우 — 잘린 원 대신 넓고 부드러운 그라데이션 */
 .footer::before{right:-10%;top:-30%;width:70%;height:130%;border-radius:0;background:radial-gradient(closest-side,rgba(0,87,255,.16),rgba(0,87,255,.06) 55%,transparent);filter:blur(40px)}
 .footer::after{content:"";position:absolute;left:-10%;bottom:-40%;width:60%;height:110%;background:radial-gradient(closest-side,rgba(0,87,255,.08),transparent);filter:blur(40px);pointer-events:none}
+/* 페이지 헤드 대신 첫 섹션 상단 타이틀 */
+.ph-first{padding-top:clamp(150px,13vw,210px)!important}
+.store-hd{margin-bottom:clamp(40px,4vw,64px)}
+.store-hd .section-title{font-family:var(--serif-ko);font-weight:400;font-size:clamp(34px,3.2vw,56px);letter-spacing:-.06em;color:#000;margin-bottom:16px}
+.store-hd .section-desc{margin:0 auto}
+@media (max-width:768px){.ph-first{padding-top:120px!important}}
 </style>
 </head>
 <body>
@@ -848,16 +854,13 @@ input[type=checkbox],input[type=radio]{accent-color:var(--pp)}
 
 
 <!-- ================= 섹션 1 : 페이지 헤드 ================= -->
-<section class="page-head">
-  <div class="container">
-    <h1>자주 묻는 질문</h1>
-    <p>교육, 제품, 배송, 환불, 마스터크루까지<br>가장 많이 물어보시는 내용을 모았어요.</p>
-  </div>
-</section>
-
 <!-- ================= 섹션 2 : 검색 + 카테고리 + 아코디언 ================= -->
-<section class="section">
+<section class="section ph-first">
   <div class="container" style="max-width:960px">
+    <div class="text-center store-hd">
+      <h1 class="section-title">자주 묻는 질문</h1>
+      <p class="section-desc">교육, 제품, 배송, 환불, 마스터크루까지<br>가장 많이 물어보시는 내용을 모았어요.</p>
+    </div>
     <form class="search-box" style="margin-bottom:32px" onsubmit="return false"><input type="text" placeholder="궁금한 내용을 검색해보세요"><button class="btn btn-primary"><i data-lucide="search"></i>검색</button></form>
     <div data-tabs>
       <div class="tabs" style="justify-content:center"><button class="is-active">전체</button><button>교육</button><button>제품</button><button>배송</button><button>환불</button><button>마스터크루</button></div>
